@@ -1,0 +1,142 @@
+.float-wp {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:200px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+	z-index:100;
+	display: none;
+}
+
+.my-float-wp {
+	margin-top:16px;
+}
+
+.float-wp:hover, .float-wp:active {
+	color:#FFF;
+}
+
+.alert-success-alt {
+	position:fixed;
+	width:300px;
+	height:70px;
+	bottom:100px;
+	right:40px;
+	text-align:center;
+	z-index:100;
+}
+
+.alert-purple { border-color: #694D9F;background: #20A286;color: #fff; }
+.alert-info-alt { border-color: #B4E1E4;background: #81c7e1;color: #fff; }
+.alert-danger-alt { border-color: #B63E5A;background: #E26868;color: #fff; }
+.alert-warning-alt { border-color: #F3F3EB;background: #E9CEAC;color: #fff; }
+.alert-success-alt { border-color: #19B99A;background: #20A286;color: #fff; }
+.glyphicon { margin-right:10px; }
+.alert a {color: #025AA5;}
+
+#popup {
+	background-color: rgba(0,0,0,0.8);
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:0;
+	-webkit-animation:autopopup 2s;
+	-moz-animation:autopopup 2s;
+	animation:autopopup 2s;
+}
+
+@-webkit-keyframes autopopup {
+	from {opacity: 0;margin-top:-200px;}
+	to {opacity: 1;}
+}
+@-moz-keyframes autopopup {
+	from {opacity: 0;margin-top:-200px;}
+	to {opacity: 1;}
+}
+@keyframes autopopup {
+	from {opacity: 0;margin-top:-200px;}
+	to {opacity: 1;}
+}
+
+#popup:target {
+	-webkit-transition:all 1s;
+	-moz-transition:all 1s;
+	transition:all 1s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.popup-contenedor {
+	position: relative;
+	margin:7% auto;
+	background-color: #fafafa;
+	color:#333;
+	border-radius: 3px;
+	width: 28%;
+}
+
+.img-popup {
+	width: 100%;
+}
+
+a.popup-cerrar {
+	position: absolute;
+	top:3px;
+	right:3px;
+	background-color: #333;
+	padding:7px 10px;
+	font-size: 20px;
+	text-decoration: none;
+	line-height: 1;
+	color:#fff;
+}
+
+@media screen and (max-width: 1300px) {
+  	.popup-contenedor {
+		width: 38%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+  	.popup-contenedor {
+		margin: 9% auto;
+		width: 36%;
+
+	}
+}
+
+@media screen and (max-width: 800px) {
+  	.popup-contenedor {
+		margin: 10% auto;
+		width: 45%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+  	.popup-contenedor {
+		margin: 12% auto;
+		width: 58%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+  	.popup-contenedor {
+		margin: 15% auto;
+		width: 65%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+  	.popup-contenedor {
+		margin: 18% auto;
+		width: 70%;
+	}
+}

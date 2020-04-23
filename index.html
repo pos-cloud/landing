@@ -63,49 +63,64 @@
 
 	<title>POS Cloud - Sistema de gestión de punto de venta</title>
 
-	<script>
-
-		function hidePopup() {
-			document.getElementById('popup').style.display = 'none';
+	<style>
+		#d-alert {
+			display: none;
+			height: 80px;
 		}
-
-		function showAndHideChat() {
-			if (document.getElementById('ic-chat-fb').style.display !== 'block') {
-
-				if (document.getElementById('alert') &&
-					document.getElementById('alert').style &&
-					document.getElementById('alert').style.display !== 'none') {
-					document.getElementById('alert').style.display = "none";
-				}
-
-				document.getElementById('ic-chat').style.backgroundColor = "#F82D2D";
-
-				document.getElementById('ic-chat-i').className = "fas fa-times my-float-chat";
-
-				document.getElementById("ic-chat-fb").style.WebkitTransition = "all 1s"; // Code for Safari 3.1 to 6.0
-				document.getElementById("ic-chat-fb").style.transition = "all 1s";       // Standard syntax
-				document.getElementById('ic-chat-fb').style.display = "block";
-
-				document.getElementById("ic-chat-wp").style.WebkitTransition = "all 1s"; // Code for Safari 3.1 to 6.0
-				document.getElementById("ic-chat-wp").style.transition = "all 1s";       // Standard syntax
-				document.getElementById('ic-chat-wp').style.display = "block";
-
-			} else {
-
-				document.getElementById('ic-chat').style.backgroundColor = "#4267B2";
-
-				document.getElementById('ic-chat-i').className = "far fa-comment my-float-chat";
-
-				document.getElementById("ic-chat-fb").style.WebkitTransition = "all 1s"; // Code for Safari 3.1 to 6.0
-				document.getElementById("ic-chat-fb").style.transition = "all 1s";       // Standard syntax
-				document.getElementById('ic-chat-fb').style.display = "none";
-
-				document.getElementById("ic-chat-wp").style.WebkitTransition = "all 1s"; // Code for Safari 3.1 to 6.0
-				document.getElementById("ic-chat-wp").style.transition = "all 1s";       // Standard syntax
-				document.getElementById('ic-chat-wp').style.display = "none";
+	
+		.alert {
+			text-align: center;
+		}
+	
+		#loading {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 996;
+			background-color: rgba(0, 0, 255, 0.7);
+			display: none;
+		}
+	
+		.content-text-loading {
+			color: white;
+			position: absolute;
+			top: 50%;
+			left: 37%;
+		}
+	
+		@keyframes typing {
+			from {
+				width: 0;
 			}
 		}
-	</script>
+	
+		@keyframes blink-caret {
+			50% {
+				border-color: transparent;
+			}
+		}
+	
+		#text-loading {
+			font: bold 200% Consolas, Monaco, monospace;
+			border-right: .1em solid;
+			width: 16.5em;
+			/* fallback */
+			width: 30ch;
+			/* # of chars */
+			margin: 2em 1em;
+		}
+	
+		.teclea {
+			white-space: nowrap;
+			overflow: hidden;
+			animation: typing 2s steps(25, end), blink-caret .5s step-end infinite alternate;
+		}
+	</style>
 </head>
 
 <body>
@@ -122,20 +137,27 @@
 					<li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
-					<a href="http://demo.poscloud.com.ar/#/registrar"
-						class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">Registrarme GRATIS</a>
+					<a href="registro.html?tipo-negocio=ropa" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase"
+						id="btn-registro">Registrate GRATIS</a>
 					<a href="#contact" class="btn btn-info my-2 my-sm-0 text-uppercase">COTIZAR AHORA!</a>
 				</form>
 			</div>
 		</div>
 	</nav>
-	<div class="container-fluid gtco-banner-area" id="home">
+	<div id="loading">
+		<div id="cloud"><span class='shadow'></span></div>
+		<div id="cloud2"><span class='shadow2'></span></div>
+		<div class="content-text-loading">
+			<h2 id="text-loading"></h2>
+		</div>
+	</div>
+	<div class="container-fluid gtco-banner-area" id="home" style="padding-top: 100px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
 					<h1> Nos comprometemos a brindar la mejor <span>solución</span> para su negocio.</h1>
 					<p>EL FUTURO LLEGÓ. UNA SOLUCIÓN EN LA NUBE.</p>
-					<a href="#">Contacta con nosotros <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<a href="#contact">Contacta con nosotros <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 				</div>
 				<div class="col-md-6">
 					<div class="card"><img class="card-img-top img-fluid" src="images/banner-img.png" alt=""></div>
@@ -143,7 +165,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid gtco-feature" id="about" style="padding-top: 80px;">
+	<div class="container-fluid gtco-feature" id="about" style="padding-top: 180px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7">
@@ -185,14 +207,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid gtco-features" id="services">
+	<div class="container-fluid gtco-features" id="services" style="padding-top: 50px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
 					<h2> Explorar los servicios<br />
 						Ofrecemos para usted</h2>
 					<p> Todos nuestros servicios son personalizados para cada cliente.</p>
-					<h4>No existe 2 POS Cloud IGUALES.</h4>
+					<h4>Para cada cliente su propia funcionalidad.</h4>
 					<a href="#all-services">Todos los servicios<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 				</div>
 				<div class="col-lg-8">
@@ -352,7 +374,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid gtco-testimonials">
+	<!-- <div class="container-fluid gtco-testimonials">
 		<div class="container">
 			<h2>Que dicen los clientes sobre nosotros.</h2>
 			<div class="owl-carousel owl-carousel1 owl-theme">
@@ -398,7 +420,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="container-fluid gtco-logo-area" style="margin-top: 100px !important;">
 		<div class="container">
 			<div class="row">
@@ -411,102 +433,26 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="container-fluid gtco-news" id="news">
-		<div class="container">
-			<h2>Latest News & Articles</h2>
-			<div class="owl-carousel owl-carousel2 owl-theme">
-				<div>
-					<div class="card text-center"><img class="card-img-top" src="images/news1.jpg" alt="">
-						<div class="card-body text-left pr-0 pl-0">
-							<h5>Aenean ultrices lorem quis blandit
-								tempor urabitur accumsan. </h5>
-							<p class="card-text">Donec non sem mi. In hac habitasse platea dictumst. Nullam a feugiat augue,
-								et porta metus. Nulla mollis lobortis leet. Maecenas tincidunt, arcu sed ornare purus risus
-								. . . </p>
-							<a href="#">LEER MÁS <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="card text-center"><img class="card-img-top" src="images/news2.jpg" alt="">
-						<div class="card-body text-left pr-0 pl-0">
-							<h5> Nam vel nisi eget odio pulvinar
-								iaculis. Fusce aliquet. </h5>
-							<p class="card-text">Donec non sem mi. In hac habitasse platea dictumst. Nullam a feugiat augue,
-								et porta metus. Nulla mollis lobortis leet. Maecenas tincidunt, arcu sed ornare purus risus
-								. . . </p>
-							<a href="#">LEER MÁS <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="card text-center"><img class="card-img-top" src="images/news3.jpg" alt="">
-						<div class="card-body text-left pr-0 pl-0">
-							<h5>Morbi faucibus odio sollicitudin
-								risus scelerisque dignissim. </h5>
-							<p class="card-text">Donec non sem mi. In hac habitasse platea dictumst. Nullam a feugiat augue,
-								et porta metus. Nulla mollis lobortis leet. Maecenas tincidunt, arcu sed ornare purus risus
-								. . . </p>
-							<a href="#">LEER MÁS <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="card text-center"><img class="card-img-top" src="images/news1.jpg" alt="">
-						<div class="card-body text-left pr-0 pl-0">
-							<h5>Aenean ultrices lorem quis blandit
-								tempor urabitur accumsan. </h5>
-							<p class="card-text">Donec non sem mi. In hac habitasse platea dictumst. Nullam a feugiat augue,
-								et porta metus. Nulla mollis lobortis leet. Maecenas tincidunt, arcu sed ornare purus risus
-								. . . </p>
-							<a href="#">LEER MÁS <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="card text-center"><img class="card-img-top" src="images/news2.jpg" alt="">
-						<div class="card-body text-left pr-0 pl-0">
-							<h5> Nam vel nisi eget odio pulvinar
-								iaculis. Fusce aliquet. </h5>
-							<p class="card-text">Donec non sem mi. In hac habitasse platea dictumst. Nullam a feugiat augue,
-								et porta metus. Nulla mollis lobortis leet. Maecenas tincidunt, arcu sed ornare purus risus
-								. . . </p>
-							<a href="#">LEER MÁS <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="card text-center"><img class="card-img-top" src="images/news3.jpg" alt="">
-						<div class="card-body text-left pr-0 pl-0">
-							<h5>Morbi faucibus odio sollicitudin
-								risus scelerisque dignissim. </h5>
-							<p class="card-text">Donec non sem mi. In hac habitasse platea dictumst. Nullam a feugiat augue,
-								et porta metus. Nulla mollis lobortis leet. Maecenas tincidunt, arcu sed ornare purus risus
-								. . . </p>
-							<a href="#">LEER MÁS <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
 	<footer class="container-fluid" id="gtco-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-1"></div>
-				<div class="col-lg-10" id="contact" style="padding-top: 50px;">
+				<div class="col-lg-10" id="contact" style="padding-top: 150px;">
 					<h4 style="text-align: center;"> Contacta con nosotros</h4>
 					<h5 style="color: #1d3ede;">También puedes solicitar tu cotización.</h5>
-					<input type="text" class="form-control" placeholder="Nombre">
-					<input type="email" class="form-control" placeholder="Email">
-					<textarea class="form-control" placeholder="Mensaje"></textarea>
-					<a href="#" class="submit-button">ENVIAR <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<div class="row" id="d-alert">
+						<div class="col-md-12 alert" role="alert" id="alert"></div>
+					</div>
+					<input type="text" class="form-control" id="contact-name" placeholder="Nombre" required>
+					<input type="email" class="form-control" id="contact-email"  placeholder="Email" required>
+					<textarea class="form-control" id="contact-message" placeholder="Mensaje" required></textarea>
+					<a onclick="contactMe()" class="submit-button">ENVIAR <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 				</div>
 			</div>
 			<div class="row" style="padding-top: 100px;">
 				<div class="col-lg-12">
 					<div class="row">
-						<div class="col-3">
+						<div class="col-4">
 							<h4>Empresa</h4>
 							<ul class="nav flex-column company-nav">
 								<li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
@@ -514,39 +460,31 @@
 								<li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
 								<!-- <li class="nav-item"><a class="nav-link" href="#">News</a></li>
 								<li class="nav-item"><a class="nav-link" href="#">FAQ's</a></li> -->
-								<li class="nav-item"><a class="nav-link" href="#contect">Contacto</a></li>
+								<li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
 							</ul>
 						</div>
-						<div class="col-3">
+						<div class="col-4">
 							<h4>Síguenos</h4>
 							<ul class="nav follow-us-nav">
-								<li class="nav-item"><a class="nav-link pl-0" href="https://www.facebook.com/poscloudweb"><i
+								<li class="nav-item"><a class="nav-link pl-0" target="_blank" href="https://www.facebook.com/poscloudweb"><i
 											class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li class="nav-item"><a class="nav-link" href="https://www.instagram.com/poscloud_oficial/"><i
+								<li class="nav-item"><a class="nav-link" target="_blank" href="https://www.instagram.com/poscloud_oficial/"><i
 											class="fab fa-instagram" aria-hidden="true"></i></a></li>
-								<!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li> -->
-								<li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/company/35547604"><i
+								<li class="nav-item"><a class="nav-link" target="_blank" href="https://www.linkedin.com/company/35547604"><i
 											class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
-						<div class="col-3">
+						<div class="col-4">
 							<h4>Contáctanos</h4>
 							<ul class="nav follow-us-nav">
-								<li class="nav-item"><a class="nav-link pl-0" href="mailto:ventas@poscloud.com.ar"><i
-											class="fa fa-envelope-o" aria-hidden="true" style="font-size: 15px; margin-left: 10px;"></i> info@poscloud.com.ar</a></li>
-								<li class="nav-item"><a class="nav-link" href="https://m.me/poscloudweb"><i
+								<li class="nav-item"><a class="nav-link pl-0" target="_blank" href="mailto:ventas@poscloud.com.ar"><i
+											class="fa fa-envelope-o" aria-hidden="true"
+											style="font-size: 15px; margin-left: 10px;"></i> info@poscloud.com.ar</a></li>
+								<li class="nav-item"><a class="nav-link" target="_blank" href="https://m.me/poscloudweb"><i
 											class="fab fa-facebook-messenger" aria-hidden="true"></i> Facebook Messenger</a></li>
-								<li class="nav-item"><a class="nav-link" href="https://web.whatsapp.com/send?phone=5493564677539&text="><i
-											class="fab fa-whatsapp" aria-hidden="true"></i> (+54 9 3564 677539)</a></li>
-							</ul>
-						</div>
-						<div class="col-3">
-							<h4>Services</h4>
-							<ul class="nav flex-column services-nav">
-								<li class="nav-item"><a class="nav-link" href="#">Ventas rápidas</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">E-commerce</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Gestión de mesas</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Delivery</a></li>
+								<li class="nav-item"><a class="nav-link"
+										target="_blank" href="https://web.whatsapp.com/send?phone=5493564677539&text="><i class="fab fa-whatsapp"
+											aria-hidden="true"></i> (+54 9 3564 677539)</a></li>
 							</ul>
 						</div>
 					</div>
@@ -561,36 +499,30 @@
 		</div>
 	</footer>
 
-	<a class="float-chat" id="ic-chat" onclick="showAndHideChat()">
+	<!-- <a class="float-chat" id="ic-chat" onclick="showAndHideChat()">
 		<i id="ic-chat-i" class="far fa-comment my-float-chat"></i>
-	</a>
+	</a> -->
 
 	<a href="https://web.whatsapp.com/send?phone=5493564677539&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POS%20Cloud%20."
 		class="float-wp" id="ic-chat-wp" target="_blank">
 		<i class="fa fa-whatsapp my-float-wp"></i>
 	</a>
 
-	<a href="https://www.messenger.com/t/poscloudweb" class="float-fb" id="ic-chat-fb" target="_blank">
+	<!-- <a href="https://www.messenger.com/t/poscloudweb" class="float-fb" id="ic-chat-fb" target="_blank">
 		<i class="fab fa-facebook-messenger my-float-fb"></i>
-	</a>
+	</a> -->
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="js/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<!-- owl carousel js-->
 	<script src="owl-carousel/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/index.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109128235-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-109128235-1');
-	</script>
 </body>
 
 </html>

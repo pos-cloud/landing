@@ -47,7 +47,7 @@ function contactMe() {
 	if (isValid) {
 		$("body").css('overflow', 'hidden');
 		loading();
-		$.post("http://localhost:300/api/contact-me",
+		$.post("http://demo.poscloud.com.ar:300/api/contact-me",
 			{
 				"name": $('#contact-name').val(),
 				"message": $('#contact-message').val(),

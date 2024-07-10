@@ -147,7 +147,7 @@ body {
 	}
 }
 
-#home::after {
+/* #home::after {
 	position: absolute;
 	content: "";
 	height: 600px;
@@ -161,7 +161,7 @@ body {
 	top: -50px;
 	z-index: -1;
 	border-radius: 50% 0 50% 50%;
-}
+} */
 
 @media (max-width: 1400px) {
 	#gtco-main-nav::after {
@@ -191,7 +191,7 @@ body {
 	}
 }
 
-#home::before {
+/* #home::before {
 	position: absolute;
 	content: "";
 	height: 590px;
@@ -205,7 +205,7 @@ body {
 	top: -25px;
 	z-index: -1;
 	border-radius: 50% 0 50% 50%;
-}
+} */
 
 @media (max-width: 1400px) {
 	#gtco-main-nav::before {

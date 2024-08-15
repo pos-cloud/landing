@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Precios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .card {
+            border-radius: 15px;
+            border: 1px solid #ddd; /* Mantiene las líneas alrededor de las cartas */
+        }
+        .card-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+            padding: 15px;
+            border-radius: 15px 15px 0 0; /* Bordes redondeados solo en la parte superior */
+            border-bottom: none; /* Elimina la línea del borde inferior del card-header */
+        }
+        .basic {
+            background: linear-gradient(to bottom, #326aec, #5C8BEF, #ffffff); /* Degradado más suave con un color intermedio */
+        }
+        .intermediate {
+            background: linear-gradient(to bottom, #38A169, #65bb96, #ffffff); /* Degradado más suave con un color intermedio */
+        }
+        .advanced {
+            background: linear-gradient(to bottom, #7B2CBF, #a872df, #ffffff); /* Degradado más suave con un color intermedio */
+        }
+        .price {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .card-body ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card-body ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .contact p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .contact img {
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .icon-svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="pricing-header">
+            LISTA DE PRECIOS
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header basic">
+                        BÁSICO
+                    </div>
+                    <div class="card-body">
+                        <div class="price">$15.000 <br> <small>AL MES</small></div>
+                        <ul>
+                            <li>📊 Ventas</li>
+                            <li>🗂 Compras</li>
+                            <li>📦 Stock</li>
+                            <li>💰 Fondos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header intermediate">
+                        INTERMEDIO
+                    </div>
+                    <div class="card-body">
+                        <div class="price">$30.000 <br> <small>AL MES</small></div>
+                        <ul>
+                            <li>📊 Ventas</li>
+                            <li>🗂 Compras</li>
+                            <li>📦 Stock</li>
+                            <li>💰 Fondos</li>
+                            <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"
+                                    fill="currentColor">
+                                        <path d="M10.25 2.24a5.79 5.79 0 0 0-4 1.63 4.48 4.48 0 1 0 0 8.26 5.76 5.76 0 1 0 4-9.89zm0 10.24A4.49 4.49 0 0 1 5.76 8H4.48a5.74 5.74 0 0 0 .89 3.07 3.29 3.29 0 0 1-.88.13 3.2 3.2 0 0 1 0-6.4A3.2 3.2 0 0 1 7.69 8H9a4.42 4.42 0 0 0-1.63-3.43 4.48 4.48 0 1 1 2.88 7.91z">
+                                        </path>
+                                    </svg>
+                                Tienda nube
+                            </li>
+                            <li>📱 Carta Digital</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header advanced">
+                        AVANZADO
+                    </div>
+                    <div class="card-body">
+                        <div class="price">$45.000 <br> <small>AL MES</small></div>
+                        <ul>
+                            <li>📊 Ventas</li>
+                            <li>🗂 Compras</li>
+                            <li>📦 Stock</li>
+                            <li>💰 Fondos</li>
+                            <li>            
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"
+                                fill="currentColor">
+                                    <path d="M10.25 2.24a5.79 5.79 0 0 0-4 1.63 4.48 4.48 0 1 0 0 8.26 5.76 5.76 0 1 0 4-9.89zm0 10.24A4.49 4.49 0 0 1 5.76 8H4.48a5.74 5.74 0 0 0 .89 3.07 3.29 3.29 0 0 1-.88.13 3.2 3.2 0 0 1 0-6.4A3.2 3.2 0 0 1 7.69 8H9a4.42 4.42 0 0 0-1.63-3.43 4.48 4.48 0 1 1 2.88 7.91z">
+                                    </path>
+                                </svg>
+                                 Tienda nube
+                            </li>
+                            <li>📱 Carta digital</li>
+                            <li>📡 Local Host</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <p><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/> 3564-677539</p>
+            <p><img src="https://img.icons8.com/color/48/000000/gmail--v1.png"/> info@poscloud.com.ar</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

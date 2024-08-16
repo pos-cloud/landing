@@ -3,154 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Precios</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Tabla de Precios</title>
+    <!-- CSS de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-        .card {
+        .pricing-card {
             border-radius: 15px;
-            border: 1px solid #ddd; /* Mantiene las líneas alrededor de las cartas */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
-        .card-header {
+        .pricing-header {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding: 20px;
             text-align: center;
-            font-weight: bold;
-            font-size: 1.5rem;
             color: white;
-            padding: 15px;
-            border-radius: 15px 15px 0 0; /* Bordes redondeados solo en la parte superior */
-            border-bottom: none; /* Elimina la línea del borde inferior del card-header */
         }
-        .basic {
-            background: linear-gradient(to bottom, #326aec, #5C8BEF, #ffffff); /* Degradado más suave con un color intermedio */
+        .pricing-header h2 {
+            margin: 0;
         }
-        .intermediate {
-            background: linear-gradient(to bottom, #38A169, #65bb96, #ffffff); /* Degradado más suave con un color intermedio */
+        .pricing-price {
+            font-size: 2em;
+            margin: 10px 0;
         }
-        .advanced {
-            background: linear-gradient(to bottom, #7B2CBF, #a872df, #ffffff); /* Degradado más suave con un color intermedio */
-        }
-        .price {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-        .card-body ul {
+        .pricing-body ul {
             list-style: none;
             padding: 0;
         }
-        .card-body ul li {
-            margin-bottom: 10px;
-            font-size: 1rem;
+        .pricing-body ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
         }
-        .contact {
+        .pricing-body ul li:last-child {
+            border-bottom: none;
+        }
+        .pricing-footer {
             text-align: center;
-            margin-top: 30px;
+            padding: 20px;
         }
-        .contact p {
-            margin: 0;
-            font-size: 1.2rem;
+
+        /* Colores personalizados */
+        .basic-plan {
+            background-color: #0d6efd; /* Azul */
         }
-        .contact img {
-            width: 20px;
-            vertical-align: middle;
-            margin-right: 10px;
+        .intermediate-plan {
+            background-color: #0a58ca; /* Azul más oscuro */
         }
-        .icon-svg {
-            width: 16px;
-            height: 16px;
-            margin-right: 8px;
-            vertical-align: middle;
+        .advanced-plan {
+            background-color: #084298; /* Azul aún más oscuro */
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <div class="pricing-header">
-            LISTA DE PRECIOS
-        </div>
-        <div class="row">
+    <div class="container mt-5">
+        <div class="row text-center justify-content-center">
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header basic">
-                        BÁSICO
+                <div class="card pricing-card">
+                    <div class="pricing-header basic-plan">
+                        <h2>Básico</h2>
+                        <p class="pricing-price">$25.900</p>
+                        <small>AR$ por mes</small>
                     </div>
-                    <div class="card-body">
-                        <div class="price">$15.000 <br> <small>AL MES</small></div>
+                    <div class="card-body pricing-body">
                         <ul>
-                            <li>📊 Ventas</li>
-                            <li>🗂 Compras</li>
-                            <li>📦 Stock</li>
-                            <li>💰 Fondos</li>
+                            <li>Hasta 30 operaciones por mes</li>
+                            <li>1 usuario</li>
+                            <li>Usuario adicional: $11.900 AR$/mes</li>
+                            <li>Facturación electrónica</li>
+                            <li>Acceso a todo el sistema</li>
+                            <li>Soporte</li>
                         </ul>
+                    </div>
+                    <div class="card-footer pricing-footer">
+                        <button class="btn btn-primary">Seleccionar</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header intermediate">
-                        INTERMEDIO
+                <div class="card pricing-card">
+                    <div class="pricing-header intermediate-plan">
+                        <h2>Intermedio</h2>
+                        <p class="pricing-price">$72.000</p>
+                        <small>AR$ por mes</small>
                     </div>
-                    <div class="card-body">
-                        <div class="price">$30.000 <br> <small>AL MES</small></div>
+                    <div class="card-body pricing-body">
                         <ul>
-                            <li>📊 Ventas</li>
-                            <li>🗂 Compras</li>
-                            <li>📦 Stock</li>
-                            <li>💰 Fondos</li>
-                            <li>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"
-                                    fill="currentColor">
-                                        <path d="M10.25 2.24a5.79 5.79 0 0 0-4 1.63 4.48 4.48 0 1 0 0 8.26 5.76 5.76 0 1 0 4-9.89zm0 10.24A4.49 4.49 0 0 1 5.76 8H4.48a5.74 5.74 0 0 0 .89 3.07 3.29 3.29 0 0 1-.88.13 3.2 3.2 0 0 1 0-6.4A3.2 3.2 0 0 1 7.69 8H9a4.42 4.42 0 0 0-1.63-3.43 4.48 4.48 0 1 1 2.88 7.91z">
-                                        </path>
-                                    </svg>
-                                Tienda nube
-                            </li>
-                            <li>📱 Carta Digital</li>
+                            <li>De 31 hasta 250 operaciones por mes</li>
+                            <li>1 usuario</li>
+                            <li>Usuario adicional: $11.900 AR$/mes</li>
+                            <li>Facturación electrónica</li>
+                            <li>Acceso a todo el sistema</li>
+                            <li>Soporte</li>
                         </ul>
+                    </div>
+                    <div class="card-footer pricing-footer">
+                        <button class="btn btn-primary">Seleccionar</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header advanced">
-                        AVANZADO
+                <div class="card pricing-card">
+                    <div class="pricing-header advanced-plan">
+                        <h2>Avanzado</h2>
+                        <p class="pricing-price">$120.000</p>
+                        <small>AR$ por mes</small>
                     </div>
-                    <div class="card-body">
-                        <div class="price">$45.000 <br> <small>AL MES</small></div>
+                    <div class="card-body pricing-body">
                         <ul>
-                            <li>📊 Ventas</li>
-                            <li>🗂 Compras</li>
-                            <li>📦 Stock</li>
-                            <li>💰 Fondos</li>
-                            <li>            
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"
-                                fill="currentColor">
-                                    <path d="M10.25 2.24a5.79 5.79 0 0 0-4 1.63 4.48 4.48 0 1 0 0 8.26 5.76 5.76 0 1 0 4-9.89zm0 10.24A4.49 4.49 0 0 1 5.76 8H4.48a5.74 5.74 0 0 0 .89 3.07 3.29 3.29 0 0 1-.88.13 3.2 3.2 0 0 1 0-6.4A3.2 3.2 0 0 1 7.69 8H9a4.42 4.42 0 0 0-1.63-3.43 4.48 4.48 0 1 1 2.88 7.91z">
-                                    </path>
-                                </svg>
-                                 Tienda nube
-                            </li>
-                            <li>📱 Carta digital</li>
-                            <li>📡 Local Host</li>
+                            <li>Hasta 500 operaciones por mes</li>
+                            <li>1 usuario</li>
+                            <li>Usuario adicional: $11.900 AR$/mes</li>
+                            <li>Facturación electrónica</li>
+                            <li>Acceso a todo el sistema</li>
+                            <li>Soporte</li>
                         </ul>
+                    </div>
+                    <div class="card-footer pricing-footer">
+                        <button class="btn btn-primary">Seleccionar</button>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="contact">
-            <p><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/> 3564-677539</p>
-            <p><img src="https://img.icons8.com/color/48/000000/gmail--v1.png"/> info@poscloud.com.ar</p>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript de Bootstrap y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

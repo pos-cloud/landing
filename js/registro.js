@@ -54,28 +54,31 @@ async function registrar() {
 		$('#alert').removeClass('alert-success');
 		loading();
 
-		$.post("http://demo.poscloud.com.ar:300/api/register",
+		$.post("http://localhost:300/api/register",
 			{
 				"companyName": $('#companyName').val(),
 				"email": $('#email').val(),
 				"phone": $('#phone').val(),
 				"category": $('#tipo-negocio').val(),
 				"password": $('#password').val(),
-				"codeCountry": $('#paises').val()
+				//	"codeCountry": $('#paises').val()
 			},
 			async function (data) {
-				if (data && data.message) {
-					showMessage('alert-info', data.message);
+				if (data.password && data.db && data.user) {
+					showMessage('alert-succes', 'Se creó la tienda correctamente. Revise su email para ingresar a su cuenta.');
 					$('#loading').hide();
 					$("body").css('overflow', 'auto');
-				} else if (data && data.url) {
-					window.location.replace('http://demo.poscloud.com.ar/#/login?negocio=' + data.url.replace('http://www.', '').replace('.poscloud.com.ar', ''));
-				} else {
-					showMessage('alert-danger', 'Ocurrio un error al intentar registrarse, por favor, intentelo nuevamente.');
+				}  else {		
+					showMessage('alert-danger', data.message);
 					$('#loading').hide();
 					$("body").css('overflow', 'auto');
 				}
-			});
+			}
+		).fail(function (jqXHR, textStatus, errorThrown) {
+			showMessage('alert-danger', jqXHR.responseJSON.message);
+			$('#loading').hide();
+			$("body").css('overflow', 'auto');
+		});
 	}
 }
 

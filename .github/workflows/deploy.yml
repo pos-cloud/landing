@@ -20,7 +20,7 @@ jobs:
           path: ./
 
   deploy:
-    runs-on: [prod2]
+    runs-on: [prod]
     needs: build
     steps:
       - name: Ensure /home/sites/web exists

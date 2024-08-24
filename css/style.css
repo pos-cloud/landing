@@ -235,7 +235,7 @@ body {
 	}
 }
 
-.gtco-banner-area a, .gtco-feature a, .gtco-features a, .gtco-news .owl-carousel .card a, #gtco-footer .submit-button {
+.gtco-banner-area a, .gtco-feature a, .gtco-features a, .gtco-news .owl-carousel .card a, #register .submit-button {
 	background-image: -moz-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
 	background-image: -webkit-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
 	background-image: -ms-linear-gradient(0deg, #06c6f9 0%, #38eaf9 100%);
@@ -251,7 +251,7 @@ body {
 	cursor: pointer;
 }
 
-.gtco-banner-area a .fa, .gtco-feature a .fa, .gtco-features a .fa, .gtco-news .owl-carousel .card a .fa, #gtco-footer .submit-button .fa {
+.gtco-banner-area a .fa, .gtco-feature a .fa, .gtco-features a .fa, .gtco-news .owl-carousel .card a .fa, #register .submit-button .fa {
 	background: #fff;
 	border-radius: 50%;
 	height: 32px;
@@ -844,18 +844,18 @@ body {
 	padding-bottom: 3px !important;
 }
 
-#gtco-footer {
+#register {
 	padding-bottom: 20px;
 }
 
-#gtco-footer h4 {
+#register h4 {
 	font-family: "Lato-Medium";
 	font-size: 36px;
 	/* color: #1d3ede; */
 	margin-bottom: 30px;
 }
 
-#gtco-footer input, #gtco-footer select, #gtco-footer textarea {
+#register input, #register select, #register textarea {
 	background-color: white;
 	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08);
 	border-radius: 50px;
@@ -868,13 +868,13 @@ body {
 	color: #000;
 }
 
-#gtco-footer input::-webkit-input-placeholder, #gtco-footer input::-moz-placeholder, #gtco-footer input:-ms-input-placeholder, #gtco-footer input:-moz-placeholder, #gtco-footer textarea::-webkit-input-placeholder, #gtco-footer textarea::-moz-placeholder, #gtco-footer textarea:-ms-input-placeholder, #gtco-footer textarea:-moz-placeholder, #gtco-footer select::-webkit-input-placeholder, #gtco-footer select::-moz-placeholder, #gtco-footer select:-ms-input-placeholder, #gtco-footer select:-moz-placeholder {
+#register input::-webkit-input-placeholder, #register input::-moz-placeholder, #register input:-ms-input-placeholder, #register input:-moz-placeholder, #register textarea::-webkit-input-placeholder, #register textarea::-moz-placeholder, #register textarea:-ms-input-placeholder, #register textarea:-moz-placeholder, #register select::-webkit-input-placeholder, #register select::-moz-placeholder, #register select:-ms-input-placeholder, #register select:-moz-placeholder {
 	color: #999999;
 	font-family: "OpenSans-Regular";
 	font-size: 18px;
 }
 
-#gtco-footer textarea {
+#register textarea {
 	min-height: 200px;
 	border-radius: 30px;
 	padding-top: 20px;
@@ -882,50 +882,50 @@ body {
 	resize: none;
 }
 
-#gtco-footer .company-nav, #gtco-footer .services-nav {
+#register .company-nav, #register .services-nav {
 	font-family: "OpenSans-Regular";
 	font-size: 20px;
 }
 
-#gtco-footer .company-nav a, #gtco-footer .services-nav a {
+#register .company-nav a, #register .services-nav a {
 	color: #666666;
 	margin: 0;
 	padding: 0;
 }
 
-#gtco-footer .follow-us-nav a {
+/* #register .follow-us-nav a {
 	padding: 0 10px;
 	color: #666666;
-}
+} */
 
-@media (max-width: 385px) {
-	#gtco-footer .follow-us-nav a {
+/* @media (max-width: 385px) {
+	#register .follow-us-nav a {
 		padding-right: 0;
 	}
-}
+} */
 
-#gtco-footer .follow-us-nav a .fa {
+/* #register .follow-us-nav a .fa {
 	font-size: 24px;
-}
+} */
 
-#gtco-footer .col-12 {
+#register .col-12 {
 	margin-top: 90px;
 }
 
-#gtco-footer .col-12 p {
+#register .col-12 p {
 	font-family: "Lato-Regular";
 	font-size: 18px;
 	color: #999999;
 }
 
 @media (max-width: 991px) {
-	#gtco-footer .col-12 {
+	#register .col-12 {
 		margin-top: 20px;
 	}
 }
 
 @media (max-width: 991px) {
-	#gtco-footer .col-lg-6 {
+	#register .col-lg-6 {
 		margin-bottom: 50px;
 	}
 }

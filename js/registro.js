@@ -1,22 +1,11 @@
 
 
-$(document).ready(function () {
-	$('#tipo-negocio').val(new URLSearchParams(window.location.search).get('tipo-negocio'));
+// $(document).ready(function () {
+// 	$('#tipo-negocio').val(new URLSearchParams(window.location.search).get('tipo-negocio'));
 
-	obtenerPaíses();
-});
+// 	obtenerPaíses();
+// });
 
-function obtenerPaíses() {
-	$.get("https://restcountries.eu/rest/v2/all?fields=name;alpha2Code",
-		async function (data) {
-			if (data.length > 0) {
-				$.each(data, function (i, pais) {
-					$('#paises').append(new Option(pais.name, pais.alpha2Code));
-				});
-				$('#paises').val('AR');
-			}
-		});
-}
 
 async function registrar() {
 	var isValid = true;

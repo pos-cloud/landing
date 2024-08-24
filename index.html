@@ -1,316 +1,593 @@
 <!doctype html>
+<!--
+	Solution by GetTemplates.co
+	URL: https://gettemplates.co
+-->
 <html lang="es">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="application-name" content="poscloud" />
-    <meta name="keywords" content="pos, cloud, poscloud, point of sale, sistema, programa, gestion, factura, electrónica, sistema contable, pos resto, pos mostrador, pos delivery, resto, mostrador, delivery, ticket, online, sistema online, sistema facil, gestion, afip">
-    <meta name="description" content="Sistema de gestión y punto de venta online de fácil uso y configuración para administrar tu negocio de manera eficiente. Gratis tu facturación electrónica.">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="NCHntMRzHdXwNGzsjgL1HqbKOjrCieZ1S3S00TPgNeI" />
-    
-    <!-- Stylesheets -->
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="owl-carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="css/wp.css" rel="stylesheet">
-    <link href="css/fb.css" rel="stylesheet">
-    <link href="css/chat.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900" rel="stylesheet">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="lang" content="es-ES" />
+	<meta name='language' content='ES'>
+	<meta name="application-name" content="poscloud" />
+	<meta name='keywords'
+		content='pos, cloud, poscloud, point of sale, punto de venta, sistema, programa, gestion, factura, electrónica, factura electrónica, sistema contable, pos resto, pos mostrador, pos delivery, resto, mostrador, delivery, ticket, online, sistema online, sistema facil, gestion, afip'>
+	<meta name='description'
+		content='Sistema de gestión y punto de venta online de fácil uso y configuración para administrar tu negocio de manera eficiente. Gratis tu facturación electrónica.'>
+	<meta name='subject' content='POS Cloud'>
+	<meta name='copyright' content='POS Cloud'>
+	<meta name='robots' content="index, follow">
+	<meta name="generator" content="Boostrap, HTML5, CSS" />
+	<meta name="organization" content="POS Cloud" />
+	<meta name='Classification' content='software'>
+	<meta name='author' content='POS Cloud, ventas@poscloud.com.ar, https://www.facebook.com/poscloudweb/?ref=br_rs'>
+	<meta name='url' content='https://poscloud.com.ar/'>
+	<meta name='identifier-URL' content='https://poscloud.com.ar/'>
+	<meta name='pagename' content='software'>
+	<meta name='distribution' content='Global'>
+	<meta name='coverage' content='Worldwide'>
+	<meta name='rating' content='General'>
+	<meta name='subtitle' content='Punto de venta en la nube'>
+	<meta name='target' content='all'>
+	<meta name='HandheldFriendly' content='True'>
+	<meta name='MobileOptimized' content='320'>
+	<meta name='medium' content='software'>
+	<meta name="google-site-verification" content="NCHntMRzHdXwNGzsjgL1HqbKOjrCieZ1S3S00TPgNeI" />
+	<!-- awesone fonts css-->
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<!-- owl carousel css-->
+	<link rel="stylesheet" href="owl-carousel/assets/owl.carousel.min.css" type="text/css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- custom CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- WHATSAPP - FACEBOOK -->
+	<link href="css/wp.css" rel="stylesheet">
+	<link href="css/fb.css" rel="stylesheet">
+	<link href="css/chat.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <title>POS Cloud - Sistema de gestión de punto de venta</title>
 
-    <style>
-        #d-alert {
-            display: none;
-            height: 80px;
-        }
-        .alert {
-            text-align: center;
-        }
-        #loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 996;
-            background-color: rgba(0, 0, 255, 0.7);
-            display: none;
-        }
-        .content-text-loading {
-            color: white;
-            position: absolute;
-            top: 50%;
-            left: 37%;
-        }
-        @keyframes typing {
-            from { width: 0; }
-        }
-        @keyframes blink-caret {
-            50% { border-color: transparent; }
-        }
-        #text-loading {
-            font: bold 200% Consolas, Monaco, monospace;
-            border-right: .1em solid;
-            width: 30ch;
-            margin: 2em 1em;
-        }
-        .teclea {
-            white-space: nowrap;
-            overflow: hidden;
-            animation: typing 2s steps(25, end), blink-caret .5s step-end infinite alternate;
-        }
-        .pricing-card {
-            border-radius: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-        .pricing-header {
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-        .pricing-price {
-            color: white;
-            font-size: 2em;
-            margin: 10px 0;
-        }
-        .pricing-body ul {
-            list-style: none;
-            padding: 0;
-        }
-        .pricing-body ul li {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        .pricing-body ul li:last-child {
-            border-bottom: none;
-        }
-        .pricing-footer {
-            text-align: center;
-            padding: 20px;
-        }
-        .basic-plan {
-            background-color: #227bff;
-        }
-        .intermediate-plan {
-            background-color: #0a58ca;
-        }
-        .advanced-plan {
-            background-color: #084298;
-        }
-        .social-icon {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background-color: #007bff;
-            border-radius: 50%;
-            color: #ffffff;
-            text-align: center;
-            line-height: 50px;
-            margin-right: 10px;
-            font-size: 24px;
-            transition: background-color 0.3s;
-        }
-        .social-icon:hover {
-            background-color: #0056b3;
-        }
-        .col-md-6.d-flex.justify-content-end {
-            padding-right: 0;
-        }
-    </style>
+	<!--https://fontawesome.com/start-->
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link
+		href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+		rel='stylesheet' type='text/css'>
+	<link
+		href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>POS Cloud - Sistema de gestión de punto de venta</title>
+
+	<style>
+		#d-alert {
+			display: none;
+			height: 80px;
+		}
+
+		.alert {
+			text-align: center;
+		}
+
+		#loading {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 996;
+			background-color: rgba(0, 0, 255, 0.7);
+			display: none;
+		}
+
+		.content-text-loading {
+			color: white;
+			position: absolute;
+			top: 50%;
+			left: 37%;
+		}
+
+		@keyframes typing {
+			from {
+				width: 0;
+			}
+		}
+
+		@keyframes blink-caret {
+			50% {
+				border-color: transparent;
+			}
+		}
+
+		#text-loading {
+			font: bold 200% Consolas, Monaco, monospace;
+			border-right: .1em solid;
+			width: 16.5em;
+			/* fallback */
+			width: 30ch;
+			/* # of chars */
+			margin: 2em 1em;
+		}
+
+		.teclea {
+			white-space: nowrap;
+			overflow: hidden;
+			animation: typing 2s steps(25, end), blink-caret .5s step-end infinite alternate;
+		}
+	</style>
+	<style>
+		.pricing-card {
+			border-radius: 15px;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			margin-bottom: 30px;
+		}
+
+		.pricing-header {
+			border-top-left-radius: 15px;
+			border-top-right-radius: 15px;
+			padding: 20px;
+			text-align: center;
+			color: white;
+		}
+
+		.pricing-header h2 {
+			margin: 0;
+		}
+
+		.pricing-price {
+			color: white;
+			font-size: 2em;
+			margin: 10px 0;
+		}
+
+		.pricing-body ul {
+			list-style: none;
+			padding: 0;
+		}
+
+		.pricing-body ul li {
+			padding: 10px 0;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.pricing-body ul li:last-child {
+			border-bottom: none;
+		}
+
+		.pricing-footer {
+			text-align: center;
+			padding: 20px;
+		}
+
+		/* Colores personalizados */
+		.basic-plan {
+			background-color: #227bff;
+			/* Azul */
+		}
+
+		.intermediate-plan {
+			background-color: #0a58ca;
+			/* Azul más oscuro */
+		}
+
+		.advanced-plan {
+			background-color: #084298;
+		}
+
+		.social-icon {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			background-color: #007bff;
+			border-radius: 50%;
+			color: #ffffff;
+			text-align: center;
+			line-height: 50px;
+			margin-right: 10px;
+			font-size: 24px;
+			transition: background-color 0.3s;
+		}
+
+		.social-icon:hover {
+			background-color: #0056b3;
+		}
+
+		.col-md-6.d-flex.justify-content-end {
+			padding-right: 0;
+		}
+	</style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
-        <div class="container">
-            <a class="navbar-brand">POS Cloud</a>
-            <div id="my-nav" class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#prices">Precios</a></li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <a href="https://web.whatsapp.com/send?phone=5493857511680&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POS%20Cloud%20." class="btn btn-info my-2 my-sm-0 text-uppercase" target="_blank">Solicitar Ahora!</a>
-                </form>
-            </div>
-        </div>
-    </nav>
-    
-    <div id="loading">
-        <div id="cloud"><span class='shadow'></span></div>
-        <div id="cloud2"><span class='shadow2'></span></div>
-        <div class="content-text-loading">
-            <h2 id="text-loading"></h2>
-        </div>
-    </div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
+		<div class="container"><a class="navbar-brand">POS Cloud</a>
+			<!-- <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+					class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button> -->
+			<div id="my-nav" class="collapse navbar-collapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+					<li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+					<li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
+					<!-- <li class="nav-item"><a class="nav-link" href="#news">Noticias</a></li> -->
+					<!-- <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li> -->
+					<li class="nav-item"><a class="nav-link" href="#prices">PRECIOS</a></li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<!-- <a href="registro.html?tipo-negocio=ropa" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase"
+						id="btn-registro">Registrate GRATIS</a> -->
+					<a href="https://web.whatsapp.com/send?phone=5493857511680&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POS%20Cloud." class="btn btn-info my-2 my-sm-0 text-uppercase" target="_blank">SOLICITAR AHORA!</a>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<div id="loading">
+		<div id="cloud"><span class='shadow'></span></div>
+		<div id="cloud2"><span class='shadow2'></span></div>
+		<div class="content-text-loading">
+			<h2 id="text-loading"></h2>
+		</div>
+	</div>
+	<div class="container-fluid gtco-banner-area" id="home" style="padding-top: 100px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h1> Nos comprometemos a brindar la mejor <span>solución</span> para su negocio.</h1>
+					<p>EL FUTURO LLEGÓ. UNA SOLUCIÓN EN LA NUBE.</p>
+					<a href="#prices">Contacta con nosotros <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				</div>
+				<div class="col-md-6">
+					<div class="card"><img class="card-img-top img-fluid" src="images/banner-img.png" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid gtco-feature" id="about" style="padding-top: 180px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="cover">
+						<div class="card">
+							<svg class="back-bg" width="100%" viewBox="0 0 900 700"
+								style="position:absolute; z-index: -1">
+								<defs>
+									<linearGradient id="PSgrad_01" x1="64.279%" x2="0%" y1="76.604%" y2="0%">
+										<stop offset="0%" stop-color="rgb(1,230,248)" stop-opacity="1" />
+										<stop offset="100%" stop-color="rgb(29,62,222)" stop-opacity="1" />
+									</linearGradient>
+								</defs>
+								<path fill-rule="evenodd" opacity="0.102" fill="url(#PSgrad_01)"
+									d="M616.656,2.494 L89.351,98.948 C19.867,111.658 -16.508,176.639 7.408,240.130 L122.755,546.348 C141.761,596.806 203.597,623.407 259.843,609.597 L697.535,502.126 C748.221,489.680 783.967,441.432 777.751,392.742 L739.837,95.775 C732.096,35.145 677.715,-8.675 616.656,2.494 Z" />
+							</svg>
+							<!-- *************-->
 
-    <div class="container-fluid gtco-banner-area" id="home" style="padding-top: 100px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1>Nos comprometemos a brindar la mejor <span>solución</span> para su negocio.</h1>
-                    <p>El futuro llegó. Una solución en la nube.</p>
-                    <a href="#prices">Contacta con nosotros <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                </div>
-                <div class="col-md-6">
-                    <div class="card"><img class="card-img-top img-fluid" src="images/banner-img.png" alt=""></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container-fluid gtco-feature" id="about" style="padding-top: 180px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="cover">
-                        <div class="card">
-                            <svg class="back-bg" width="100%" viewBox="0 0 900 700" style="position:absolute; z-index: -1">
-                                <defs>
-                                    <linearGradient id="PSgrad_01" x1="64.279%" x2="0%" y1="76.604%" y2="0%">
-                                        <stop offset="0%" stop-color="rgb(1,230,248)" />
-                                        <stop offset="100%" stop-color="rgb(29,62,222)" />
-                                    </linearGradient>
-                                </defs>
-                                <path fill-rule="evenodd" opacity="0.102" fill="url(#PSgrad_01)" d="M616.656,2.494 L89.351,98.948 C19.867,111.658 -16.508,176.639 7.408,240.130 L122.755,546.348 C141.275,594.206 174.018,627.507 213.129,647.787 L583.447,747.915 C624.038,766.854 673.937,745.614 710.942,699.577 L881.903,558.417 C930.345,505.490 962.423,435.934 977.491,363.075 L993.506,291.542 C1010.572,214.578 972.716,118.116 911.330,84.830 L629.934,9.045 C609.743,-7.124 586.682,-1.938 564.609,2.029 L616.656,2.494 Z" />
-                            </svg>
-                            <div class="card-body">
-                                <h5 class="card-title">Gestiona tu negocio desde cualquier lugar.</h5>
-                                <p class="card-text">Nuestro sistema en la nube permite el acceso desde cualquier lugar y en cualquier momento, facilitando la administración de tu negocio sin importar dónde te encuentres.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="gtco-heading">
-                        <h2>¿Por qué elegirnos?</h2>
-                        <p>Descubre por qué somos la opción preferida para la gestión de tu negocio.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+							<svg width="100%" viewBox="0 0 700 500">
+								<clipPath id="clip-path">
+									<path
+										d="M89.479,0.180 L512.635,25.932 C568.395,29.326 603.115,76.927 590.357,129.078 L528.827,380.603 C518.688,422.048 472.661,448.814 427.190,443.300 L73.350,400.391 C32.374,395.422 -0.267,360.907 -0.002,322.064 L1.609,85.154 C1.938,36.786 40.481,-2.801 89.479,0.180 Z">
+									</path>
+								</clipPath>
+								<!-- xlink:href for modern browsers, src for IE8- -->
+								<image clip-path="url(#clip-path)" xlink:href="images/learn-img.jpg" width="100%"
+									height="465" class="svg__image"></image>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<h2> Somos una empresa dedicada a la construcción de software para tu negocio. </h2>
+					<p> Nuestro principal objetivo es lograr la satisfacción del cliente brindando un mayor control.
+					</p>
+					<p>
+						<small>Contamos con un conjunto de herramientas para poder cubrir diferentes áreas de tu
+							negocio.</small>
+					</p>
+					<a href="#services">Leer más <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid gtco-features" id="services" style="padding-top: 50px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h2> Explorar los servicios<br />
+						Ofrecemos para usted</h2>
+					<p> Todos nuestros servicios son personalizados para cada cliente.</p>
+					<h4>Para cada cliente su propia funcionalidad.</h4>
+					<a href="#all-services">Todos los servicios<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				</div>
+				<div class="col-lg-8">
+					<svg id="bg-services" width="100%" viewBox="0 0 1000 800">
+						<defs>
+							<linearGradient id="PSgrad_02" x1="64.279%" x2="0%" y1="76.604%" y2="0%">
+								<stop offset="0%" stop-color="rgb(1,230,248)" stop-opacity="1" />
+								<stop offset="100%" stop-color="rgb(29,62,222)" stop-opacity="1" />
+							</linearGradient>
+						</defs>
+						<path fill-rule="evenodd" opacity="0.102" fill="url(#PSgrad_02)"
+							d="M801.878,3.146 L116.381,128.537 C26.052,145.060 -21.235,229.535 9.856,312.073 L159.806,710.157 C184.515,775.753 264.901,810.334 338.020,792.380 L907.021,652.668 C972.912,636.489 1019.383,573.766 1011.301,510.470 L962.013,124.412 C951.950,45.594 881.254,-11.373 801.878,3.146 Z" />
+					</svg>
+					<div class="row">
+						<div class="col">
+							<div class="card text-center">
+								<div class="oval"><img class="card-img-top" src="images/web-design.png" alt=""></div>
+								<div class="card-body">
+									<h3 class="card-title">VENTAS RÁPIDA</h3>
+									<p class="card-text">Interfaz amigable y eficaz para ventas rápidas.</p>
+								</div>
+							</div>
+							<div class="card text-center">
+								<div class="oval"><img class="card-img-top" src="images/marketing.png" alt=""></div>
+								<div class="card-body">
+									<h3 class="card-title">GESTIÓN DE MESAS</h3>
+									<p class="card-text">La mejor manera de controlar tus mesas y mozos.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card text-center">
+								<div class="oval"><img class="card-img-top" src="images/seo.png" alt=""></div>
+								<div class="card-body">
+									<h3 class="card-title">E-COMMERCE</h3>
+									<p class="card-text">Publicá tus productos online en tu propio comercio electrónico.
+									</p>
+								</div>
+							</div>
+							<div class="card text-center">
+								<div class="oval"><img class="card-img-top" src="images/graphics-design.png" alt="">
+								</div>
+								<div class="card-body">
+									<h3 class="card-title">DELIVERY</h3>
+									<p class="card-text">Todo para el control de tus envíos y entregas.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid gtco-features-list" id="all-services" style="padding-top: 100px;">
+		<div class="container">
+			<div class="row">
+				<div class="media col-md-6 col-lg-4">
+					<div class="oval mr-4"><img class="align-self-start" src="images/quality-results.png" alt=""></div>
+					<div class="media-body">
+						<h5 class="mb-0">Sistema en la nube</h5>
+						La solución mas segura donde tus datos están a salvo y acceso instantáneo de los mismos.
+					</div>
+				</div>
+				<div class="media col-md-6 col-lg-4">
+					<div class="oval mr-4"><img class="align-self-start" src="images/analytics.png" alt=""></div>
+					<div class="media-body">
+						<h5 class="mb-0">Reportes</h5>
+						Todos los informes para saber el estado de tu negocio.
+					</div>
+				</div>
+				<div class="media col-md-6 col-lg-4">
+					<div class="oval mr-4"><img class="align-self-start" src="images/affordable-pricing.png" alt="">
+					</div>
+					<div class="media-body">
+						<h5 class="mb-0">Cuentas Corrientes</h5>
+						El control de tus finanzas en un solo lugar, para mejorar las decisiones.
+					</div>
+				</div>
+				<div class="media col-md-6 col-lg-4">
+					<div class="oval mr-4"><img class="align-self-start" src="images/easy-to-use.png" alt=""></div>
+					<div class="media-body">
+						<h5 class="mb-0">Factura Electrónica</h5>
+						Factura Electrónica para tu país.
+					</div>
+				</div>
+				<div class="media col-md-6 col-lg-4">
+					<div class="oval mr-4"><img class="align-self-start" src="images/free-support.png" alt=""></div>
+					<div class="media-body">
+						<h5 class="mb-0">Soporte 24/7</h5>
+						Comunicación constantemente para resolver tus dudas o problemas.
+					</div>
+				</div>
+				<div class="media col-md-6 col-lg-4">
+					<div class="oval mr-4"><img class="align-self-start" src="images/effectively-increase.png" alt="">
+					</div>
+					<div class="media-body">
+						<h5 class="mb-0">Código de Barras</h5>
+						Lector de códigos de barras para identificar mas rápido el producto.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="container-fluid" id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="service-item">
-                        <i class="fa fa-cogs fa-3x"></i>
-                        <h4>Servicios Personalizados</h4>
-                        <p>Ofrecemos servicios personalizados adaptados a las necesidades específicas de tu negocio.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-item">
-                        <i class="fa fa-chart-line fa-3x"></i>
-                        <h4>Mejora Continua</h4>
-                        <p>Nuestro sistema está en constante evolución para ofrecerte las mejores herramientas y funcionalidades.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-item">
-                        <i class="fa fa-support fa-3x"></i>
-                        <h4>Soporte Dedicado</h4>
-                        <p>Contamos con un equipo de soporte dedicado para resolver cualquier inquietud o problema que puedas tener.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container mt-4" id="prices" style="padding-top: 100px;">
+		<div class="container" id="">
+			<div class="row text-center justify-content-center" style="padding-top: 10px; margin-bottom: 20px;">
+				<div class="col-md-12">
+					<h2 class="mb-0">Nuestros planes</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row text-center justify-content-center">
+			<div class="col-md-3">
+				<div class="card pricing-card">
+					<div class="pricing-header basic-plan">
+						<h2>Básico</h2>
+						<p class="pricing-price">$15.000</p>
+						<small>Por mes</small>
+					</div>
+					<div class="card-body pricing-body">
+						<ul>
+							<li>Ventas</li>
+							<li>Compras</li>
+							<li>Stock</li>
+							<li>Fondos</li>
+							<li>Usuarios ilimitados</li>
+							<li>Soporte 24/7</li>
+						</ul>
+					</div>
+					<div class="card-footer pricing-footer">
+						<a href="https://wa.me/5493857511680?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POS%20Cloud."
+							style="background-color: #084298; color: #ffff;" target="_blank" class="btn">Contratar</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card pricing-card">
+					<div class="pricing-header intermediate-plan">
+						<h2>Intermedio</h2>
+						<p class="pricing-price">$30.000</p>
+						<small>Por mes</small>
+					</div>
+					<div class="card-body pricing-body">
+						<ul>
+							<li>Ventas</li>
+							<li>Compras</li>
+							<li>Stock</li>
+							<li>Fondos</li>
+							<li>Producción</li>
+							<li>Tienda Nube / Carta Digital</li>
+							<li>Usuarios ilimitados</li>
+							<li>Soporte 24/7</li>
+						</ul>
+					</div>
+					<div class="card-footer pricing-footer">
+						<a href="https://wa.me/5493857511680?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POS%20Cloud."
+							style="background-color: #084298; color: #ffff;" target="_blank" class="btn">Contratar</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card pricing-card">
+					<div class="pricing-header advanced-plan">
+						<h2>Avanzado</h2>
+						<p class="pricing-price">$45.000 </p>
+						<small>Por mes</small>
+					</div>
+					<div class="card-body pricing-body">
+						<ul>
+							<li>Personalizado</li>
+							<li>Usuarios ilimitados</li>
+							<li>Soporte 24/7</li>
+						</ul>
+					</div>
+					<div class="card-footer pricing-footer">
+						<a href="https://wa.me/5493857511680?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POS%20Cloud."
+							style="background-color: #084298; color: #ffff;" target="_blank" class="btn">Contratar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="container" id="prices">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="pricing-card basic-plan">
-                    <div class="pricing-header">
-                        <h3>Plan Básico</h3>
-                        <p class="pricing-price">$19.99 / mes</p>
-                    </div>
-                    <div class="pricing-body">
-                        <ul>
-                            <li>Características Básicas</li>
-                            <li>Soporte por correo</li>
-                            <li>Actualizaciones mensuales</li>
-                        </ul>
-                    </div>
-                    <div class="pricing-footer">
-                        <a href="#" class="btn btn-light">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="pricing-card intermediate-plan">
-                    <div class="pricing-header">
-                        <h3>Plan Intermedio</h3>
-                        <p class="pricing-price">$39.99 / mes</p>
-                    </div>
-                    <div class="pricing-body">
-                        <ul>
-                            <li>Características Avanzadas</li>
-                            <li>Soporte telefónico</li>
-                            <li>Actualizaciones semanales</li>
-                        </ul>
-                    </div>
-                    <div class="pricing-footer">
-                        <a href="#" class="btn btn-light">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="pricing-card advanced-plan">
-                    <div class="pricing-header">
-                        <h3>Plan Avanzado</h3>
-                        <p class="pricing-price">$59.99 / mes</p>
-                    </div>
-                    <div class="pricing-body">
-                        <ul>
-                            <li>Características Premium</li>
-                            <li>Soporte 24/7</li>
-                            <li>Actualizaciones diarias</li>
-                        </ul>
-                    </div>
-                    <div class="pricing-footer">
-                        <a href="#" class="btn btn-light">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div id="loading">
+		<div id="cloud"><span class='shadow'></span></div>
+		<div id="cloud2"><span class='shadow2'></span></div>
+		<div class="content-text-loading">
+			<h2 id="text-loading"></h2>
+		</div>
+	</div>
+	<div class="container mt-4" id="register" style="padding-top: 100px" >
+		<div class="row">
+			<div class="col-md-5" id="contact" style="padding-top: 50px;">
+				<div class="row">
+					<div class="col-md-12">
+						<h4 style="text-align: center;"> Registrate GRATIS</h4>
+					</div>
+				</div>
+				<div class="row" id="d-alert">
+					<div class="col-md-12 alert" role="alert" id="alert"></div>
+				</div>
+				<!-- <div class="row">
+					<div class="col-md 12">
+						<select id="paises">
+						</select>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="col-md 12">
+						<select id="tipo-negocio" class="form-control" required>
+							<option value="" disabled selected hidden>Tipo de negocio</option>
+							<option value="gastronomia">Gastronomía</option>
+							<option value="ropa">Indumentaria / Calzado</option>
+							<option value="supermercado">Supermercado / Kiosco</option>
+							<option value="otros">Otro</option>
+						</select>
+						<input type="text" class="form-control" placeholder="Nombre del negocio" id="companyName" required >
+						<input type="email" class="form-control" placeholder="Correo" id="email" required>
+						<input type="number" class="form-control" placeholder="Teléfono" id="phone" required>
+						<input type="password" class="form-control" placeholder="Contraseña" id="password" required>
+						<a onclick="registrar()" class="submit-button">Registrar<i class="fa fa-angle-right"
+								aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card"><img class="card-img-top img-fluid" src="images/banner-img.png" alt=""></div>
+			</div>
+		</div>
+	</div>
+	<footer class="container-fluid" style="margin-top: 20px;">
+		<hr>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<img src="images/logoPosCloud.png" alt="Logo"
+						style="max-width: 150px;">
+				</div>
+				<div class="col-md-6 d-flex justify-content-end"> <!-- Asegura que los íconos estén a la derecha -->
+					<div> <!-- Elimina el margen derecho aquí -->
+						<a href="https://www.instagram.com/poscloud.it" target="_blank" class="social-icon">
+							<i class="fab fa-instagram"></i>
+						</a>
+						<a href="https://www.linkedin.com/company/poscloud-comar" target="_blank" class="social-icon">
+							<i class="fab fa-linkedin"></i>
+						</a>
+						<!-- <a href="https://www.facebook.com/poscloudweb" target="_blank" class="social-icon">
+							<i class="fab fa-facebook"></i>
+						</a> -->
+					</div>
+				</div>
+			</div>
+			<div class="row" style="padding-top: 50px;">
+				<div class="col-md-12">
+					<p style="text-align: center;">&copy; 2020. Todos los derechos reservados. Diseñado
+						por POS Cloud.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 d-flex justify-content-start">
-                    <a href="https://facebook.com" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-                <div class="col-md-6 d-flex justify-content-end">
-                    <p>&copy; 2024 POS Cloud. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+	<!-- <a class="float-chat" id="ic-chat" onclick="showAndHideChat()">
+		<i id="ic-chat-i" class="far fa-comment my-float-chat"></i>
+	</a> -->
 
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+	<a href="https://wa.me/5493857511680?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POS%20Cloud."
+		class="float-wp" id="ic-chat-wp" target="_blank">
+		<i class="fa fa-whatsapp my-float-wp"></i>
+	</a>
+
+	<!-- <a href="https://www.messenger.com/t/poscloudweb" class="float-fb" id="ic-chat-fb" target="_blank">
+		<i class="fab fa-facebook-messenger my-float-fb"></i>
+	</a> -->
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- owl carousel js-->
+	<script src="owl-carousel/owl.carousel.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/index.js"></script>
+	<!-- <script src="js/registro.js"></script> -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109128235-1"></script>
 </body>
 
 </html>

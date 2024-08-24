@@ -58,7 +58,7 @@ async function registrar() {
 		$('#alert').removeClass('alert-success');
 		loading();
 
-		$.post("http://localhost:300/api/register",
+		$.post("https://d-api-v1.poscloud.ar/api/register",
 			{
 				"companyName": $('#companyName').val(),
 				"email": $('#email').val(),

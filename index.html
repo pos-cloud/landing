@@ -605,6 +605,54 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="loading">
+		<div id="cloud"><span class='shadow'></span></div>
+		<div id="cloud2"><span class='shadow2'></span></div>
+		<div class="content-text-loading">
+			<h2 id="text-loading"></h2>
+		</div>
+	</div>
+	<div class="container mt-4" style="padding-top: 100px" id="gtco-footer">
+		<div class="row">
+			<div class="col-md-5" id="contact" style="padding-top: 50px;">
+				<div class="row">
+					<div class="col-md-12">
+						<h4 style="text-align: center;"> Registrate GRATIS</h4>
+					</div>
+				</div>
+				<div class="row" id="d-alert">
+					<div class="col-md-12 alert" role="alert" id="alert"></div>
+				</div>
+				<!-- <div class="row">
+					<div class="col-md 12">
+						<select id="paises">
+						</select>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="col-md 12">
+						<select id="tipo-negocio" class="form-control" required>
+							<option value="" disabled selected hidden>Tipo de negocio</option>
+							<option value="gastronomia">Gastronomía</option>
+							<option value="ropa">Indumentaria / Calzado</option>
+							<option value="supermercado">Supermercado / Kiosco</option>
+							<option value="otros">Otro</option>
+						</select>
+						<input type="text" class="form-control" placeholder="Nombre del negocio" id="companyName" required autofocus >
+						<input type="email" class="form-control" placeholder="Correo" id="email" required>
+						<input type="number" class="form-control" placeholder="Teléfono" id="phone" required>
+						<input type="password" class="form-control" placeholder="Contraseña" id="password" required>
+						<a onclick="registrar()" class="submit-button">Registrar<i class="fa fa-angle-right"
+								aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card"><img class="card-img-top img-fluid" src="images/banner-img.png" alt=""></div>
+			</div>
+		</div>
+	</div>
 	<footer class="container-fluid" id="gtco-footer" style="margin-top: 20px;">
 		<hr>
 		<div class="container">
@@ -658,6 +706,7 @@
 	<script src="owl-carousel/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/index.js"></script>
+	<script src="js/registro.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109128235-1"></script>
 </body>

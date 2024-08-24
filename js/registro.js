@@ -21,6 +21,16 @@ function obtenerPaíses() {
 async function registrar() {
 	var isValid = true;
 
+	if ($('#tipo-negocio').val() === '') {
+		isValid = false;
+		showMessage('alert-info', 'Debe selecionar un Tipo de Negocio');
+	}
+
+	if ($('#companyName').val() === '') {
+		isValid = false;
+		showMessage('alert-info', 'Debe completar el nombre del negocio');
+	}
+
 	if ($('#password').val() === '') {
 		isValid = false;
 		showMessage('alert-info', 'Debe completar el campo Contraseña');
@@ -33,14 +43,8 @@ async function registrar() {
 		isValid = false;
 		showMessage('alert-info', 'Debe completar el campo E-mail');
 	}
-	if ($('#companyName').val() === '') {
-		isValid = false;
-		showMessage('alert-info', 'Debe completar el nombre del negocio');
-	}
-	if ($('#tipo-negocio').val() === '') {
-		isValid = false;
-		showMessage('alert-info', 'Debe completar el campo Tipo de Negocio');
-	}
+
+	
 
 	if (!validateEmail($('#email').val())) {
 		isValid = false;
@@ -65,7 +69,7 @@ async function registrar() {
 			},
 			async function (data) {
 				if (data.password && data.db && data.user) {
-					showMessage('alert-succes', 'Se creó la tienda correctamente. Revise su email para ingresar a su cuenta.');
+					showMessage('alert-succes', 'Se creó correctamente. Revise su email para ingresar a su cuenta POS Cloud.');
 					$('#loading').hide();
 					$("body").css('overflow', 'auto');
 				}  else {		

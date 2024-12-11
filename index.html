@@ -57,8 +57,32 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
   
+     
+
       <!-- Botón -->
-      <a href="https://prod.poscloud.ar" class="btn-header">Iniciar Sesión</a>
+<a href="https://prod.poscloud.ar" class="btn-header" id="openModalBtn">Iniciar Sesión</a>
+
+<!-- Modal -->
+<div id="modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 9999;">
+    <div style="width: 80%; height: 80%; margin: 5% auto; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <button onclick="closeModal()" style="float: right; font-size: 18px;">X</button>
+        <iframe src="https://prod.poscloud.ar" width="100%" height="100%" style="border: none;"></iframe>
+    </div>
+</div>
+
+<script>
+    // Abre el modal
+    document.getElementById('openModalBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Evita que el enlace se abra en otra página
+        document.getElementById('modal').style.display = 'block'; // Muestra el modal
+    });
+
+    // Cierra el modal
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none'; // Oculta el modal
+    }
+</script>
+
   
     </div>
   </header>
@@ -75,26 +99,25 @@
           <div class="col-lg-6">
             <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
               <div class="company-badge mb-4">
-                <i class="bi bi-gear-fill me-2"></i>
-                Una solución en la nuve
+                <i class="bi bi-graph-up-arrow me-2"></i>
+                Impulsa la eficiencia de tu negocio
               </div>
-
+        
               <h1 class="mb-4">
-                Maecenas Vitae <br>
-                Consectetur Led <br>
-                <span class="accent-text">Vestibulum Ante</span>
+                Simplifica tu gestión <br>
+                Controla cada detalle <br>
+                <span class="accent-text">Haz crecer tu negocio</span>
               </h1>
-
+        
               <p class="mb-4 mb-md-5">
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-                Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
+                Olvídate del papeleo y la gestión manual. POS Cloud te ofrece una herramienta ágil para optimizar procesos, aumentar la productividad y tomar decisiones basadas en datos reales.
               </p>
-
+        
               <div class="hero-buttons">
-                <a href="#about" class="btn btn-primary me-0 me-sm-2 mx-1">Get Started</a>
+                <a href="#features" class="btn btn-primary me-0 me-sm-2 mx-1">Conoce más</a>
                 <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn btn-link mt-2 mt-sm-0 glightbox">
                   <i class="bi bi-play-circle me-1"></i>
-                  Play Video
+                  Ver cómo funciona
                 </a>
               </div>
             </div>
@@ -315,13 +338,17 @@
               <h4>Labore consequatur</h4>
               <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
             </div>
-          </div><!-- End Feature Borx-->
+          </div>
+          
+          <!-- End Feature Borx-->
 
         </div>
 
       </div>
 
-    </section><!-- /Features Cards Section -->
+    </section>
+    
+    <!-- /Features Cards Section -->
 
     <!-- Features 2 Section -->
     <section id="features-2" class="features-2 section">
@@ -342,7 +369,9 @@
                   <i class="bi bi-display"></i>
                 </div>
               </div>
-            </div><!-- End .feature-item -->
+            </div>
+            
+            <!-- End .feature-item -->
 
             <div class="feature-item text-end mb-5" data-aos="fade-right" data-aos-delay="300">
               <div class="d-flex align-items-center justify-content-end gap-4">
@@ -354,7 +383,9 @@
                   <i class="bi bi-feather"></i>
                 </div>
               </div>
-            </div><!-- End .feature-item -->
+            </div>
+            
+            <!-- End .feature-item -->
 
             <div class="feature-item text-end" data-aos="fade-right" data-aos-delay="400">
               <div class="d-flex align-items-center justify-content-end gap-4">
@@ -366,7 +397,9 @@
                   <i class="bi bi-eye"></i>
                 </div>
               </div>
-            </div><!-- End .feature-item -->
+            </div>
+            
+            <!-- End .feature-item -->
 
           </div>
 
@@ -388,7 +421,9 @@
                   <p>Donec vitae sapien ut libero venenatis faucibus nullam quis ante etiam sit amet orci eget eros faucibus tincidunt.</p>
                 </div>
               </div>
-            </div><!-- End .feature-item -->
+            </div>
+            
+            <!-- End .feature-item -->
 
             <div class="feature-item mb-5" data-aos="fade-left" data-aos-delay="300">
               <div class="d-flex align-items-center gap-4">
@@ -473,39 +508,33 @@
         </div>
 
       </div>
-
-    
-
-    
-
-  
-
    
     <!-- Services Section -->
+
     <section id="services" class="services section light-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Servicios</h2>
+        <h2>Servicios</h2> 
         <p></p>
       </div><!-- End Section Title -->
-
+ 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row g-4">
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100"> 
             <div class="service-card d-flex">
               <div class="icon flex-shrink-0">
                
               </div>
               <div>
-                <h3>Nesciunt Mete</h3>
+                <h3>Nesciunt Mete</h3>  
                 <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
                 <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-          </div><!-- End Service Card -->
+          </div><!-- End Service Card -->  
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-card d-flex">
@@ -583,7 +612,7 @@
             <li><i class="bi bi-check-circle-fill"></i> Usuarios ilimitados</li>
             <li><i class="bi bi-check-circle-fill"></i> Soporte y acistencia 24/7</li>
           </ul>
-          <a href="#" class="btn btn-primary">
+          <a href="https://api.whatsapp.com/send/?phone=393922181727&text=Hola%21+Quisiera+m%C3%A1s+informaci%C3%B3n+sobre+POS+Cloud.&type=phone_number&app_absent=0" class="btn btn-primary">
             ¡Comprar Ahora! <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -608,7 +637,7 @@
             <li><i class="bi bi-check-circle-fill"></i> Usuarios Ilimitados</li>
             <li><i class="bi bi-check-circle-fill"></i> Soporte y Acistencia 24/7</li>
           </ul>
-          <a href="#" class="btn btn-light">
+          <a href="https://api.whatsapp.com/send/?phone=393922181727&text=Hola%21+Quisiera+m%C3%A1s+informaci%C3%B3n+sobre+POS+Cloud.&type=phone_number&app_absent=0" class="btn btn-light">
             ¡Comprar Ahora! <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -629,7 +658,7 @@
             <li><i class="bi bi-check-circle-fill"></i> Usuarios ilimitados</li>
             <li><i class="bi bi-check-circle-fill"></i> Soporte y acistencia 24/7</li>
           </ul>
-          <a href="#" class="btn btn-primary">
+          <a href="https://api.whatsapp.com/send/?phone=393922181727&text=Hola%21+Quisiera+m%C3%A1s+informaci%C3%B3n+sobre+POS+Cloud.&type=phone_number&app_absent=0" class="btn btn-primary">
             ¡Comprar Ahora! <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -733,7 +762,7 @@
     <div class="col-lg-5">
       <div class="info-box" data-aos="fade-up" data-aos-delay="200">
         <h3>Información de Contacto</h3>
-        <p></p>
+        <p></p>  
 
         <!-- Ubicación -->
         <div class="info-item" data-aos="fade-up" data-aos-delay="300">

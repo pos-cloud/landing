@@ -5,6 +5,8 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+       
+
 
 /*--------------------------------------------------------------
 # Font & Color Variables
@@ -60,86 +62,6 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
-.btn-header {
-  display: inline-block;
-  padding: 12px 30px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Gradiente moderno */
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 50px; /* Bordes completamente redondeados */
-  font-size: 1rem;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.4); /* Efecto de sombra */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-header:hover {
-  transform: translateY(-3px);  /*Efecto de elevación al pasar el cursor */
-  box-shadow: 0 6px 15px rgba(0, 114, 255, 0.6); /* Sombra más intensa */
-  background: linear-gradient(90deg, #0072ff, #00c6ff); /* Inversión del gradiente */
-  color: #fff; /* Mantiene el color del texto en blanco */
-}
-
-.btn-header:active {
-  transform: translateY(0);  /*Evitar elevación al hacer clic*/ 
-  box-shadow: 0 2px 8px rgba(0, 114, 255, 0.4);
-}
-
-.btn-submit {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 15px;
-  display: block;
-  width: 100%;
-}
-
-/* Estilos para el modal */
-#modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro y semitransparente */
-  z-index: 9999; /* Asegura que el modal esté sobre otros contenidos */
-  overflow: auto;
-  padding: 20px;
-}
-
-#modal .modal-content {
-  position: relative;
-  width: 80%;
-  height: 80%;
-  margin: 5% auto;
-  background: white;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px; /* Bordes redondeados para que se vea más bonito */
-}
-
-#modal button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #333;
-}
-
-#modal iframe {
-  border: none;
-  border-radius: 8px; /* Bordes redondeados en el iframe */
-}
-
-
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -248,7 +170,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 50px;
+  max-height: 36px;
   margin-right: 8px;
 }
 
@@ -301,6 +223,20 @@ h6 {
     order: 3;
   }
 }
+  .header-logo {
+    width: 120px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción del logo */
+    margin-left: -5cm; /* Mueve el logo más hacia la izquierda */
+  }
+  
+  @media (max-width: 768px) {
+    .header-logo {
+      width: 100px; /* Tamaño más pequeño para dispositivos móviles */
+      margin-left: -10px; /* Ajusta la posición en dispositivos móviles */
+    }
+  }
+  
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -555,12 +491,12 @@ h6 {
 
 .footer .footer-about .logo {
   line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .footer .footer-about .logo img {
-  max-height: 49px;
-  margin-right: 8px;
+  max-height: 40px;
+  margin-right: 6px;
 }
 
 .footer .footer-about .logo span {
@@ -655,6 +591,19 @@ h6 {
   margin-top: 8px;
   font-size: 13px;
 }
+
+.footer-logo {
+  width: 120px; /* Tamaño inicial del logo */
+  height: auto; /* Mantiene la proporción */
+  transform: translateX(16px); /* Mueve el logo 15px hacia la derecha */
+  transition: all 0.2s ease; /* Suaviza los cambios al agrandar */
+}
+
+.footer-logo:hover {
+  width: 130px; /* Agranda el logo al pasar el cursor */
+  transform: translateX(20px); /* Lo mueve más a la derecha al pasar el cursor */
+}
+
 
 /*--------------------------------------------------------------
 # Scroll Top Button
@@ -1731,6 +1680,45 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Stats Section
+--------------------------------------------------------------*/
+.stats .stats-item {
+  padding: 30px;
+  width: 100%;
+}
+
+.stats .stats-item span {
+  color: var(--heading-color);
+  font-size: 48px;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.stats .stats-item span:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.stats .stats-item p {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  padding: 0;
+  margin: 0;
+  font-family: var(--heading-font);
+  font-weight: 500;
+}
+
+/*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
 .services .service-card {
@@ -1742,7 +1730,7 @@ section,
 }
 
 .services .service-card:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.192);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
 }
 
 .services .service-card:hover .icon {
@@ -1809,14 +1797,11 @@ section,
   background: var(--surface-color);
   border-radius: 1rem;
   transition: all 0.3s ease;
-  text-align: center;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.354);
 }
 
 .pricing .pricing-card:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.355);
-  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .pricing .pricing-card.popular {
@@ -1825,70 +1810,123 @@ section,
 }
 
 .pricing .pricing-card.popular h3,
-.pricing .pricing-card.popular .price .period,
-.pricing .pricing-card.popular .features-title,
+.pricing .pricing-card.popular h4 {
+  color: var(--contrast-color);
+}
+
+.pricing .pricing-card.popular .price .currency,
+.pricing .pricing-card.popular .price .amount,
+.pricing .pricing-card.popular .price .period {
+  color: var(--contrast-color);
+}
+
 .pricing .pricing-card.popular .features-list li {
-  color: white; /* Cambia los textos a blanco */
+  color: var(--contrast-color);
 }
 
 .pricing .pricing-card.popular .features-list li i {
-  color: var(--contrast-color); /* Color del ícono dentro de la bolita */
+  color: var(--contrast-color);
+}
+
+.pricing .pricing-card.popular .btn-light {
+  background: var(--contrast-color);
+  color: var(--accent-color);
+}
+
+.pricing .pricing-card.popular .btn-light:hover {
+  background: color-mix(in srgb, var(--contrast-color), transparent 10%);
+}
+
+.pricing .pricing-card .popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--contrast-color);
+  color: var(--accent-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .pricing .pricing-card h3 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .pricing .pricing-card .price {
-  margin: 1rem 0;
-  font-weight: bold;
-  color: black; /* Precio en negro */
+  margin-bottom: 1.5rem;
+}
+
+.pricing .pricing-card .price .currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  vertical-align: top;
+  line-height: 1;
+}
+
+.pricing .pricing-card .price .amount {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pricing .pricing-card .price .period {
+  font-size: 1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.pricing .pricing-card .description {
+  margin-bottom: 2rem;
+  font-size: 0.975rem;
 }
 
 .pricing .pricing-card h4 {
-  color: black; /* "Incluye" en negro */
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
 }
 
 .pricing .pricing-card .features-list {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0;
+  margin: 0 0 2rem 0;
 }
 
 .pricing .pricing-card .features-list li {
-  margin: 0.5rem 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  color: blue; /* Texto de los ítems en azul */
+  margin-bottom: 1rem;
 }
 
 .pricing .pricing-card .features-list li i {
-  color: white; /* Icono en blanco */
-  margin-right: 0.5rem;
+  color: var(--accent-color);
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
 }
 
 .pricing .pricing-card .btn {
-  display: inline-block;
-  margin-top: 1rem;
+  width: 100%;
   padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
   border-radius: 50px;
-  font-weight: bold;
-  transition: all 0.3s ease;
 }
 
-.pricing .pricing-card .btn-light {
-  background: var(--contrast-color);
-  color: var(--accent-color);
+.pricing .pricing-card .btn.btn-primary {
+  background: var(--accent-color);
+  border: none;
+  color: var(--contrast-color);
 }
 
-.pricing .pricing-card .btn-light:hover {
-  background: color-mix(in srgb, var(--contrast-color), transparent 10%);
+.pricing .pricing-card .btn.btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
-  
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
@@ -2026,136 +2064,157 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Pricing Section
+# Contact Section
 --------------------------------------------------------------*/
-.pricing-card {
-  background-color: #ffffff;
-  color: #333;
-  padding: 2rem;
+.contact .info-box {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 3rem;
   border-radius: 1rem;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+  height: 100%;
 }
 
-.pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.pricing-card h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.pricing-card .price {
+.contact .info-box h3 {
+  color: var(--contrast-color);
   font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-}
-
-.pricing-card .price .currency {
-  font-size: 1.2rem;
-}
-
-.pricing-card h4 {
-  font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #555;
 }
 
-.pricing-card .features-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
+@media (max-width: 767.98px) {
+  .contact .info-box h3 {
+    font-size: 1.75rem;
+  }
 }
 
-.pricing-card .features-list li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #666;
+.contact .info-box p {
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.contact .info-box a {
+  color: var(--contrast-color);
+}
+
+@media (max-width: 992px) {
+  .contact .info-box {
+    padding: 1.5rem;
+  }
+}
+
+.contact .info-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact .info-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact .info-item .icon-box {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: color-mix(in srgb, var(--contrast-color), transparent 85%);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  flex-shrink: 0;
+  transition: 0.3s;
 }
 
-.pricing-card .features-list i {
-  color: var(--primary-color);
+.contact .info-item .icon-box i {
+  font-size: 1.5rem;
+  color: var(--contrast-color);
 }
 
-.pricing-card .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+.contact .info-item:hover .icon-box {
+  background-color: color-mix(in srgb, var(--contrast-color), transparent 70%);
 }
 
-.pricing-card .btn:hover {
-  transform: translateY(-2px);
+.contact .info-item .content h4 {
+  color: var(--contrast-color);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-/* Badge para el plan más popular */
-.pricing-card.popular {
-  border: 2px solid var(--primary-color);
+.contact .info-item .content p {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
 }
 
-.popular-badge {
-  position: absolute;
-  top: -1rem;
-  right: -1rem;
-  background-color: var(--primary-color);
-  color: #cefcffe8;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transform: rotate(10deg);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.303);
+.contact .info-item .content p:last-child {
+  margin-bottom: 0;
 }
 
-/* Ajustes para pantallas pequeñas */
+.contact .contact-form {
+  background-color: var(--surface-color);
+  padding: 3rem;
+  border-radius: 1rem;
+  height: 100%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+}
+
 @media (max-width: 992px) {
-  .pricing-card {
+  .contact .contact-form {
     padding: 1.5rem;
   }
+}
 
-  .pricing-card h3 {
-    font-size: 1.5rem;
-  }
+.contact .contact-form h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 
-  .pricing-card .price {
-    font-size: 1.8rem;
-  }
-
-  .pricing-card h4 {
-    font-size: 1.2rem;
-  }
-
-  .pricing-card .features-list li {
-    font-size: 0.9rem;
+@media (max-width: 768px) {
+  .contact .contact-form h3 {
+    font-size: 1.75rem;
   }
 }
 
-@media (max-width: 576px) {
-  .pricing-card {
-    padding: 1rem;
-  }
+.contact .contact-form p {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 2rem;
+}
 
-  .pricing-card h3 {
-    font-size: 1.3rem;
-  }
+.contact .contact-form .form-control,
+.contact .contact-form .form-select {
+  padding: 0.875rem 1.25rem;
+  border-color: color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 0.5rem;
+  background-color: color-mix(in srgb, var(--surface-color) 90%, white 5%);
+  color: var(--default-color);
+}
 
-  .pricing-card .price {
-    font-size: 1.5rem;
-  }
+.contact .contact-form .form-control:focus,
+.contact .contact-form .form-select:focus {
+  box-shadow: none;
+  border-color: var(--accent-color);
+}
 
-  .pricing-card h4 {
-    font-size: 1rem;
-  }
+.contact .contact-form .form-control::placeholder,
+.contact .contact-form .form-select::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.contact .contact-form .btn {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.3s;
+}
+
+.contact .contact-form .btn i {
+  font-size: 1.25rem;
+}
+
+.contact .contact-form .btn:hover {
+  background-color: color-mix(in srgb, var(--accent-color), var(--contrast-color) 20%);
 }
 
 /*--------------------------------------------------------------
@@ -2164,7 +2223,7 @@ section,
 .service-details .service-box {
   background-color: var(--surface-color);
   padding: 20px;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.129);
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .service-details .service-box+.service-box {
@@ -2297,3 +2356,4 @@ section,
 --------------------------------------------------------------*/
 /*.starter-section {
   /* Add your styles here */
+/*}

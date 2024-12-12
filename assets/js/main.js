@@ -175,5 +175,3 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
-
-

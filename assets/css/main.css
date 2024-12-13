@@ -1927,140 +1927,185 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
-/*--------------------------------------------------------------
-# Faq Section
---------------------------------------------------------------*/
-.faq .faq-title {
-  font-size: 2.5rem;
+
+/* General Section Styling */
+.icons {
+  padding: 120px 0; /* Incrementa la altura vertical */
+  background-color: #0d83fd; /* Light gray background */
+}
+
+.icons .text-section h3 {
+  font-size: 28px;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--heading-color);
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
-.faq .faq-description {
-  font-size: 1rem;
-  color: var(--default-color);
-  margin-bottom: 2rem;
+.icons .text-section p {
+  color: #ffffff; /* Dark gray text */
+  margin-bottom: 30px;
 }
 
-.faq .faq-arrow {
-  color: var(--accent-color);
-}
-
-.faq .faq-container .faq-item {
-  background-color: var(--surface-color);
-  position: relative;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.faq .faq-container .faq-item:last-child {
-  margin-bottom: 0;
-}
-
-.faq .faq-container .faq-item h3 {
-  font-weight: 600;
+.icons .cta-btn {
+  font-family: Arial, sans-serif;
+  font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
-  margin: 0 30px 0 0;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
   transition: 0.3s;
-  cursor: pointer;
+  background-color: #ffffff; /* Black button */
+  color: #0d83fd; /* White text */
+  text-decoration: none;
+}
+
+.icons .cta-btn:hover {
+  background-color: #e8f4ff; /* Slightly lighter black */
+}
+
+.icons-section .icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  grid-template-rows: repeat(2, 1fr);   /* Dos filas */
+  gap: 40px; /* Espaciado entre íconos */
+  justify-items: center;
+  align-items: center; /* Alineación central vertical */
+}
+
+.icons-section .icon-circle {
+  width: 100px; /* Tamaño incrementado */
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fff; /* White background for icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-section .icon-circle img {
+  width: 60%; /* Ajusta el tamaño del ícono dentro del círculo */
+  height: auto;
+  object-fit: contain; /* Escala la imagen correctamente */
+}
+
+/* Sección de Iconos */
+.icons {
+  padding: 120px 0; /* Incrementa la altura vertical */
+  background-color: #0d83fd; /* Fondo azul */
+  width: 100%; /* Hace que ocupe el 100% del ancho */
+  position: relative;
+  margin-bottom: 0; /* Elimina cualquier espacio en la parte inferior */
+}
+
+.icons .text-section h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.icons .text-section p {
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.icons .cta-btn {
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.3s;
+  background-color: #ffffff;
+  color: #0d83fd;
+  text-decoration: none;
+}
+
+.icons .cta-btn:hover {
+  background-color: #e8f4ff; /* Color de hover */
+}
+
+/* Ajuste para los iconos en formato cuadrícula */
+.icons-section .icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 30px; /* Espaciado entre los iconos */
+  justify-items: center;
+  align-items: center; /* Alineación central vertical */
+  grid-template-rows: repeat(2, auto); /* 2 filas */
+}
+
+.icons-section .icon-circle {
+  width: 100px; /* Tamaño incrementado */
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fff; /* Fondo blanco para los iconos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-section .icon-circle img {
+  width: 60%; /* Ajusta el tamaño del ícono dentro del círculo */
+  height: auto;
+  object-fit: contain; /* Escala la imagen correctamente */
+}
+
+/* Ajuste adicional para asegurar que los iconos no estén demasiado pegados */
+@media (max-width: 768px) {
+  .icons-section .icon-grid {
+    grid-template-columns: repeat(2, 1fr); /* En dispositivos pequeños, usar dos columnas */
+    gap: 20px; /* Reducir el espacio entre íconos en pantallas más pequeñas */
+  }
+}
+
+/* Sección Footer */
+footer {
+  background-color: #222222; /* Fondo oscuro para el footer */
+  padding: 50px 0;
+  color: #fff;
+  position: relative;
+  width: 100%;
+}
+
+footer .footer-about .logo {
   display: flex;
   align-items: center;
 }
 
-.faq .faq-container .faq-item h3 .num {
-  color: var(--accent-color);
-  padding-right: 5px;
+footer .footer-about .footer-logo {
+  max-width: 150px;
 }
 
-.faq .faq-container .faq-item h3:hover {
-  color: var(--accent-color);
+footer .social-links a {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 0 15px;
 }
 
-.faq .faq-container .faq-item .faq-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: 0.3s ease-in-out;
-  visibility: hidden;
-  opacity: 0;
+footer .social-links a:hover {
+  color: #0d83fd; /* Color al pasar el cursor */
 }
 
-.faq .faq-container .faq-item .faq-content p {
-  margin-bottom: 0;
-  overflow: hidden;
+/* Scroll Top */
+#scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #0d83fd;
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.faq .faq-container .faq-item .faq-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 16px;
-  line-height: 0;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.faq .faq-container .faq-item .faq-toggle:hover {
-  color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active h3 {
-  color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active .faq-content {
-  grid-template-rows: 1fr;
-  visibility: visible;
-  opacity: 1;
-  padding-top: 10px;
-}
-
-.faq .faq-container .faq-active .faq-toggle {
-  transform: rotate(90deg);
-  color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Call To Action 2 Section
---------------------------------------------------------------*/
-.call-to-action-2 {
-  padding: 80px 0;
-}
-
-.call-to-action-2 .container {
-  position: relative;
-  z-index: 3;
-}
-
-.call-to-action-2 h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--default-color);
-}
-
-.call-to-action-2 p {
-  color: var(--default-color);
-}
-
-.call-to-action-2 .cta-btn {
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 12px 40px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin: 10px;
-  border: 2px solid color-mix(in srgb, var(--contrast-color), transparent 30%);
-  color: var(--contrast-color);
-}
-
-.call-to-action-2 .cta-btn:hover {
-  border-color: var(--contrast-color);
+#scroll-top i {
+  font-size: 20px;
 }
 
 /*--------------------------------------------------------------

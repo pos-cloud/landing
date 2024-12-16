@@ -1,18 +1,3 @@
-/**
-* Template Name: iLanding
-* Template URL: https://bootstrapmade.com/ilanding-bootstrap-landing-page-template/
-* Updated: Nov 12 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-       
-
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Nunito",  sans-serif;
@@ -181,22 +166,33 @@ h6 {
   color: var(--heading-color);
 }
 
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 14px;
-  padding: 8px 20px;
-  margin: 0 0 0 30px;
-  border-radius: 50px;
-  transition: 0.3s;
+/* Estilo para el botón "Iniciar sesión" */
+.btn-getstarted {
+  display: inline-block;
+  padding: 12px 30px; /* Ajusta el tamaño del botón */
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px; /* Borde redondeado */
+  background-color: #007bff; /* Azul como color de fondo */
+  color: #fff; /* Texto blanco */
+  transition: all 0.3s ease; /* Transiciones suaves */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+.btn-getstarted:hover {
+  background: linear-gradient(90deg, #007bff, #0056b3); /* Efecto degradado de izquierda a derecha */
+  color: #fff; /* Mantiene el texto blanco */
+  transform: translateY(-3px); /* Desplazamiento hacia arriba */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al pasar el cursor */
 }
+
+.btn-getstarted:focus {
+  outline: none; /* Elimina el borde predeterminado del navegador */
+  box-shadow: 0 0 0 4px rgba(0, 208, 255, 0.5); /* Sombra de enfoque */
+}
+
 
 @media (max-width: 1200px) {
   .header {
@@ -223,19 +219,17 @@ h6 {
     order: 3;
   }
 }
-  .header-logo {
-    width: 120px; /* Ajusta el tamaño según sea necesario */
-    height: auto; /* Mantiene la proporción del logo */
-    margin-left: -5cm; /* Mueve el logo más hacia la izquierda */
-  }
-  
-  @media (max-width: 768px) {
-    .header-logo {
-      width: 100px; /* Tamaño más pequeño para dispositivos móviles */
-      margin-left: -10px; /* Ajusta la posición en dispositivos móviles */
-    }
-  }
-  
+
+/* Estilos para el logo */
+.logo-img {
+  height: 40px; /* Ajusta la altura a tu preferencia */
+  width: auto; /* Mantiene la proporción */
+  transition: transform 0.3s ease; /* Opcional: efecto al pasar el cursor */
+}
+
+.logo-img:hover {
+  transform: scale(1.05); /* Efecto de zoom suave al pasar el cursor */
+}
 
 
 /*--------------------------------------------------------------
@@ -475,9 +469,7 @@ h6 {
   }
 }
 
-/*--------------------------------------------------------------
-# Global Footer
---------------------------------------------------------------*/
+/* Footer General */
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -489,6 +481,7 @@ h6 {
   padding-top: 50px;
 }
 
+/* Estilo del logo */
 .footer .footer-about .logo {
   line-height: 1;
   margin-bottom: 25px;
@@ -499,17 +492,11 @@ h6 {
   margin-right: 6px;
 }
 
-.footer .footer-about .logo span {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.footer .footer-about p {
-  font-size: 14px;
-  font-family: var(--heading-font);
+/* Redes sociales alineadas a la derecha */
+.footer .social-links {
+  display: flex;
+  gap: 15px; /* Espacio entre iconos */
+  justify-content: flex-end; /* Alinea los iconos a la derecha */
 }
 
 .footer .social-links a {
@@ -522,7 +509,6 @@ h6 {
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 16px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin-right: 10px;
   transition: 0.3s;
 }
 
@@ -531,53 +517,7 @@ h6 {
   border-color: var(--accent-color);
 }
 
-.footer h4 {
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.footer .footer-links {
-  margin-bottom: 30px;
-}
-
-.footer .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer .footer-links ul i {
-  padding-right: 2px;
-  font-size: 12px;
-  line-height: 0;
-}
-
-.footer .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-.footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  display: inline-block;
-  line-height: 1;
-}
-
-.footer .footer-links ul a:hover {
-  color: var(--accent-color);
-}
-
-.footer .footer-contact p {
-  margin-bottom: 5px;
-}
-
+/* Copyright */
 .footer .copyright {
   padding: 25px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -585,23 +525,6 @@ h6 {
 
 .footer .copyright p {
   margin-bottom: 0;
-}
-
-.footer .credits {
-  margin-top: 8px;
-  font-size: 13px;
-}
-
-.footer-logo {
-  width: 120px; /* Tamaño inicial del logo */
-  height: auto; /* Mantiene la proporción */
-  transform: translateX(16px); /* Mueve el logo 15px hacia la derecha */
-  transition: all 0.2s ease; /* Suaviza los cambios al agrandar */
-}
-
-.footer-logo:hover {
-  width: 130px; /* Agranda el logo al pasar el cursor */
-  transform: translateX(20px); /* Lo mueve más a la derecha al pasar el cursor */
 }
 
 
@@ -1789,6 +1712,79 @@ section,
 }
 
 /*--------------------------------------------------------------
+#  seccion icons
+--------------------------------------------------------------*/
+.integration-section {
+  background-color: #0d83fd; /* Fondo gris claro */
+  padding: 100px 0; /* Aumenta verticalmente */
+}
+
+.integration-section .text-content {
+  text-align: left;
+}
+
+.integration-section h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.integration-section p {
+  color: #deddff;
+  margin-bottom: 20px;
+}
+
+.integration-section .btn-integrate {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #fff;
+  color: #0d83fd;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-radius: 20%;
+}
+
+.integration-section .btn-integrate:hover {
+  background-color: #ffffffd4;
+}
+
+/* Icons Container */
+.integration-section .icons-container {
+  position: relative;
+  height: 400px; /* Altura para dispersión */
+}
+
+.integration-section .icon-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute; /* Posiciones absolutas para dispersión */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Posiciones de los íconos */
+.integration-section .icon-circle:nth-child(1) { top: 10%; left: 25%; }
+.integration-section .icon-circle:nth-child(2) { top: 5%; left: 65%; }
+.integration-section .icon-circle:nth-child(3) { top: 40%; left: 5%; }
+.integration-section .icon-circle:nth-child(4) { top: 38%; left: 40%; }
+.integration-section .icon-circle:nth-child(5) { top: 55%; left: 77%; }
+.integration-section .icon-circle:nth-child(6) { top: 90%; left: 20%; }
+.integration-section .icon-circle:nth-child(7) { top: 83%; left: 55%; }
+.integration-section .icon-circle:nth-child(8) { top: 25%; left: 90%; }
+
+.integration-section .icon-circle img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+
+/*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
 .pricing .pricing-card {
@@ -1927,186 +1923,103 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
-
-/* General Section Styling */
-.icons {
-  padding: 120px 0; /* Incrementa la altura vertical */
-  background-color: #0d83fd; /* Light gray background */
-}
-
-.icons .text-section h3 {
-  font-size: 28px;
+/*--------------------------------------------------------------
+# Faq Section
+--------------------------------------------------------------*/
+.faq .faq-title {
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
 }
 
-.icons .text-section p {
-  color: #ffffff; /* Dark gray text */
-  margin-bottom: 30px;
+.faq .faq-description {
+  font-size: 1rem;
+  color: var(--default-color);
+  margin-bottom: 2rem;
 }
 
-.icons .cta-btn {
-  font-family: Arial, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 12px 40px;
-  border-radius: 50px;
-  transition: 0.3s;
-  background-color: #ffffff; /* Black button */
-  color: #0d83fd; /* White text */
-  text-decoration: none;
+.faq .faq-arrow {
+  color: var(--accent-color);
 }
 
-.icons .cta-btn:hover {
-  background-color: #e8f4ff; /* Slightly lighter black */
-}
-
-.icons-section .icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-  grid-template-rows: repeat(2, 1fr);   /* Dos filas */
-  gap: 40px; /* Espaciado entre íconos */
-  justify-items: center;
-  align-items: center; /* Alineación central vertical */
-}
-
-.icons-section .icon-circle {
-  width: 100px; /* Tamaño incrementado */
-  height: 100px;
-  border-radius: 50%;
-  background-color: #fff; /* White background for icons */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icons-section .icon-circle img {
-  width: 60%; /* Ajusta el tamaño del ícono dentro del círculo */
-  height: auto;
-  object-fit: contain; /* Escala la imagen correctamente */
-}
-
-/* Sección de Iconos */
-.icons {
-  padding: 120px 0; /* Incrementa la altura vertical */
-  background-color: #0d83fd; /* Fondo azul */
-  width: 100%; /* Hace que ocupe el 100% del ancho */
+.faq .faq-container .faq-item {
+  background-color: var(--surface-color);
   position: relative;
-  margin-bottom: 0; /* Elimina cualquier espacio en la parte inferior */
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.icons .text-section h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 20px;
+.faq .faq-container .faq-item:last-child {
+  margin-bottom: 0;
 }
 
-.icons .text-section p {
-  color: #ffffff;
-  margin-bottom: 30px;
-}
-
-.icons .cta-btn {
-  font-family: Arial, sans-serif;
-  font-weight: 500;
+.faq .faq-container .faq-item h3 {
+  font-weight: 600;
   font-size: 16px;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 12px 40px;
-  border-radius: 50px;
+  line-height: 24px;
+  margin: 0 30px 0 0;
   transition: 0.3s;
-  background-color: #ffffff;
-  color: #0d83fd;
-  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.icons .cta-btn:hover {
-  background-color: #e8f4ff; /* Color de hover */
+.faq .faq-container .faq-item h3 .num {
+  color: var(--accent-color);
+  padding-right: 5px;
 }
 
-/* Ajuste para los iconos en formato cuadrícula */
-.icons-section .icon-grid {
+.faq .faq-container .faq-item h3:hover {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-item .faq-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  gap: 30px; /* Espaciado entre los iconos */
-  justify-items: center;
-  align-items: center; /* Alineación central vertical */
-  grid-template-rows: repeat(2, auto); /* 2 filas */
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
 
-.icons-section .icon-circle {
-  width: 100px; /* Tamaño incrementado */
-  height: 100px;
-  border-radius: 50%;
-  background-color: #fff; /* Fondo blanco para los iconos */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.faq .faq-container .faq-item .faq-content p {
+  margin-bottom: 0;
+  overflow: hidden;
 }
 
-.icons-section .icon-circle img {
-  width: 60%; /* Ajusta el tamaño del ícono dentro del círculo */
-  height: auto;
-  object-fit: contain; /* Escala la imagen correctamente */
+.faq .faq-container .faq-item .faq-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  line-height: 0;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-/* Ajuste adicional para asegurar que los iconos no estén demasiado pegados */
-@media (max-width: 768px) {
-  .icons-section .icon-grid {
-    grid-template-columns: repeat(2, 1fr); /* En dispositivos pequeños, usar dos columnas */
-    gap: 20px; /* Reducir el espacio entre íconos en pantallas más pequeñas */
-  }
+.faq .faq-container .faq-item .faq-toggle:hover {
+  color: var(--accent-color);
 }
 
-/* Sección Footer */
-footer {
-  background-color: #222222; /* Fondo oscuro para el footer */
-  padding: 50px 0;
-  color: #fff;
-  position: relative;
-  width: 100%;
+.faq .faq-container .faq-active h3 {
+  color: var(--accent-color);
 }
 
-footer .footer-about .logo {
-  display: flex;
-  align-items: center;
+.faq .faq-container .faq-active .faq-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 10px;
 }
 
-footer .footer-about .footer-logo {
-  max-width: 150px;
+.faq .faq-container .faq-active .faq-toggle {
+  transform: rotate(90deg);
+  color: var(--accent-color);
 }
 
-footer .social-links a {
-  font-size: 24px;
-  color: #ffffff;
-  margin: 0 15px;
-}
 
-footer .social-links a:hover {
-  color: #0d83fd; /* Color al pasar el cursor */
-}
-
-/* Scroll Top */
-#scroll-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #0d83fd;
-  color: #fff;
-  border-radius: 50%;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#scroll-top i {
-  font-size: 20px;
-}
 
 /*--------------------------------------------------------------
 # Contact Section
@@ -2396,9 +2309,3 @@ footer .social-links a:hover {
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-/*.starter-section {
-  /* Add your styles here */
-/*}

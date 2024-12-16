@@ -175,3 +175,27 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+/*iconos */
+
+// Seleccionar todos los iconos con la clase "icon-circle"
+const icons = document.querySelectorAll('.icon-circle');
+
+// Añadir efecto al pasar el cursor sobre cada ícono
+icons.forEach(icon => {
+  icon.addEventListener('mousemove', (e) => {
+    const rect = icon.getBoundingClientRect(); // Obtener posición del elemento
+    const x = (e.clientX - rect.left - rect.width / 2) / 8; // Movimiento horizontal (más amplio)
+    const y = (e.clientY - rect.top - rect.height / 2) / 8; // Movimiento vertical (más amplio)
+
+    icon.style.transition = 'transform 0.5s ease-out'; // Transición más lenta y suave
+    icon.style.transform = `translate(${x}px, ${y}px)`; // Aplicar transformación
+  });
+
+  // Restablecer posición al quitar el cursor
+  icon.addEventListener('mouseleave', () => {
+    icon.style.transition = 'transform 0.8s ease-out'; // Movimiento de retorno lento y fluido
+    icon.style.transform = 'translate(0, 0)';
+  });
+});

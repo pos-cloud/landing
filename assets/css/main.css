@@ -481,32 +481,32 @@ h6 {
   padding-top: 50px;
 }
 
-/* Ajuste para alinear logo con redes sociales */
-.footer .footer-top .row {
-  display: flex; /* Flexbox para los hijos */
-  align-items: center; /* Centra verticalmente logo y redes */
+
+.footer .footer-about .d-flex {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
 }
 
-/* Estilo del logo */
+
 .footer .footer-about .logo {
-  line-height: 2;
-  margin-bottom: 0; /* Elimina margen inferior */
-  margin-left: -10px; /* Mueve el logo un poco más a la izquierda */
-  margin-top: 12px; /* Baja el logo un poco hacia abajo */
+  display: flex;
+  align-items: center;
 }
 
 .footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
-  align-self: center; /* Centra verticalmente la imagen */
+  max-height: 40px; 
+  margin-right: 8px; 
 }
 
-/* Redes sociales alineadas a la derecha */
+
 .footer .social-links {
   display: flex;
-  gap: 15px; /* Espacio entre iconos */
-  justify-content: flex-end; /* Alinea los iconos a la derecha */
+  gap: 15px;
+  justify-content: flex-end;
+  align-items: center;
 }
+
 
 .footer .social-links a {
   display: flex;
@@ -526,14 +526,32 @@ h6 {
   border-color: var(--accent-color);
 }
 
-/* Copyright */
+
 .footer .copyright {
   padding: 25px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  text-align: center;
 }
 
 .footer .copyright p {
   margin-bottom: 0;
+}
+
+
+@media (max-width: 768px) {
+  .footer .footer-about .d-flex {
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center;
+  }
+
+  .footer .footer-about .logo {
+    margin-bottom: 0;
+  }
+
+  .footer .social-links {
+    justify-content: center; 
+  }
 }
 
 
@@ -1356,14 +1374,23 @@ section,
   overflow: hidden;
   border-radius: 1rem;
   padding: 4rem 2rem;
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+}
+
+.call-to-action .text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Alinea a la izquierda */
 }
 
 .call-to-action .text-content h2 {
   color: #ffffff;
   font-size: 2rem;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
   transition: transform 0.3s ease;
 }
 
@@ -1374,15 +1401,15 @@ section,
 .call-to-action .text-content p {
   color: #bef5ff;
   font-size: 0.9rem;
-  line-height: 1.6; 
-  text-align: justify; 
+  line-height: 1.6;
   font-family: 'Arial', sans-serif;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 /* Icons Container */
 .call-to-action .icons-container {
   position: relative;
+  flex: 1;
   height: 400px;
   display: flex;
   flex-wrap: wrap;
@@ -1399,10 +1426,11 @@ section,
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  opacity: 0.9; 
+  opacity: 0.9;
+  overflow: hidden; /* Asegura que los íconos no sobresalgan del círculo */
 }
 
-/* Definición de las posiciones de los iconos (ajustados para no solaparse) */
+/* Definición de las posiciones de los iconos */
 .call-to-action .icon-circle:nth-child(1) {
   width: 60px;
   height: 60px;
@@ -1459,20 +1487,30 @@ section,
   left: 40%;
 }
 
+/* Ajusta los íconos para que ocupen todo el círculo */
 .call-to-action .icon-circle img {
-  max-width: 35px;
-  max-height: 35px;
+  width: 100%; /* Ocupa todo el ancho del círculo */
+  height: 100%; /* Ocupa todo el alto del círculo */
+  object-fit: cover; /* Asegura que el ícono se ajuste al tamaño del círculo sin distorsión */
 }
-
 
 @media (max-width: 992px) {
   .call-to-action .container {
     padding: 3rem 1.5rem;
   }
 
+  .call-to-action .text-content h2 {
+    font-size: 1.8rem; /* Ajusta el tamaño para pantallas medianas */
+  }
+
   .call-to-action .icon-circle {
     width: 45px;
     height: 45px;
+  }
+
+  .call-to-action .icon-circle img {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -1482,7 +1520,7 @@ section,
   }
 
   .call-to-action .text-content h2 {
-    font-size: 1.7rem; 
+    font-size: 1.7rem;
   }
 
   .call-to-action .icon-circle {
@@ -1490,10 +1528,16 @@ section,
     height: 35px;
   }
 
+  .call-to-action .icon-circle img {
+    width: 100%;
+    height: 100%;
+  }
+
   .call-to-action .text-content p {
     font-size: 0.85rem;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Clients Section

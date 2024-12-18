@@ -176,26 +176,64 @@
 
 })();
 
+/* Iconos */
 
-/*iconos */
 
-// Seleccionar todos los iconos con la clase "icon-circle"
 const icons = document.querySelectorAll('.icon-circle');
 
-// Añadir efecto al pasar el cursor sobre cada ícono
-icons.forEach(icon => {
-  icon.addEventListener('mousemove', (e) => {
-    const rect = icon.getBoundingClientRect(); // Obtener posición del elemento
-    const x = (e.clientX - rect.left - rect.width / 2) / 8; // Movimiento horizontal (más amplio)
-    const y = (e.clientY - rect.top - rect.height / 2) / 8; // Movimiento vertical (más amplio)
 
-    icon.style.transition = 'transform 0.5s ease-out'; // Transición más lenta y suave
-    icon.style.transform = `translate(${x}px, ${y}px)`; // Aplicar transformación
+const animateIcons = () => {
+  icons.forEach((icon, index) => {
+  
+    icon.style.transition = 'transform 1s ease-out'; 
+    icon.style.transform = 'translateX(100%)';
   });
 
-  // Restablecer posición al quitar el cursor
+ 
+  setTimeout(() => {
+    icons.forEach((icon, index) => {
+     
+      setTimeout(() => {
+        icon.style.transform = 'translateX(0)';
+      }, index * 100);
+    });
+  }, 100);
+};
+
+
+const section = document.querySelector('.call-to-action');
+const options = {
+  root: null,
+  threshold: 0.5 
+};
+
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateIcons(); 
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+
+observer.observe(section);
+
+
+icons.forEach(icon => {
+  icon.addEventListener('mousemove', (e) => {
+    const rect = icon.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / 8; 
+    const y = (e.clientY - rect.top - rect.height / 2) / 8; 
+
+    icon.style.transition = 'transform 0.5s ease-out'; 
+    icon.style.transform = `translate(${x}px, ${y}px)`; 
+  });
+
   icon.addEventListener('mouseleave', () => {
-    icon.style.transition = 'transform 0.8s ease-out'; // Movimiento de retorno lento y fluido
+    icon.style.transition = 'transform 0.8s ease-out'; 
     icon.style.transform = 'translate(0, 0)';
   });
 });
+

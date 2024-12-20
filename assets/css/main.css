@@ -1393,7 +1393,7 @@ section,
 }
 
 .call-to-action .container {
-  background: linear-gradient(0deg,  rgb(38, 88, 197), rgb(38, 88, 197),  rgb(38, 88, 197)),
+  background: linear-gradient(0deg,  #0d83fd,#0d83fd,  rgb(38, 88, 197)),
     var(--accent-color);
   color: var(--contrast-color);
   position: relative;

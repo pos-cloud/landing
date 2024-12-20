@@ -176,64 +176,28 @@
 
 })();
 
-/* Iconos */
+/*icons */
 
+document.addEventListener('DOMContentLoaded', () => {
+  const icons = document.querySelectorAll('.icon-circle');
 
-const icons = document.querySelectorAll('.icon-circle');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          icons.forEach((icon, index) => {
+            setTimeout(() => {
+              icon.classList.add('visible');
+            }, index * 400); // Retraso de 500ms entre cada ícono
+          });
 
+          // Deja de observar para evitar múltiples activaciones
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.3 } // Activación al estar el 30% del elemento visible
+  );
 
-const animateIcons = () => {
-  icons.forEach((icon, index) => {
-  
-    icon.style.transition = 'transform 1s ease-out'; 
-    icon.style.transform = 'translateX(100%)';
-  });
-
- 
-  setTimeout(() => {
-    icons.forEach((icon, index) => {
-     
-      setTimeout(() => {
-        icon.style.transform = 'translateX(0)';
-      }, index * 100);
-    });
-  }, 100);
-};
-
-
-const section = document.querySelector('.call-to-action');
-const options = {
-  root: null,
-  threshold: 0.5 
-};
-
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateIcons(); 
-      observer.unobserve(entry.target);
-    }
-  });
-}, options);
-
-
-observer.observe(section);
-
-
-icons.forEach(icon => {
-  icon.addEventListener('mousemove', (e) => {
-    const rect = icon.getBoundingClientRect();
-    const x = (e.clientX - rect.left - rect.width / 2) / 8; 
-    const y = (e.clientY - rect.top - rect.height / 2) / 8; 
-
-    icon.style.transition = 'transform 0.5s ease-out'; 
-    icon.style.transform = `translate(${x}px, ${y}px)`; 
-  });
-
-  icon.addEventListener('mouseleave', () => {
-    icon.style.transition = 'transform 0.8s ease-out'; 
-    icon.style.transform = 'translate(0, 0)';
-  });
+  observer.observe(document.querySelector('.icons-container'));
 });
-

@@ -1364,134 +1364,83 @@ section,
   }
 }
 
+
+
 /*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/
+
+/* Ocultar íconos inicialmente */
+.call-to-action .icon-circle {
+  opacity: 0; /* Completamente invisible */
+  transform: translateY(40px); /* Inicia más abajo */
+  transition: opacity 1s ease, transform 1s ease; /* Transición más lenta */
+}
+
+/* Clase para hacerlos visibles */
+.call-to-action .icon-circle.visible {
+  opacity: 1; /* Completamente visible */
+  transform: translateY(0); /* Vuelve a su posición inicial */
+}
+
+/* Resto de estilos del contenedor */
+.main-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: unset;
+  color: rgba(252, 252, 252, 0.908);
+  margin-bottom: 0;
+}
+
 .call-to-action .container {
-  background: var(--accent-color);
+  background: linear-gradient(0deg, rgb(48, 134, 233), rgb(29, 64, 169), rgb(8, 28, 115), rgb(0, 0, 0)),
+    var(--accent-color);
   color: var(--contrast-color);
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
-  padding: 4rem 2rem;
-  display: flex;
-  align-items: center; /* Alinea verticalmente */
-}
-
-.call-to-action .text-content {
-  flex: 1;
+  border-radius: 2rem;
+  padding: 6rem 3rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start; /* Alinea a la izquierda */
+  height: 700px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.229), 0 10px 15px rgba(0, 0, 0, 0.246);
 }
 
-.call-to-action .text-content h2 {
-  color: #ffffff;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.call-to-action .text-content h2:hover {
-  transform: scale(1.1);
-}
-
-.call-to-action .text-content p {
-  color: #bef5ff;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  font-family: 'Arial', sans-serif;
-  margin-top: 0;
-}
-
-/* Icons Container */
 .call-to-action .icons-container {
-  position: relative;
-  flex: 1;
-  height: 400px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 2rem;
   overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 9rem;
+  position: relative;
 }
 
-/* Estilo de los iconos */
 .call-to-action .icon-circle {
-  position: absolute;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
   background-color: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  opacity: 0.9;
-  overflow: hidden; /* Asegura que los íconos no sobresalgan del círculo */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Definición de las posiciones de los iconos */
-.call-to-action .icon-circle:nth-child(1) {
-  width: 60px;
-  height: 60px;
-  top: 5%;
-  left: 5%;
-}
-
-.call-to-action .icon-circle:nth-child(2) {
-  width: 55px;
-  height: 55px;
-  top: 20%;
-  left: 40%;
-}
-
-.call-to-action .icon-circle:nth-child(3) {
-  width: 50px;
-  height: 50px;
-  top: 35%;
-  left: 10%;
-}
-
-.call-to-action .icon-circle:nth-child(4) {
-  width: 70px;
-  height: 70px;
-  top: 50%;
-  left: 75%;
-}
-
-.call-to-action .icon-circle:nth-child(5) {
-  width: 65px;
-  height: 65px;
-  top: 60%;
-  left: 30%;
-}
-
-.call-to-action .icon-circle:nth-child(6) {
-  width: 75px;
-  height: 75px;
-  top: 70%;
-  left: 60%;
-}
-
-.call-to-action .icon-circle:nth-child(7) {
-  width: 85px;
-  height: 85px;
-  top: 60%;
-  left: 10%;
-}
-
-.call-to-action .icon-circle:nth-child(8) {
-  width: 80px;
-  height: 80px;
-  top: 75%;
-  left: 40%;
-}
-
-/* Ajusta los íconos para que ocupen todo el círculo */
 .call-to-action .icon-circle img {
-  width: 100%; /* Ocupa todo el ancho del círculo */
-  height: 100%; /* Ocupa todo el alto del círculo */
-  object-fit: cover; /* Asegura que el ícono se ajuste al tamaño del círculo sin distorsión */
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.call-to-action .icon-circle:hover {
+  transform: scale(1.1);
 }
 
 @media (max-width: 992px) {
@@ -1499,18 +1448,13 @@ section,
     padding: 3rem 1.5rem;
   }
 
-  .call-to-action .text-content h2 {
-    font-size: 1.8rem; /* Ajusta el tamaño para pantallas medianas */
+  .call-to-action .icons-container {
+    gap: 1rem;
   }
 
-  .call-to-action .icon-circle {
-    width: 45px;
-    height: 45px;
-  }
-
-  .call-to-action .icon-circle img {
-    width: 100%;
-    height: 100%;
+  .call-to-action .logo-container {
+    width: 150px;
+    height: 60px;
   }
 }
 
@@ -1519,24 +1463,12 @@ section,
     border-radius: 0;
   }
 
-  .call-to-action .text-content h2 {
-    font-size: 1.7rem;
-  }
-
-  .call-to-action .icon-circle {
-    width: 35px;
-    height: 35px;
-  }
-
-  .call-to-action .icon-circle img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .call-to-action .text-content p {
-    font-size: 0.85rem;
+  .call-to-action .logo-container {
+    width: 100px;
+    height: 50px;
   }
 }
+
 
 
 /*--------------------------------------------------------------

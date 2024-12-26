@@ -1368,61 +1368,56 @@ section,
 }
 
 
-
 /*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/
 
-/* Ocultar íconos inicialmente */
-.call-to-action .icon-circle {
-  opacity: 0; /* Completamente invisible */
-  transform: translateY(40px); /* Inicia más abajo */
-  transition: opacity 1s ease, transform 1s ease; /* Transición más lenta */
-}
-
-/* Clase para hacerlos visibles */
-.call-to-action .icon-circle.visible {
-  opacity: 1; /* Completamente visible */
-  transform: translateY(0); /* Vuelve a su posición inicial */
-}
-
-/* Resto de estilos del contenedor */
+/* Estilos principales */
 .main-title {
   text-align: center;
-  font-size: 2rem;
-  font-weight: unset;
+  font-size: 2.8rem; /* Tamaño ajustado */
+  font-weight: 600;
   color: rgba(252, 252, 252, 0.908);
-  margin-bottom: 0;
+  margin: 0 auto;
+  padding-top: 1rem; /* Espacio superior */
+  max-width: 80%;
+  word-wrap: break-word;
+  line-height: 1.3; /* Espaciado entre líneas */
 }
 
+/* Contenedor */
 .call-to-action .container {
-  background: linear-gradient(0deg,  #0d83fd,#0d83fd,  rgb(95, 145, 255)),
+  background: linear-gradient(0deg, #0d83fd, #0d83fd, rgb(95, 145, 255)),
     var(--accent-color);
   color: var(--contrast-color);
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Permitir que los íconos sobresalgan */
   border-radius: 2rem;
   padding: 6rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 500px;
+  justify-content: space-between; /* Título arriba, iconos abajo */
+  height: 600px;
+  min-height: 600px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.229), 0 10px 15px rgba(0, 0, 0, 0.246);
 }
 
+/* Iconos */
 .call-to-action .icons-container {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centrado horizontal */
   align-items: center;
-  gap: 2rem;
-  overflow: hidden;
+  flex-wrap: wrap; /* Permitir múltiples filas si es necesario */
+  gap: 1.5rem;
   width: 100%;
-  white-space: nowrap;
-  margin-top: 9rem;
   position: relative;
+  margin-top: auto;
+  margin-bottom: -5rem; /* Fuerza a bajar los iconos por debajo del contenedor */
+  transform: translateY(50%); /* Mueve aún más hacia abajo */
 }
 
+/* Iconos en círculo */
 .call-to-action .icon-circle {
   flex-shrink: 0;
   width: 80px;
@@ -1442,10 +1437,7 @@ section,
   object-fit: contain;
 }
 
-.call-to-action .icon-circle:hover {
-  transform: scale(1.1);
-}
-
+/* Ajustes para pantallas grandes */
 @media (max-width: 992px) {
   .call-to-action .container {
     padding: 3rem 1.5rem;
@@ -1453,22 +1445,38 @@ section,
 
   .call-to-action .icons-container {
     gap: 1rem;
-  }
-
-  .call-to-action .logo-container {
-    width: 150px;
-    height: 60px;
+    margin-bottom: -4rem; /* Mantenerlos más abajo */
+    transform: translateY(50%);
   }
 }
 
+/* Ajustes para pantallas pequeñas */
 @media (max-width: 575px) {
   .call-to-action .container {
     border-radius: 0;
+    padding: 2rem 1rem;
+    height: auto;
+    min-height: 500px;
   }
 
-  .call-to-action .logo-container {
-    width: 100px;
-    height: 50px;
+  /* Ajustar título en pantallas pequeñas */
+  .main-title {
+    font-size: 1.7rem; /* Más pequeño en pantallas chicas */
+    line-height: 1.3;
+    max-width: 90%;
+    padding-top: 1rem;
+  }
+
+  /* Ajustar los íconos */
+  .call-to-action .icons-container {
+    margin-bottom: -3rem; /* Mantenerlos más abajo */
+    transform: translateY(50%);
+    gap: 1rem;
+  }
+
+  .call-to-action .icon-circle {
+    width: 70px;
+    height: 70px;
   }
 }
 
@@ -1979,6 +1987,39 @@ section,
 .contact .contact-form .btn:hover {
   background-color: color-mix(in srgb, var(--accent-color), var(--contrast-color) 20%);
 }
+
+/* Responsiveness for small screens */
+@media (max-width: 768px) {
+  /* Make sure the contact and form sections align side by side on small screens */
+  .contact .row.g-4.g-lg-5 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact .col-lg-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  .contact .contact-form,
+  .contact .info-box {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .contact .contact-form h3,
+  .contact .info-box h3 {
+    font-size: 1.75rem;
+  }
+
+  .contact .contact-form .calendly-inline-widget {
+    min-width: 100% !important;
+    height: 500px !important;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Service Details Section

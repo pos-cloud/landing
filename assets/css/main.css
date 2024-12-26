@@ -1377,7 +1377,7 @@ section,
   text-align: center;
   font-size: 2.8rem; /* Tamaño ajustado */
   font-weight: 600;
-  color: rgba(252, 252, 252, 0.908);
+  color: rgba(255, 255, 255, 0.908);
   margin: 0 auto;
   padding-top: 1rem; /* Espacio superior */
   max-width: 80%;
@@ -1413,8 +1413,8 @@ section,
   width: 100%;
   position: relative;
   margin-top: auto;
-  margin-bottom: -5rem; /* Fuerza a bajar los iconos por debajo del contenedor */
-  transform: translateY(50%); /* Mueve aún más hacia abajo */
+  margin-bottom: -9rem; /* Fuerza a bajar los iconos por debajo del contenedor */
+  transform: translateY(200%); /* Mueve aún más hacia abajo */
 }
 
 /* Iconos en círculo */
@@ -1843,6 +1843,7 @@ section,
   padding: 3rem;
   border-radius: 1rem;
   height: 100%;
+  margin-bottom: 1.5rem; /* Ajusta el margen inferior para reducir el espacio */
 }
 
 .contact .info-box h3 {
@@ -1925,6 +1926,7 @@ section,
   border-radius: 1rem;
   height: 100%;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem; /* Ajusta el margen inferior para reducir el espacio */
 }
 
 @media (max-width: 992px) {
@@ -1990,7 +1992,7 @@ section,
 
 /* Responsiveness for small screens */
 @media (max-width: 768px) {
-  /* Make sure the contact and form sections align side by side on small screens */
+  /* Ajusta la alineación de los cuadros */
   .contact .row.g-4.g-lg-5 {
     display: flex;
     flex-wrap: wrap;

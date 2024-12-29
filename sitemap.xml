@@ -6,10 +6,10 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
-        <url>
-        <loc>https://poscloud.com.ar/politicas_de_privacidad</loc>
+    <url>
+        <loc>https://poscloud.com.ar/politica_privacidad</loc>
         <lastmod>2024-12-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

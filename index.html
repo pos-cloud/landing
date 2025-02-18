@@ -1,775 +1,1065 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-	<title>POS Cloud - Sistema de gestión de punto de venta</title>
-  <meta charset="utf-8">
-  <meta name="description" content="POS Cloud - Sistema de gestión en la nube para comercios y PYMEs. Optimiza procesos, mejora la productividad y lleva tu negocio al siguiente nivel.">
-  <meta name="keywords" content="POS, Cloud, POSCloud, Point of Sale, Punto de Venta, sistema de gestión, programa contable, 
+  <head>
+    <title>POS Cloud - Sistema de gestión de punto de venta</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="POS Cloud - Sistema de gestión en la nube para comercios y PYMEs. Optimiza procesos, mejora la productividad y lleva tu negocio al siguiente nivel."
+    />
+    <meta
+      name="keywords"
+      content="POS, Cloud, POSCloud, Point of Sale, Punto de Venta, sistema de gestión, programa contable, 
   factura electrónica, AFIP, ARCA, sistema en la nube, software de gestión, control de inventarios, sistema para restaurantes, 
   POS retail, ticket online, ventas online, punto de venta fácil, POS delivery, integración Tienda Nube, integración WooCommerce, 
   integración Mercado Shop, integración Mercado Pago, integración Twilio, integración Google Drive, integración AWS, integración ARCA, 
-  integración factura electrónica, software para comercios, solución en la nube para PYMEs">  
-  <meta name="subject" content="POS Cloud">
-  <meta name="copyright" content="POS Cloud">
-  <meta name="robots" content="index, follow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="lang" content="es-ES">
-  <meta name="language" content="ES">
-  <meta name="application-name" content="POS Cloud">
-  <meta name="author" content="POS Cloud, info@poscloud.com.ar, https://www.facebook.com/poscloudweb/?ref=br_rs">
-  <meta name="url" content="https://poscloud.com.ar/">
-  <meta name="identifier-URL" content="https://poscloud.com.ar/">
-  <meta name="pagename" content="software">
-  <meta name="distribution" content="Global">
-  <meta name="coverage" content="Worldwide">
-  <meta name="rating" content="General">
-  <meta name="subtitle" content="Punto de venta en la nube">
-  <meta name="target" content="all">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="medium" content="software">
+  integración factura electrónica, software para comercios, solución en la nube para PYMEs"
+    />
+    <meta name="subject" content="POS Cloud" />
+    <meta name="copyright" content="POS Cloud" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="lang" content="es-ES" />
+    <meta name="language" content="ES" />
+    <meta name="application-name" content="POS Cloud" />
+    <meta
+      name="author"
+      content="POS Cloud, info@poscloud.com.ar, https://www.facebook.com/poscloudweb/?ref=br_rs"
+    />
+    <meta name="url" content="https://poscloud.com.ar/" />
+    <meta name="identifier-URL" content="https://poscloud.com.ar/" />
+    <meta name="pagename" content="software" />
+    <meta name="distribution" content="Global" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="rating" content="General" />
+    <meta name="subtitle" content="Punto de venta en la nube" />
+    <meta name="target" content="all" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="medium" content="software" />
 
-  <!-- Google Ads-->
-  <meta name="google-site-verification" content="NCHntMRzHdXwNGzsjgL1HqbKOjrCieZ1S3S00TPgNeI" />
+    <!-- Google Ads-->
+    <meta
+      name="google-site-verification"
+      content="NCHntMRzHdXwNGzsjgL1HqbKOjrCieZ1S3S00TPgNeI"
+    />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSG747BSDT">
-  </script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WSG747BSDT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-WSG747BSDT');
-  </script>
+      gtag("config", "G-WSG747BSDT");
+    </script>
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="POS Cloud - Sistema de Gestión en la nube">
-  <meta property="og:description" content="POS Cloud es un sistema de gestión en la nube orientado a todo tipo de negocio, con especialidad en restaurantes y tiendas de ropa.">
-  <meta property="og:image" content="assets/img/logo-pos-cloud.png">
-  <meta property="og:url" content="https://www.poscloud.com">
-  <meta property="og:type" content="website">
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="POS Cloud - Sistema de Gestión en la nube"
+    />
+    <meta
+      property="og:description"
+      content="POS Cloud es un sistema de gestión en la nube orientado a todo tipo de negocio, con especialidad en restaurantes y tiendas de ropa."
+    />
+    <meta property="og:image" content="assets/img/logo-pos-cloud.png" />
+    <meta property="og:url" content="https://www.poscloud.com" />
+    <meta property="og:type" content="website" />
 
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="POS Cloud - Sistema de Gestión en la nube">
-  <meta name="twitter:description" content="POS Cloud es un sistema de gestión en la nube orientado a todo tipo de negocio, con especialidad en restaurantes y tiendas de ropa.">
-  <meta name="twitter:image" content="assets/img/logo-pos-cloud.png">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="POS Cloud - Sistema de Gestión en la nube"
+    />
+    <meta
+      name="twitter:description"
+      content="POS Cloud es un sistema de gestión en la nube orientado a todo tipo de negocio, con especialidad en restaurantes y tiendas de ropa."
+    />
+    <meta name="twitter:image" content="assets/img/logo-pos-cloud.png" />
 
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="assets/img/logo-pos-cloud.png" type="image/png">  
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/img/logo-pos-cloud.png" type="image/png" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
 
-</head>
+  <body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <img
+            src="assets/img/logo-pos-cloud.png"
+            alt="Logo POS Cloud"
+            class="logo-img"
+          />
+        </a>
 
-<body class="index-page">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Inicio</a></li>
+            <li><a href="#about">Nosotros</a></li>
+            <li><a href="#features">Características</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#pricing">Precios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <a class="btn-getstarted" href="#contact">Conoce más</a>
+      </div>
+    </header>
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-      <img src="assets/img/logo-pos-cloud.png" alt="Logo POS Cloud" class="logo-img">
-      </a>
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="company-badge mb-4">
+                  <i class="bi bi-graph-up-arrow me-2"></i>
+                  Impulsa la eficiencia de tu negocio
+                </div>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">Nosotros</a></li>
-          <li><a href="#features">Características</a></li>
-          <li><a href="#services">Servicios</a></li>
-          <li><a href="#pricing">Precios</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+                <h1 class="mb-4">
+                  Optimiza tu gestión, <br />
+                  Controla cada detalle, <br />
+                  <span class="accent-text">Haz crecer tu negocio</span>
+                </h1>
 
-      <a class="btn-getstarted" href="https://prod.poscloud.ar/#/login?return=%2F" target="_blank" rel="noopener noreferrer">Iniciar sesión</a>
+                <p class="mb-4 mb-md-5">
+                  Olvídate del papeleo y la gestión manual. POS Cloud te ofrece
+                  una herramienta ágil para optimizar procesos, aumentar la
+                  productividad y tomar decisiones basadas en datos reales.
+                </p>
 
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row align-items-center">
-       
-          <div class="col-lg-6">
-            <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-              <div class="company-badge mb-4">
-                <i class="bi bi-graph-up-arrow me-2"></i>
-                Impulsa la eficiencia de tu negocio
-              </div>
-        
-              <h1 class="mb-4">
-                Optimiza tu gestión, <br>
-                Controla cada detalle, <br>
-                <span class="accent-text">Haz crecer tu negocio</span>
-              </h1>
-        
-              <p class="mb-4 mb-md-5">
-                Olvídate del papeleo y la gestión manual. POS Cloud te ofrece una herramienta ágil para optimizar procesos, aumentar la productividad y tomar decisiones basadas en datos reales.
-              </p>
-        
-              <div class="hero-buttons">
-                <a href="#features" class="btn btn-primary me-0 me-sm-2 mx-1">Conoce más</a>
-                <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn btn-link mt-2 mt-sm-0 glightbox">
+                <div class="hero-buttons">
+                  <a href="#features" class="btn btn-primary me-0 me-sm-2 mx-1"
+                    >Conoce más</a
+                  >
+                  <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn btn-link mt-2 mt-sm-0 glightbox">
                   <i class="bi bi-play-circle me-1"></i>
                   Ver cómo funciona
                 </a> -->
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-6">
-            <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-              <img src="assets/img/illustration-1.webp" alt="Hero Image" class="img-fluid">
-            </div>
-          </div>
-        </div>
-
-      
-      </div>
-
-    </section>
-    <!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-    
-        <div class="row gy-4 align-items-center justify-content-between">
-    
-          <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
-            <span class="about-meta">NOSOTROS</span>
-            <h2 class="about-title">Impulsamos tu Negocio con Soluciones Inteligentes</h2>
-            <p class="about-description">En <strong>POS Cloud</strong>, nos especializamos en ofrecer soluciones de gestión en la nube que revolucionan la manera en que las empresas operan. Nuestro objetivo es ayudarte a optimizar tus procesos, elevando así tu productividad y eficiencia a nuevos niveles.</p>
-    
-            <div class="row feature-list-wrapper">
-              <div class="col-md-6">
-                <ul class="feature-list">
-                  <li><i class="bi bi-check-circle-fill"></i> Interfaces fáciles de usar y con diseño moderno.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Escalabilidad para adaptarse al crecimiento de tu negocio.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Integración con facturación electrónica</li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <ul class="feature-list">
-                  <li><i class="bi bi-check-circle-fill"></i> Soporte técnico personalizado.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Cumplimiento con las normativas locales.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Implementación rápida, segura y sin complicaciones.</li>
-                </ul>
-              </div>
-            </div>
-    
-         
-          </div>
-    
-          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="image-wrapper">
-              <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
-                <img src="assets/img/2137448.jpg" alt="Working on Cloud Management" class="img-fluid main-image rounded-4">
-               
-              </div>
-              <div class="experience-badge floating">
-                <h3>10+ <span>Años</span></h3>
-                <p>De experiencia en soluciones empresariales</p>
+            <div class="col-lg-6">
+              <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
+                <img
+                  src="assets/img/illustration-1.webp"
+                  alt="Hero Image"
+                  class="img-fluid"
+                />
               </div>
             </div>
           </div>
         </div>
-    
-      </div>
-    
-    </section>
-    <!-- /About Section -->
+      </section>
+      <!-- /Hero Section -->
 
-    <!-- Features Section -->
-    <section id="features" class="features section">
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4 align-items-center justify-content-between">
+            <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
+              <span class="about-meta">NOSOTROS</span>
+              <h2 class="about-title">
+                Impulsamos tu Negocio con Soluciones Inteligentes
+              </h2>
+              <p class="about-description">
+                En <strong>POS Cloud</strong>, nos especializamos en ofrecer
+                soluciones de gestión en la nube que revolucionan la manera en
+                que las empresas operan. Nuestro objetivo es ayudarte a
+                optimizar tus procesos, elevando así tu productividad y
+                eficiencia a nuevos niveles.
+              </p>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Principales Características</h2>
-        <p>Descubre las herramientas que impulsan la administración de tu negocio, elevando su productividad y eficiencia.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="d-flex justify-content-center">
-
-          <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
-
-            <li class="nav-item">
-              <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
-                <h4>Gestión Simplificada</h4>
-              </a>
-            </li><!-- End tab nav item -->
-
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
-                <h4>Informes en Tiempo Real</h4>
-              </a><!-- End tab nav item -->
-
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
-                <h4>Seguridad Avanzada</h4>
-              </a>
-            </li><!-- End tab nav item -->
-
-          </ul>
-
-        </div>
-
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="tab-pane fade active show" id="features-tab-1">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>Transforma tu gestión administrativa</h3>
-                <p class="fst-italic">
-                  Con nuestro sistema de gestión integral, tendrás el control total de inventarios, facturación y clientes en un solo lugar, simplificando tus tareas diarias y maximizando la productividad de tu negocio.</p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Automatiza procesos repetitivos y ahorra tiempo.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Accede a datos en tiempo real para tomar decisiones rápidas y acertadas.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Interfaz amigable y fácil de usar.</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-illustration-1.webp" alt="Ilustración de funcionalidades del producto" class="img-fluid">
+              <div class="row feature-list-wrapper">
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Interfaces fáciles
+                      de usar y con diseño moderno.
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Escalabilidad para
+                      adaptarse al crecimiento de tu negocio.
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Integración con
+                      facturación electrónica
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Soporte técnico
+                      personalizado.
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Cumplimiento con
+                      las normativas locales.
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Implementación
+                      rápida, segura y sin complicaciones.
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div><!-- End tab content item -->
 
-          <div class="tab-pane fade" id="features-tab-2">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>Acceso a Informes Personalizados</h3>
-                <p class="fst-italic">
-                  Genera informes a medida sobre ventas, clientes y mucho más en solo segundos, sin complicaciones.
+            <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="image-wrapper">
+                <div
+                  class="images position-relative"
+                  data-aos="zoom-out"
+                  data-aos-delay="400"
+                >
+                  <img
+                    src="assets/img/2137448.jpg"
+                    alt="Working on Cloud Management"
+                    class="img-fluid main-image rounded-4"
+                  />
+                </div>
+                <div class="experience-badge floating">
+                  <h3>10+ <span>Años</span></h3>
+                  <p>De experiencia en soluciones empresariales</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
+
+      <!-- Features Section -->
+      <section id="features" class="features section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Principales Características</h2>
+          <p>
+            Descubre las herramientas que impulsan la administración de tu
+            negocio, elevando su productividad y eficiencia.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="d-flex justify-content-center">
+            <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
+              <li class="nav-item">
+                <a
+                  class="nav-link active show"
+                  data-bs-toggle="tab"
+                  data-bs-target="#features-tab-1"
+                >
+                  <h4>Gestión Simplificada</h4>
+                </a>
+              </li>
+              <!-- End tab nav item -->
+
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  data-bs-toggle="tab"
+                  data-bs-target="#features-tab-2"
+                >
+                  <h4>Informes en Tiempo Real</h4> </a
+                ><!-- End tab nav item -->
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  data-bs-toggle="tab"
+                  data-bs-target="#features-tab-3"
+                >
+                  <h4>Seguridad Avanzada</h4>
+                </a>
+              </li>
+              <!-- End tab nav item -->
+            </ul>
+          </div>
+
+          <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="tab-pane fade active show" id="features-tab-1">
+              <div class="row">
+                <div
+                  class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center"
+                >
+                  <h3>Transforma tu gestión administrativa</h3>
+                  <p class="fst-italic">
+                    Con nuestro sistema de gestión integral, tendrás el control
+                    total de inventarios, facturación y clientes en un solo
+                    lugar, simplificando tus tareas diarias y maximizando la
+                    productividad de tu negocio.
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check2-all"></i>
+                      <span
+                        >Automatiza procesos repetitivos y ahorra tiempo.</span
+                      >
+                    </li>
+                    <li>
+                      <i class="bi bi-check2-all"></i>
+                      <span
+                        >Accede a datos en tiempo real para tomar decisiones
+                        rápidas y acertadas.</span
+                      >
+                    </li>
+                    <li>
+                      <i class="bi bi-check2-all"></i>
+                      <span>Interfaz amigable y fácil de usar.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                  <img
+                    src="assets/img/features-illustration-1.webp"
+                    alt="Ilustración de funcionalidades del producto"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- End tab content item -->
+
+            <div class="tab-pane fade" id="features-tab-2">
+              <div class="row">
+                <div
+                  class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center"
+                >
+                  <h3>Acceso a Informes Personalizados</h3>
+                  <p class="fst-italic">
+                    Genera informes a medida sobre ventas, clientes y mucho más
+                    en solo segundos, sin complicaciones.
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check2-all"></i>
+                      <span
+                        >Accede a informes detallados en cualquier momento,
+                        cuando más los necesites.</span
+                      >
+                    </li>
+                    <li>
+                      <i class="bi bi-check2-all"></i>
+                      <span
+                        >Exporta datos fácilmente en formatos como Excel o PDF
+                        para mayor flexibilidad.
+                      </span>
+                    </li>
+                    <li>
+                      <i class="bi bi-check2-all"></i>
+                      <span
+                        >Visualiza estadísticas clave que te ayudarán a
+                        optimizar tu toma de decisiones.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                  <img
+                    src="assets/img/features-illustration-2.webp"
+                    alt="Ilustración de funcionalidades del producto"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- End tab content item -->
+
+            <div class="tab-pane fade" id="features-tab-3">
+              <div class="row">
+                <div
+                  class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center"
+                >
+                  <h3>Protección de Datos de Nivel Superior</h3>
+                  <p class="fst-italic">
+                    Tu seguridad es nuestra prioridad. Protege tu información
+                    sensible con las tecnologías más avanzadas y asegúrate de
+                    que siempre esté respaldada.
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check2-all"></i>
+                      <span
+                        >Cifrado avanzado para proteger la información
+                        sensible.</span
+                      >
+                    </li>
+                    <li>
+                      <i class="bi bi-check2-all"></i>
+                      <span
+                        >Autenticación en dos pasos para garantizar la seguridad
+                        de tus cuentas.</span
+                      >
+                    </li>
+                    <li>
+                      <i class="bi bi-check2-all"></i>
+                      <span
+                        >Backup automático para evitar la pérdida de
+                        datos.</span
+                      >
+                    </li>
+                  </ul>
+                  <p class="fst-italic">
+                    Con nosotros, tu información está siempre segura y
+                    protegida, en todo momento.
+                  </p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                  <img
+                    src="assets/img/features-illustration-3.webp"
+                    alt="Ilustración de funcionalidades del producto"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- End tab content item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Features Section -->
+
+      <!-- Features Cards Section -->
+      <section id="features-cards" class="features-cards section">
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-xl-3 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="feature-box orange">
+                <i class="bi bi-award"></i>
+                <h4>Gestión sin Fronteras</h4>
+                <p>
+                  Accede a tu sistema desde cualquier dispositivo y en cualquier
+                  lugar, sin limitaciones.
                 </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Accede a informes detallados en cualquier momento, cuando más los necesites.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Exporta datos fácilmente en formatos como Excel o PDF para mayor flexibilidad. </span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Visualiza estadísticas clave que te ayudarán a optimizar tu toma de decisiones.</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-illustration-2.webp" alt="Ilustración de funcionalidades del producto" class="img-fluid">
               </div>
             </div>
-          </div><!-- End tab content item -->
+            <!-- End Feature Box-->
 
-          <div class="tab-pane fade" id="features-tab-3">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>Protección de Datos de Nivel Superior</h3>
-                <p class="fst-italic">
-                  Tu seguridad es nuestra prioridad. Protege tu información sensible con las tecnologías más avanzadas y asegúrate de que siempre esté respaldada.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Cifrado avanzado para proteger la información sensible.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Autenticación en dos pasos para garantizar la seguridad de tus cuentas.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Backup automático para evitar la pérdida de datos.</span></li>
-                </ul>
-                <p class="fst-italic">
-                  Con nosotros, tu información está siempre segura y protegida, en todo momento.
+            <div
+              class="col-xl-3 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="feature-box blue">
+                <i class="bi bi-patch-check"></i>
+                <h4>Fácil de Integrar</h4>
+                <p>
+                  Integra nuestro sistema con otras plataformas y herramientas
+                  de forma rápida y sencilla.
                 </p>
               </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-illustration-3.webp" alt="Ilustración de funcionalidades del producto" class="img-fluid">
+            </div>
+            <!-- End Feature Box-->
+
+            <div
+              class="col-xl-3 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="feature-box green">
+                <i class="bi bi-sunrise"></i>
+                <h4>Soporte Técnico</h4>
+                <p>
+                  Obtén soporte rápido y personalizado para resolver cualquier
+                  inconveniente o duda.
+                </p>
               </div>
             </div>
-          </div><!-- End tab content item -->
+            <!-- End Feature Box-->
 
+            <div
+              class="col-xl-3 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="feature-box red">
+                <i class="bi bi-shield-check"></i>
+                <h4>Seguridad Garantizada</h4>
+                <p>
+                  Con las mejores prácticas de seguridad para que tus datos
+                  estén siempre protegidos.
+                </p>
+              </div>
+            </div>
+            <!-- End Feature Box-->
+          </div>
         </div>
+      </section>
+      <!-- /Features Cards Section -->
 
-      </div>
-
-    </section>
-    <!-- /Features Section -->
-
-    <!-- Features Cards Section -->
-    <section id="features-cards" class="features-cards section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="feature-box orange">
-              <i class="bi bi-award"></i>
-              <h4>Gestión sin Fronteras</h4>
-              <p>Accede a tu sistema desde cualquier dispositivo y en cualquier lugar, sin limitaciones.</p>
-            </div>
-          </div><!-- End Feature Box-->
-
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="feature-box blue">
-              <i class="bi bi-patch-check"></i>
-              <h4>Fácil de Integrar</h4>
-              <p>Integra nuestro sistema con otras plataformas y herramientas de forma rápida y sencilla.</p>
-            </div>
-          </div><!-- End Feature Box-->
-
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="feature-box green">
-              <i class="bi bi-sunrise"></i>
-              <h4>Soporte Técnico</h4>
-              <p>Obtén soporte rápido y personalizado para resolver cualquier inconveniente o duda.</p>
-            </div>
-          </div><!-- End Feature Box-->
-
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="feature-box red">
-              <i class="bi bi-shield-check"></i>
-              <h4>Seguridad Garantizada</h4>
-              <p>Con las mejores prácticas de seguridad para que tus datos estén siempre protegidos.</p>
-            </div>
-          </div><!-- End Feature Box-->
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Features Cards Section -->
-     
-    <!-- Integration Section -->
-    <section class="call-to-action">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-center">
-          <!-- Título Principal -->
-          <h3 class="main-title">¡Contamos con las mejores integraciones para tu negocio!</h3>
-          <!-- Íconos -->
-           <div class="align-items-center custom-icon">
-            <div class="icon-circle"><img src="assets/img/logo-mercado-shop.png" alt="logo mercado pago"></div>
-            <div class="icon-circle"><img src="assets/img/logo-tienda-nube.png" alt="logo tienda nube"></div>
-            <div class="icon-circle"><img src="assets/img/logo-twilio.png" alt="logo twilio"></div>
-            <div class="icon-circle"><img src="assets/img/logo-mercado-pago.png" alt="logo mercado pago"></div>
-            <div class="icon-circle"><img src="assets/img/logo-aws-2.png" alt="logo aws"></div>
-            <div class="icon-circle"><img src="assets/img/logo-woocommerce.png" alt="loco woocommerce"></div>
-            <div class="icon-circle"><img src="assets/img/logo-arca.png" alt="logo arca"></div>
-            <div class="icon-circle"><img src="assets/img/logo-google-drive.png" alt="logo google drive"></div>
-           </div>
-        </div>
-      </div>
-    </section>
-    <!-- /Integration Section -->
-    
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Clientes</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="13" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Proyectos</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="43499" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Horas trabajadas</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Colaboradores</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Stats Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Servicios</h2>
-        <p>Soluciones innovadoras diseñadas para optimizar la gestión de tu negocio.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-4">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card d-flex">
-              <div class="icon flex-shrink-0">
-                <i class="bi bi-cloud-check"></i>
+      <!-- Integration Section -->
+      <section class="call-to-action">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row align-items-center">
+            <!-- Título Principal -->
+            <h3 class="main-title">
+              ¡Contamos con las mejores integraciones para tu negocio!
+            </h3>
+            <!-- Íconos -->
+            <div class="align-items-center custom-icon">
+              <div class="icon-circle">
+                <img
+                  src="assets/img/logo-mercado-shop.png"
+                  alt="logo mercado pago"
+                />
               </div>
-              <div>
-                <h3>Gestión en la Nube</h3>
-                <p>Accede a tu sistema desde cualquier lugar y dispositivo, con seguridad y respaldo garantizado.</p>
-             
+              <div class="icon-circle">
+                <img
+                  src="assets/img/logo-tienda-nube.png"
+                  alt="logo tienda nube"
+                />
               </div>
-            </div>
-          </div><!-- End Service Card -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card d-flex">
-              <div class="icon flex-shrink-0">
-                <i class="bi bi-phone"></i>
+              <div class="icon-circle">
+                <img src="assets/img/logo-twilio.png" alt="logo twilio" />
               </div>
-              <div>
-                <h3>Aplicación Móvil</h3>
-                <p>Administra tu negocio desde la palma de tu mano con nuestra app móvil, diseñada para mantenerte conectado en todo momento.</p>
-             
+              <div class="icon-circle">
+                <img
+                  src="assets/img/logo-mercado-pago.png"
+                  alt="logo mercado pago"
+                />
               </div>
-            </div>
-          </div><!-- End Service Card -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card d-flex">
-              <div class="icon flex-shrink-0">
-                <i class="bi bi-headset"></i>
+              <div class="icon-circle">
+                <img src="assets/img/logo-aws-2.png" alt="logo aws" />
               </div>
-              <div>
-                <h3>Soporte 24/7</h3>
-                <p>Nuestro equipo está disponible las 24 horas, los 7 días de la semana, para resolver cualquier duda y asegurarnos de que tu sistema funcione perfectamente en todo momento.</p>
-             
+              <div class="icon-circle">
+                <img
+                  src="assets/img/logo-woocommerce.png"
+                  alt="loco woocommerce"
+                />
               </div>
-            </div>
-          </div><!-- End Service Card -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-card d-flex">
-              <div class="icon flex-shrink-0">
-                <i class="bi bi-tools"></i>
+              <div class="icon-circle">
+                <img src="assets/img/logo-arca.png" alt="logo arca" />
               </div>
-              <div>
-                <h3>Personalización a Medida</h3>
-                <p>Adaptamos nuestro sistema a las necesidades específicas de tu negocio, brindando soluciones únicas y flexibles.</p>
-              
+              <div class="icon-circle">
+                <img
+                  src="assets/img/logo-google-drive.png"
+                  alt="logo google drive"
+                />
               </div>
-            </div>
-          </div><!-- End Service Card -->
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Services Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Nuestros planes </h2>
-       <h3>¡Lo que necesitas, al precio que buscas!</h3>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-4 justify-content-center">
-
-          <!-- Basic Plan -->
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="pricing-card">
-            <h3>Plan Básico </h3>
-              <div class="price">
-                <span class="currency">$</span>
-                <span class="amount">20.000</span>
-                <span class="period">/ mes</span>
-              </div>
-              <p class="description"></p>
-
-              <h4>Cuenta con:</h4>
-              <ul class="features-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Compras
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Ventas
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Stock
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Caja
-                </li>
-              </ul>
-
-              <a href="#contact" class="btn btn-primary">
-                ¡Contratar Ahora!
-                <i class="bi bi-arrow-right"></i>
-              </a>
             </div>
           </div>
-
-          <!-- Standard Plan -->
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="pricing-card popular">
-              <div class="popular-badge">Mas popular</div>
-              <h3>Plan Standard</h3>
-              <div class="price">
-                <span class="currency">$</span>
-                <span class="amount">35.000</span>
-                <span class="period">/ mes</span>
-              </div>
-              <p class="description"></p>
-
-              <h4>Cuenta con:</h4>
-              <ul class="features-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Compras
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                 Ventas
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Stock
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Caja
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Producción
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Tienda nube / Carta digital
-                </li>
-              </ul>
-
-              <a href="#contact"class="btn btn-light">
-               ¡Contratar Ahora!
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Premium Plan -->
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="pricing-card">
-              <h3>Plan Premium</h3>
-              <div class="price">
-                <span class="currency">$</span>
-                <span class="amount">50.000</span>
-                <span class="period">/ mes</span>
-              </div>
-              <p class="description"></p>
-
-              <h4>Cuenta con:</h4>
-              <ul class="features-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                 Compras
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Ventas
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Stock
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                Caja
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                 Producción
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Tienda nube / Carta digital 
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                App Mobile
-                </li>
-              </ul>
-              <a href="#contact" class="btn btn-primary">
-               ¡Contratar Ahora!
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
         </div>
+      </section>
+      <!-- /Integration Section -->
 
-      </div>
+      <!-- Stats Section -->
+      <section id="stats" class="stats section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="232"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Clientes</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
 
-    </section>
-    <!-- /Pricing Section -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="13"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Proyectos</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section light-background">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>¡Contacta con nosotros!</h2>
-      </div><!-- End Section Title -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="43499"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Horas trabajadas</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-4 g-lg-5 ">
-          <!-- Contact Info Box -->
-          <div class="col-lg-5 col-md-5">
-            <div class="info-box" data-aos="fade-up" data-aos-delay="200">
-              <h3>Contacto</h3>
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="5"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Colaboradores</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Stats Section -->
 
-              <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box">
-                  <a href="https://api.whatsapp.com/send/?phone=393922181727&text=Hola%21+Quisiera+m%C3%A1s+informaci%C3%B3n+sobre+POS+Cloud.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+      <!-- Services Section -->
+      <section id="services" class="services section light-background">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Servicios</h2>
+          <p>
+            Soluciones innovadoras diseñadas para optimizar la gestión de tu
+            negocio.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-4">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-card d-flex">
+                <div class="icon flex-shrink-0">
+                  <i class="bi bi-cloud-check"></i>
+                </div>
+                <div>
+                  <h3>Gestión en la Nube</h3>
+                  <p>
+                    Accede a tu sistema desde cualquier lugar y dispositivo, con
+                    seguridad y respaldo garantizado.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End Service Card -->
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card d-flex">
+                <div class="icon flex-shrink-0">
+                  <i class="bi bi-phone"></i>
+                </div>
+                <div>
+                  <h3>Aplicación Móvil</h3>
+                  <p>
+                    Administra tu negocio desde la palma de tu mano con nuestra
+                    app móvil, diseñada para mantenerte conectado en todo
+                    momento.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End Service Card -->
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card d-flex">
+                <div class="icon flex-shrink-0">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <div>
+                  <h3>Soporte 24/7</h3>
+                  <p>
+                    Nuestro equipo está disponible las 24 horas, los 7 días de
+                    la semana, para resolver cualquier duda y asegurarnos de que
+                    tu sistema funcione perfectamente en todo momento.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End Service Card -->
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="service-card d-flex">
+                <div class="icon flex-shrink-0">
+                  <i class="bi bi-tools"></i>
+                </div>
+                <div>
+                  <h3>Personalización a Medida</h3>
+                  <p>
+                    Adaptamos nuestro sistema a las necesidades específicas de
+                    tu negocio, brindando soluciones únicas y flexibles.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End Service Card -->
+          </div>
+        </div>
+      </section>
+      <!-- /Services Section -->
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="pricing section light-background">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Nuestros planes</h2>
+          <h3>¡Lo que necesitas, al precio que buscas!</h3>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-4 justify-content-center">
+            <!-- Basic Plan -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="pricing-card">
+                <h3>Plan Básico</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">20.000</span>
+                  <span class="period">/ mes</span>
+                </div>
+                <p class="description"></p>
+
+                <h4>Cuenta con:</h4>
+                <ul class="features-list">
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Compras
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Ventas
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Stock
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Caja
+                  </li>
+                </ul>
+
+                <a href="#contact" class="btn btn-primary">
+                  ¡Contratar Ahora!
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Standard Plan -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="pricing-card popular">
+                <div class="popular-badge">Mas popular</div>
+                <h3>Plan Standard</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">35.000</span>
+                  <span class="period">/ mes</span>
+                </div>
+                <p class="description"></p>
+
+                <h4>Cuenta con:</h4>
+                <ul class="features-list">
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Compras
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Ventas
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Stock
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Caja
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Producción
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Tienda nube / Carta digital
+                  </li>
+                </ul>
+
+                <a href="#contact" class="btn btn-light">
+                  ¡Contratar Ahora!
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="pricing-card">
+                <h3>Plan Premium</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">50.000</span>
+                  <span class="period">/ mes</span>
+                </div>
+                <p class="description"></p>
+
+                <h4>Cuenta con:</h4>
+                <ul class="features-list">
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Compras
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Ventas
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Stock
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Caja
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Producción
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Tienda nube / Carta digital
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    App Mobile
+                  </li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">
+                  ¡Contratar Ahora!
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Pricing Section -->
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section light-background">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>¡Contacta con nosotros!</h2>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-4 g-lg-5">
+            <!-- Contact Info Box -->
+            <div class="col-lg-5 col-md-5">
+              <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Contacto</h3>
+
+                <div
+                  class="info-item click-area"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  onclick="window.open('https://api.whatsapp.com/send/?phone=5493564677539&text=Hola%21+Quisiera+m%C3%A1s+informaci%C3%B3n+sobre+POS+Cloud.&type=phone_number&app_absent=0', '_blank')"
+                >
+                  <div class="icon-box">
                     <i class="bi bi-telephone"></i>
-                  </a>
+                  </div>
+                  <div class="content">
+                    <h4>Teléfono</h4>
+                    <p>+54 9 3564 677 539</p>
+                  </div>
                 </div>
-                <div class="content">
-                  <h4>Teléfono</h4>
-                  <p>+39 392 218 1727</p>
-                  <p>+54 9 3564 677 539</p>
-                </div>
-              </div>
 
-              <div class="info-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon-box">
-                  <a href="mailto:info@poscloud.com.ar" target="_blank" rel="noopener noreferrer">
+                <div
+                  class="info-item click-area"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  onclick="window.location.href='mailto:info@poscloud.com.ar'"
+                >
+                  <div class="icon-box">
                     <i class="bi bi-envelope"></i>
-                  </a>
+                  </div>
+                  <div class="content">
+                    <h4>Email</h4>
+                    <p>info@poscloud.com.ar</p>
+                  </div>
                 </div>
-                <div class="content">
-                  <h4>Email</h4>
-                  <p>info@poscloud.com.ar</p>
-                </div>
-              </div>
 
-              <div class="info-item" data-aos="fade-up" data-aos-delay="500">
-                <div class="icon-box">
-                  <i class="bi bi-geo-alt"></i>
-                </div>
-                <div class="content">
-                  <h4>Ubicación</h4>
-                  <p>San Francisco (Córdoba)</p>
-                  <p>Argentina</p>
+                <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                  <div class="icon-box">
+                    <i class="bi bi-geo-alt"></i>
+                  </div>
+                  <div class="content">
+                    <h4>Ubicación</h4>
+                    <p>San Francisco (Córdoba)</p>
+                    <p>Argentina</p>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-7 col-md-7">
+              <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+                <h3>Agenda tu Reunión</h3>
+                <p>
+                  ¡Haz tu consulta ahora! Agenda una reunión con nosotros y encontramos la mejor solución para ti.
+                </p>
+
+                <form
+                  class="php-email-form"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div class="row gy-4">
+                    <div
+                      class="calendly-inline-widget"
+                      data-url="https://calendly.com/androettofranco/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                      style="min-width: 320px; height: 600px; min-height: 600px"
+                    ></div>
+                    <script
+                      type="text/javascript"
+                      src="https://assets.calendly.com/assets/external/widget.js"
+                      async
+                    ></script>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+      <!-- Contact sección-->
+    </main>
 
-          <!-- Contact Form -->
-          <div class="col-lg-7 col-md-7">
-            <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-              <h3>Contáctenos Ahora</h3>
-              <p>Tiene alguna consulta? Programe una reunión con un especialista del equipo.</p>
+    <footer id="footer" class="footer">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-12 footer-about">
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Logo -->
+              <a href="index.html" class="logo d-flex align-items-center">
+                <img
+                  src="assets/img/logo-pos-cloud.png"
+                  alt="Logo POS Cloud"
+                  class="footer-logo"
+                />
+              </a>
 
-              <form class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                <div class="row gy-4">
-                  <div class="calendly-inline-widget" data-url="https://calendly.com/androettofranco/30min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:600px;min-height:600px;"></div>
-                  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                </div>
-              </form>
+              <!-- Redes sociales alineadas a la derecha -->
+              <div class="social-links d-flex">
+                <a
+                  href="https://www.facebook.com/poscloudweb"
+                  class="social-icon-facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/poscloud.it"
+                  class="social-icon-instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/poscloud-comar"
+                  class="social-icon-linkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!--/contact sección-->
 
-
-  </main>
-
-  <footer id="footer" class="footer">
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-12 footer-about">
-          <div class="d-flex justify-content-between align-items-center">
-
-            <!-- Logo -->
-            <a href="index.html" class="logo d-flex align-items-center">
-              <img src="assets/img/logo-pos-cloud.png" alt="Logo POS Cloud" class="footer-logo">
-            </a>
-  
-            <!-- Redes sociales alineadas a la derecha -->
-            <div class="social-links d-flex">
-              <a href="https://www.facebook.com/poscloudweb" class="social-icon-facebook" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/poscloud.it" class="social-icon-instagram" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-instagram"></i>
-              </a>
-              <a href="https://www.linkedin.com/company/poscloud-comar" class="social-icon-linkedin" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-linkedin"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>2015 Copyright <strong>POS Cloud.</strong></span
+          ><span> All Rights Reserved.</span>
+        </p>
+        <div class="credits">Designed by <a href="#hero">POS Cloud</a></div>
       </div>
-    </div>
-  
-    <div class="container copyright text-center mt-4">
-      <p>© <span>2020 Copyright <STRong>POS Cloud.</STRong></span><span> All Rights Reserved.</span></p>
-      <div class="credits">
-        Designed by <a href="#hero">POS Cloud</a>
-      </div>
-    </div>
-  </footer>
-  
+    </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Scroll Top -->
+    <!-- <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a> -->
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <!-- Botón flotante de WhatsApp -->
+    <a
+      href="https://api.whatsapp.com/send/?phone=5493564677539&text=Hola%21+Quisiera+m%C3%A1s+informaci%C3%B3n+sobre+POS+Cloud.&type=phone_number&app_absent=0"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
-</body>
-
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

@@ -2,6 +2,7 @@
 .github
 .wrangler
 .DS_Store
+node_modules
 *.md
 wrangler.jsonc
 .assetsignore

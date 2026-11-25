@@ -2,13 +2,11 @@
 
 Bienvenido a la landing page de POS Cloud, un sistema de gestión en la nube diseñado para simplificar y optimizar la administración de negocios.
 
-## Ambientes Disponibles
+## Publicación
 
-- **DEV**: [https://pos-cloud.github.io/landing/](https://pos-cloud.github.io/landing/)  
-  Ambiente de desarrollo, utilizado para visualizar cambios y pruebas antes del despliegue en producción.  
+Solo la rama `main` publica. Cada push a `main` corre GitHub Actions y despliega el sitio en Cloudflare Workers, con el secreto `CLOUDFLARE_API_TOKEN`.
 
-- **PROD**: [https://poscloud.com.ar](https://poscloud.com.ar)  
-  Ambiente de producción, accesible para todos los usuarios y clientes de POS Cloud.  
+El sitio en producción sigue siendo [https://poscloud.com.ar](https://poscloud.com.ar) cuando el dominio apunte a ese Worker.  
 
 ## Contribuir
 

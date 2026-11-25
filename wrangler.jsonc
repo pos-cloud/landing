@@ -1,0 +1,11 @@
+{
+  "name": "landing",
+  "compatibility_date": "2026-11-25",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash"
+  }
+}

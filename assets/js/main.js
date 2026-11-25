@@ -78,13 +78,33 @@
    */
   function aosInit() {
     AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
+      duration: 800,
+      easing: 'ease-out',
       once: true,
       mirror: false
     });
   }
   window.addEventListener('load', aosInit);
+
+  /**
+   * El tablero del hero recorre la venta, fila por fila.
+   */
+  function playHeroBoard() {
+    const items = document.querySelectorAll('.hero-board li');
+    if (!items.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let index = 0;
+    const tick = () => {
+      items.forEach((item) => item.classList.remove('is-on'));
+      items[index].classList.add('is-on');
+      index = (index + 1) % items.length;
+    };
+
+    tick();
+    window.setInterval(tick, 1200);
+  }
+  window.addEventListener('load', playHeroBoard);
 
   /**
    * Initiate glightbox

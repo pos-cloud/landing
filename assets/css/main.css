@@ -712,6 +712,7 @@ section,
   height: 100%;
   background: radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--accent-color), transparent 92%), transparent 40%);
   pointer-events: none;
+  animation: hero-glow 9s ease-in-out infinite;
 }
 
 .hero .hero-content {
@@ -1819,6 +1820,68 @@ section,
   background: color-mix(in srgb, #343a40, transparent 15%);
 }
 
+.pricing .section-title {
+  padding-bottom: 28px;
+}
+
+.pricing .plan-name {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.pricing thead .price {
+  display: block;
+}
+
+.pricing thead .price .currency,
+.pricing thead .price .amount,
+.pricing thead .price .period {
+  color: var(--contrast-color);
+}
+
+.pricing thead .price .amount {
+  font-size: 1.35rem;
+}
+
+.pricing thead .price .period {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.pricing thead th,
+.pricing td,
+.pricing th {
+  padding: 0.65rem 0.55rem;
+}
+
+.pricing tbody th[scope="row"] {
+  width: 18%;
+  white-space: nowrap;
+}
+
+.pricing .plan-max {
+  background: color-mix(in srgb, var(--accent-color), white 88%);
+}
+
+.pricing table thead th.plan-max {
+  background: color-mix(in srgb, var(--accent-color), black 14%);
+}
+
+.pricing tbody tr:hover td.plan-max {
+  background: color-mix(in srgb, var(--accent-color), white 82%);
+}
+
+.pricing .plan-actions td,
+.pricing .plan-actions th {
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
 
 /*--------------------------------------------------------------
 # Contact Section
@@ -2166,10 +2229,306 @@ section,
   cursor: pointer;
   font-size: 28px;  /* Ajusta el tamaño del ícono */
   text-align: center;
+  animation: wa-pulse 2.4s ease-in-out infinite;
 }
 
 .whatsapp-float:hover {
   background-color: #20c057;
   transform: scale(1.1);
   transition: all 0.3s;
+}
+
+/* El menú fijo tapa lo que pasa por detrás */
+.header {
+  background-color: #ffffff;
+}
+
+/* Oferta: sistema, rubros y Claude */
+.hero-lead {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.hero-board {
+  background: var(--surface-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(13, 131, 253, 0.08);
+  padding: 1.25rem 1.5rem 0.35rem;
+}
+
+.hero-board-float {
+  animation: board-float 6s ease-in-out infinite;
+}
+
+.hero-board-label {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.hero-board ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-board li {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 0 -0.55rem;
+  padding: 0.7rem 0.55rem;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 14px;
+  transition: background-color 0.35s ease;
+}
+
+.hero-board li.is-on {
+  background: color-mix(in srgb, var(--accent-color), transparent 91%);
+}
+
+.hero-board li::after {
+  content: "";
+  margin-left: auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: transparent;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-board li.is-on::after {
+  background: #22c55e;
+  box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.18);
+}
+
+.hero-board li i {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: background-color 0.35s ease, color 0.35s ease, transform 0.35s ease;
+}
+
+.hero-board li.is-on i {
+  background: var(--accent-color);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.hero-board strong {
+  display: block;
+  color: var(--heading-color);
+}
+
+.hero-board span {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 0.92rem;
+}
+
+.offer-card {
+  height: 100%;
+}
+
+.offer-card p {
+  margin-bottom: 0;
+}
+
+.rubro-card {
+  height: 100%;
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  background: #f3f9ff;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rubro-card:hover,
+.services .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(13, 131, 253, 0.12);
+}
+
+.rubro-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+}
+
+.rubro-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.rubro-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.rubro-card p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.claude-panel {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.claude-kicker,
+.claude-panel h2,
+.claude-panel p,
+.claude-panel blockquote {
+  color: var(--contrast-color);
+}
+
+.claude-kicker {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.claude-panel h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.claude-panel blockquote {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 0 auto 1rem;
+  max-width: 38rem;
+  border: 0;
+  padding: 0;
+}
+
+.claude-panel p {
+  max-width: 42rem;
+  margin: 0 auto 1.75rem;
+  font-size: 1.05rem;
+}
+
+.conexion-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+.conexion-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  color: var(--heading-color);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem 0.4rem 0.5rem;
+  font-weight: 600;
+}
+
+.conexion-list img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.conexion-list i {
+  width: 28px;
+  text-align: center;
+  color: var(--accent-color);
+  font-size: 1.15rem;
+}
+
+.pricing-note {
+  text-align: center;
+  margin: 1.25rem 0 0;
+}
+
+@media (max-width: 575px) {
+  .rubro-card {
+    flex-direction: column;
+  }
+
+  .claude-panel {
+    padding: 2rem 1.15rem;
+    border-radius: 16px;
+  }
+
+  .claude-panel h2 {
+    font-size: 1.7rem;
+  }
+
+  .claude-panel blockquote {
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes hero-glow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-3%, 2%, 0);
+  }
+}
+
+@keyframes board-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes wa-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero-board-float,
+  .whatsapp-float {
+    animation: none;
+  }
 }

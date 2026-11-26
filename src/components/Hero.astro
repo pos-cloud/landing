@@ -1,0 +1,46 @@
+---
+import Icon from './Icon.astro'
+import { rubrosA, rubrosB } from '../data/site'
+---
+
+<section id="inicio" class="flex min-h-dvh flex-col justify-center px-5 pt-28 pb-24 md:px-16 md:pr-28">
+  <div data-reveal>
+    <p class="mb-4 text-xs font-extrabold tracking-[0.18em] text-acid uppercase">POS Cloud</p>
+    <h1 class="max-w-[12ch] font-display text-[clamp(2.4rem,8vw,7rem)] leading-[0.95] font-extrabold tracking-tight">
+      Un sistema para tu
+      <span data-spin class="text-acid">empresa</span>
+    </h1>
+    <p class="sr-only">
+      Sistema de gestión y punto de venta en la nube para empresas y comercios de cualquier rubro: restaurantes, distribuidoras, tiendas de ropa, ferreterías, farmacias y más.
+    </p>
+    <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl">
+      Chica, mediana o grande. POS Cloud es una solución integral que se adapta a todas las necesidades, en todos tus dispositivos.
+    </p>
+  </div>
+  <div class="mt-10 space-y-3">
+    <div class="overflow-hidden" data-marquee>
+      <div class="flex w-max gap-2.5" data-track>
+        {
+          rubrosA.map(([icon, label]) => (
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3.5 py-2 text-sm font-semibold whitespace-nowrap">
+              <Icon name={icon} class="text-acid" />
+              {label}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+    <div class="overflow-hidden" data-marquee data-reverse>
+      <div class="flex w-max gap-2.5" data-track>
+        {
+          rubrosB.map(([icon, label]) => (
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3.5 py-2 text-sm font-semibold whitespace-nowrap">
+              <Icon name={icon} class="text-acid" />
+              {label}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

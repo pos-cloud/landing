@@ -1,0 +1,37 @@
+---
+import { stops } from '../data/site'
+
+interface Props {
+  current: string
+}
+
+const { current } = Astro.props
+const last = stops.length - 1
+---
+
+<nav class="path" aria-label="Recorrido">
+  <svg class="path-svg path-svg-y" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true">
+    <line class="path-base" x1="20" y1="1" x2="20" y2="99"></line>
+    <line data-path-draw x1="20" y1="1" x2="20" y2="99"></line>
+  </svg>
+  <svg class="path-svg path-svg-x" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+    <line class="path-base" x1="1" y1="20" x2="99" y2="20"></line>
+    <line data-path-draw x1="1" y1="20" x2="99" y2="20"></line>
+  </svg>
+  <ol>
+    {
+      stops.map((stop, index) => (
+        <li style={`--i:${index / last}`}>
+          <a
+            href={stop.href}
+            data-stop={stop.id}
+            aria-label={stop.label}
+            class:list={[{ 'is-on': stop.href === current }]}
+          >
+            <span>{stop.label}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>

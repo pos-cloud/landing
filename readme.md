@@ -4,9 +4,9 @@ Bienvenido a la landing page de POS Cloud, un sistema de gestión en la nube dis
 
 ## Publicación
 
-Solo la rama `main` publica. Cada push a `main` corre GitHub Actions y despliega el sitio en Cloudflare Workers, con el secreto `CLOUDFLARE_API_TOKEN`.
+Solo la rama `main` publica. El sitio es Astro: GitHub Actions corre `npm ci` y `npm run build`, y despliega la carpeta `dist` en Cloudflare Workers con el secreto `CLOUDFLARE_API_TOKEN`.
 
-El sitio en producción sigue siendo [https://poscloud.com.ar](https://poscloud.com.ar) cuando el dominio apunte a ese Worker.  
+El sitio en producción es [https://poscloud.com.ar](https://poscloud.com.ar).  
 
 ## Contribuir
 

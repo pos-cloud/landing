@@ -1,0 +1,115 @@
+---
+import '../styles/global.css'
+import { ClientRouter } from 'astro:transitions'
+import Seo from '../components/Seo.astro'
+import Path from '../components/Path.astro'
+import { whatsappHref } from '../data/site'
+
+interface Props {
+  title: string
+  description: string
+  path: string
+  journey?: 'home' | 'page'
+  progress?: number
+  jsonLd?: Record<string, unknown>
+  noindex?: boolean
+}
+
+const { title, description, path, journey = 'page', progress = 0, jsonLd, noindex = false } = Astro.props
+
+const siteJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://poscloud.com.ar/#organization',
+      name: 'POS Cloud',
+      url: 'https://poscloud.com.ar/',
+      logo: 'https://poscloud.com.ar/assets/img/logo-pos-cloud.png',
+      email: 'info@poscloud.com.ar',
+      foundingDate: '2015',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        telephone: '+54-9-3564-368535',
+        email: 'info@poscloud.com.ar',
+        areaServed: 'AR',
+        availableLanguage: 'es',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://poscloud.com.ar/#website',
+      name: 'POS Cloud',
+      url: 'https://poscloud.com.ar/',
+      inLanguage: 'es-AR',
+      publisher: { '@id': 'https://poscloud.com.ar/#organization' },
+    },
+  ],
+}
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111a" />
+    <meta name="google-site-verification" content="NCHntMRzHdXwNGzsjgL1HqbKOjrCieZ1S3S00TPgNeI" />
+    <Seo title={title} description={description} path={path} noindex={noindex} />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <ClientRouter />
+    {!noindex && <script type="application/ld+json" set:html={JSON.stringify(siteJsonLd)} />}
+    {
+      jsonLd && (
+        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+      )
+    }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSG747BSDT"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-WSG747BSDT')
+    </script>
+  </head>
+  <body
+    class="overflow-x-hidden bg-ink font-sans text-white"
+    data-journey={journey}
+    data-progress={progress}
+  >
+    <header class="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center justify-between px-4 py-3.5 md:px-7 md:py-5">
+      <a class="pointer-events-auto" href="/" aria-label="POS Cloud">
+        <img
+          src="/assets/img/logo-pos-cloud.png"
+          alt=""
+          width="222"
+          height="112"
+          fetchpriority="high"
+          class="h-11 w-auto drop-shadow-[0_8px_18px_rgba(47,107,255,0.35)] md:h-14"
+        />
+      </a>
+      <a
+        class="pointer-events-auto rounded-full bg-acid px-4 py-2.5 text-sm font-extrabold tracking-tight text-ink"
+        href={whatsappHref()}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Escribime
+      </a>
+    </header>
+    <Path current={path} />
+    <slot />
+    <script>
+      import '../scripts/journey.ts'
+    </script>
+  </body>
+</html>

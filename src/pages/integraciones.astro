@@ -1,0 +1,21 @@
+---
+import Pitch from '../components/Pitch.astro'
+import { integracionesPitch } from '../data/pitch'
+import Base from '../layouts/Base.astro'
+import Apps from '../components/Apps.astro'
+
+const description =
+  'POS Cloud se integra con Mercado Libre, Tienda Nube, WooCommerce, facturación electrónica ARCA, WhatsApp y Claude. El stock y los pedidos quedan sincronizados.'
+---
+
+<Base
+  path="/integraciones"
+  title="Integración con Mercado Libre, Tienda Nube y ARCA — POS Cloud"
+  description={description}
+  progress={0.4}
+>
+  <main>
+    <Apps heading="h1" />
+    <Pitch {...integracionesPitch} />
+  </main>
+</Base>

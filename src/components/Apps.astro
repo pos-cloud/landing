@@ -1,0 +1,49 @@
+---
+import { apps } from '../data/site'
+
+interface Props {
+  heading?: 'h1' | 'h2'
+}
+
+const { heading = 'h2' } = Astro.props
+const Title = heading
+const columns = [apps, [...apps].reverse()]
+---
+
+<section id="apps" class="flex min-h-dvh items-center px-5 py-28 md:px-16 md:pr-28">
+  <div class="grid w-full items-center gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+    <div data-reveal>
+      <p class="mb-4 text-xs font-extrabold tracking-[0.18em] text-acid uppercase">Afuera</p>
+      <Title class="max-w-[14ch] font-display text-[clamp(2.2rem,5vw,4.4rem)] leading-[0.98] font-extrabold tracking-tight">
+        También nos conectamos con otras aplicaciones.
+      </Title>
+      <p class="mt-5 max-w-xl text-lg leading-relaxed text-white/80">
+        POS Cloud se conecta con cualquier aplicación que ya estés usando. No buscamos reemplazarla: nos unimos.
+      </p>
+    </div>
+    <div class="grid gap-3 md:grid-cols-2">
+      {
+        columns.map((column, index) => (
+          <div
+            class:list={['h-[68vh] overflow-hidden', { 'hidden md:block': index === 1 }]}
+            data-marquee
+            data-axis="y"
+            data-reverse={index === 1 || undefined}
+          >
+            <div class="flex flex-col gap-3" data-track>
+              {column.map(([src, name, text]) => (
+                <article class="flex items-center gap-3 rounded-3xl bg-white p-3 text-ink">
+                  <img src={src} alt="" width="48" height="48" loading="lazy" decoding="async" class="h-12 w-12 shrink-0 object-contain" />
+                  <div>
+                    <strong class="block">{name}</strong>
+                    <span class="block text-sm text-ink/70">{text}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

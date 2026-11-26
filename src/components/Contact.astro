@@ -1,0 +1,53 @@
+---
+import Icon from './Icon.astro'
+import { whatsappHref, type Plan } from '../data/site'
+
+interface Props {
+  plan?: Plan | null
+  heading?: 'h1' | 'h2'
+}
+
+const { plan = null, heading = 'h2' } = Astro.props
+const Title = heading
+---
+
+<section id="contacto" class="flex min-h-dvh flex-col justify-center px-5 py-28 md:px-16 md:pr-28">
+  <div data-reveal>
+    <Title class="max-w-[12ch] font-display text-[clamp(2.2rem,5vw,4.4rem)] leading-[0.98] font-extrabold tracking-tight">
+      Escribime y coordinamos.
+    </Title>
+    <a
+      class="mt-6 inline-flex items-center gap-3 rounded-full bg-acid py-2 pr-5 pl-2 font-extrabold text-ink"
+      href={whatsappHref(plan)}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-contact-link
+    >
+      <span class="grid h-11 w-11 place-items-center rounded-full bg-ink text-xl text-acid"><Icon name="whatsapp" /></span>
+      <span data-contact-label>{plan ? `Quiero el plan ${plan}` : 'Escribime por WhatsApp'}</span>
+    </a>
+    <p class="mt-8 text-sm text-white/55">
+      © 2015 POS Cloud
+      <span aria-hidden="true"> · </span>
+      <a class="underline decoration-white/30 underline-offset-4" href="/politica_privacidad">Política de privacidad</a>
+    </p>
+  </div>
+</section>
+
+<script>
+  import { whatsappHref } from '../data/site'
+
+  const plans = ['Basic', 'Pro', 'Max']
+
+  function applyPlan() {
+    const plan = new URLSearchParams(window.location.search).get('plan')
+    if (!plan || !plans.includes(plan)) return
+    document.querySelectorAll<HTMLAnchorElement>('[data-contact-link]').forEach((link) => {
+      link.href = whatsappHref(plan)
+      const label = link.querySelector('[data-contact-label]')
+      if (label) label.textContent = `Quiero el plan ${plan}`
+    })
+  }
+
+  document.addEventListener('astro:page-load', applyPlan)
+</script>

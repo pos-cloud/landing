@@ -1,0 +1,21 @@
+---
+import Pitch from '../components/Pitch.astro'
+import { modulosPitch } from '../data/pitch'
+import Base from '../layouts/Base.astro'
+import Modules from '../components/Modules.astro'
+
+const description =
+  'Tienda online mayorista y minorista, app de pedidos para vendedores, producción a medida y carta digital, conectados al mismo stock y la misma caja.'
+---
+
+<Base
+  path="/modulos"
+  title="Tienda mayorista, app de pedidos y carta digital — POS Cloud"
+  description={description}
+  progress={0.6}
+>
+  <main>
+    <Modules heading="h1" />
+    <Pitch {...modulosPitch} />
+  </main>
+</Base>

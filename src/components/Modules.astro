@@ -1,0 +1,38 @@
+---
+import Icon from './Icon.astro'
+import { modules } from '../data/site'
+
+interface Props {
+  heading?: 'h1' | 'h2'
+}
+
+const { heading = 'h2' } = Astro.props
+const Title = heading
+---
+
+<section id="modulos" class="flex min-h-dvh flex-col justify-center px-5 py-28 md:px-16 md:pr-28">
+  <div data-reveal>
+    <p class="mb-4 text-xs font-extrabold tracking-[0.18em] text-acid uppercase">A tu medida</p>
+    <Title class="max-w-[16ch] font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[0.98] font-extrabold tracking-tight">
+      Además, desarrollamos módulos exclusivos para vos.
+    </Title>
+    <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/80">
+      Los armamos sobre el mismo núcleo para que el sistema quede a tu medida y no tengas que cambiar tu forma de trabajar.
+    </p>
+  </div>
+  <div class="mt-8 overflow-hidden" data-marquee>
+    <div class="flex w-max gap-4" data-track>
+      {
+        modules.map(([kind, mark, title, text]) => (
+          <article class="w-72 shrink-0 rounded-3xl bg-white p-5 text-ink">
+            <div class="grid h-14 w-14 place-items-center rounded-2xl bg-acid text-2xl text-ink">
+              {kind === 'img' ? <img src={mark} alt="" width="32" height="32" loading="lazy" decoding="async" class="h-8 w-8 object-contain" /> : <Icon name={mark} />}
+            </div>
+            <h3 class="mt-4 font-display text-2xl">{title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink/70">{text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro'
+import Hero from '../components/Hero.astro'
+import Nucleo from '../components/Nucleo.astro'
+import Apps from '../components/Apps.astro'
+import Modules from '../components/Modules.astro'
+import Prices from '../components/Prices.astro'
+import Contact from '../components/Contact.astro'
+
+const description =
+  'Sistema de gestión y punto de venta en la nube para comercios: ventas, stock, caja y facturación electrónica ARCA, conectado a Mercado Libre y Tienda Nube.'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'POS Cloud',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://poscloud.com.ar/',
+  description,
+  offers: {
+    '@type': 'AggregateOffer',
+    lowPrice: '30000',
+    highPrice: '60000',
+    priceCurrency: 'ARS',
+    offerCount: '3',
+  },
+}
+---
+
+<Base
+  path="/"
+  title="POS Cloud — Sistema de gestión y punto de venta en la nube"
+  description={description}
+  journey="home"
+  progress={0}
+  jsonLd={jsonLd}
+>
+  <main>
+    <Hero />
+    <Nucleo />
+    <Apps />
+    <Modules />
+    <Prices />
+    <Contact />
+  </main>
+</Base>

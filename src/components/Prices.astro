@@ -1,0 +1,54 @@
+---
+import { offers } from '../data/site'
+
+interface Props {
+  heading?: 'h1' | 'h2'
+}
+
+const { heading = 'h2' } = Astro.props
+const Title = heading
+---
+
+<section id="precio" class="flex min-h-dvh flex-col justify-center px-5 py-28 md:px-16 md:pr-28">
+  <div data-reveal>
+    <p class="mb-4 text-xs font-extrabold tracking-[0.18em] text-acid uppercase">Los planes</p>
+    <Title class="font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[0.98] font-extrabold tracking-tight">
+      Un precio que no podés creer.
+    </Title>
+  </div>
+  <div class="mt-8 grid gap-4 lg:grid-cols-3">
+    {
+      offers.map((plan) => (
+        <article
+          class:list={[
+            'flex flex-col rounded-3xl border p-5',
+            plan.name === 'Max'
+              ? 'border-transparent bg-acid text-ink'
+              : 'border-white/15 bg-white/6',
+          ]}
+        >
+          <p class="text-xs font-extrabold tracking-[0.12em] uppercase">
+            {plan.name} · {plan.who}
+          </p>
+          <p class:list={['mt-3 font-display text-5xl tracking-tight', plan.name === 'Max' ? 'text-ink' : 'text-acid']}>
+            {plan.label} <small class="font-sans text-base font-bold">/mes</small>
+          </p>
+          <ul class="mt-4 flex-1 space-y-1 font-semibold">
+            {plan.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          <a
+            class:list={[
+              'mt-6 inline-flex w-fit rounded-full px-4 py-3 font-extrabold',
+              plan.name === 'Max' ? 'bg-ink text-acid' : 'bg-white text-ink',
+            ]}
+            href={`/contacto?plan=${plan.name}`}
+          >
+            Quiero {plan.name}
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</section>

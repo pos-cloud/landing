@@ -1,0 +1,41 @@
+---
+import Pitch from '../components/Pitch.astro'
+import { preciosPitch } from '../data/pitch'
+import Base from '../layouts/Base.astro'
+import Prices from '../components/Prices.astro'
+import { offers } from '../data/site'
+
+const description =
+  'Planes del sistema de gestión POS Cloud: Basic $30.000, Pro $45.000 y Max $60.000 por mes. Compará transacciones y usuarios de cada plan.'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'POS Cloud',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://poscloud.com.ar/precios',
+  description,
+  offers: offers.map((plan) => ({
+    '@type': 'Offer',
+    name: plan.name,
+    price: plan.price,
+    priceCurrency: 'ARS',
+    description: plan.items.join('. '),
+    url: `https://poscloud.com.ar/contacto?plan=${plan.name}`,
+  })),
+}
+---
+
+<Base
+  path="/precios"
+  title="Precios y planes del sistema de gestión — POS Cloud"
+  description={description}
+  progress={0.8}
+  jsonLd={jsonLd}
+>
+  <main>
+    <Prices heading="h1" />
+    <Pitch {...preciosPitch} />
+  </main>
+</Base>

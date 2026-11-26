@@ -1,0 +1,21 @@
+---
+import Pitch from '../components/Pitch.astro'
+import { nucleoPitch } from '../data/pitch'
+import Base from '../layouts/Base.astro'
+import Nucleo from '../components/Nucleo.astro'
+
+const description =
+  'Ventas, compras, control de stock, caja, contabilidad y producción en un solo sistema. El núcleo de POS Cloud junta toda la operación de tu negocio.'
+---
+
+<Base
+  path="/nucleo"
+  title="Ventas, stock y caja en un solo sistema — POS Cloud"
+  description={description}
+  progress={0.2}
+>
+  <main>
+    <Nucleo heading="h1" />
+    <Pitch {...nucleoPitch} />
+  </main>
+</Base>

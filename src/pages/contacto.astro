@@ -1,0 +1,23 @@
+---
+import Pitch from '../components/Pitch.astro'
+import { contactoPitch } from '../data/pitch'
+import Base from '../layouts/Base.astro'
+import Contact from '../components/Contact.astro'
+import type { Plan } from '../data/site'
+
+const allowed: Plan[] = ['Basic', 'Pro', 'Max']
+const requested = Astro.url.searchParams.get('plan')
+const plan = allowed.find((item) => item === requested) ?? null
+---
+
+<Base
+  path="/contacto"
+  title="Contacto y demo por WhatsApp — POS Cloud"
+  description="Escribinos por WhatsApp y coordinamos una demo de POS Cloud, el sistema de gestión en la nube para tu negocio."
+  progress={1}
+>
+  <main>
+    <Contact plan={plan} heading="h1" />
+    <Pitch {...contactoPitch} />
+  </main>
+</Base>

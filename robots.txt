@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://poscloud.com.ar/sitemap.xml

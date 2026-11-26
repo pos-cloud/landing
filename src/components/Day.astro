@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro'
+import { day } from '../data/site'
+
+const tone = {
+  neutral: ['bg-white/8 text-fg/80', 'text-fg/70'],
+  in: ['bg-blue/20 text-sky', 'text-ok'],
+  out: ['bg-warn/15 text-warn', 'text-fg/70'],
+  ok: ['bg-ok/15 text-ok', 'text-ok'],
+} as const
+---
+
+<section class="px-4 py-24 md:px-6 md:py-32">
+  <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
+    <div class="lg:sticky lg:top-28 lg:self-start" data-reveal>
+      <div class="card-brand p-7 md:p-9">
+        <p class="eyebrow">Un día cualquiera</p>
+        <h2 class="mt-4 text-[clamp(2rem,3.8vw,3rem)] leading-[1.05] font-medium tracking-[-0.035em] text-balance">
+          Seguí un día de tu negocio en POS Cloud
+        </h2>
+        <p class="mt-4 leading-relaxed text-fg/70">
+          Cada venta, pedido y compra cae en el mismo sistema: el stock, la caja, las cuentas corrientes y la contabilidad se actualizan solos.
+        </p>
+        <div class="mt-8 rounded-2xl bg-white p-5 text-ink shadow-2xl" aria-hidden="true">
+          <div class="flex items-center justify-between">
+            <p class="flex items-center gap-2 text-sm font-medium">
+              <span class="grid h-7 w-7 place-items-center rounded-lg bg-blue text-white"><Icon name="cash-stack" /></span>
+              Ventas del día
+            </p>
+            <span class="rounded-full bg-ok/15 px-2 py-0.5 font-mono text-[0.65rem] text-green-700">20:00</span>
+          </div>
+          <p class="mt-4 text-4xl font-semibold tracking-tight"><span data-count="204800">$204.800</span></p>
+          <p class="mt-1 text-xs text-ink/55">Mostrador, Tienda Nube y vendedores · caja cerrada sin diferencias</p>
+          <svg viewBox="0 0 300 70" class="mt-4 h-16 w-full" preserveAspectRatio="none">
+            <path data-draw d="M0 52 C30 50 40 40 70 42 S120 30 150 34 190 12 220 22 270 30 300 14" fill="none" stroke="var(--color-blue)" stroke-width="2.5" vector-effect="non-scaling-stroke"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <ol class="divide-y divide-white/8" data-stagger>
+      {
+        day.map(([time, icon, title, text, amount, kind]) => (
+          <li class="flex items-start gap-4 py-6 first:pt-2">
+            <span class:list={['grid h-11 w-11 shrink-0 place-items-center rounded-xl text-lg', tone[kind][0]]}>
+              <Icon name={icon} />
+            </span>
+            <div class="min-w-0 flex-1">
+              <p class="font-mono text-[0.68rem] tracking-wider text-fg/45">{time}</p>
+              <h3 class="mt-1 text-lg font-medium">{title}</h3>
+              <p class="mt-1 text-sm text-fg/55">{text}</p>
+            </div>
+            <span class:list={['shrink-0 pt-6 font-mono text-sm', tone[kind][1]]}>{amount}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

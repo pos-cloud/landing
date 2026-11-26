@@ -2,20 +2,20 @@
 import '../styles/global.css'
 import { ClientRouter } from 'astro:transitions'
 import Seo from '../components/Seo.astro'
-import Path from '../components/Path.astro'
-import { whatsappHref } from '../data/site'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import CtaFinal from '../components/CtaFinal.astro'
 
 interface Props {
   title: string
   description: string
   path: string
-  journey?: 'home' | 'page'
-  progress?: number
+  cta?: boolean
   jsonLd?: Record<string, unknown>
   noindex?: boolean
 }
 
-const { title, description, path, journey = 'page', progress = 0, jsonLd, noindex = false } = Astro.props
+const { title, description, path, cta = true, jsonLd, noindex = false } = Astro.props
 
 const siteJsonLd = {
   '@context': 'https://schema.org',
@@ -54,14 +54,14 @@ const siteJsonLd = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#07111a" />
+    <meta name="theme-color" content="#06080d" />
     <meta name="google-site-verification" content="NCHntMRzHdXwNGzsjgL1HqbKOjrCieZ1S3S00TPgNeI" />
     <Seo title={title} description={description} path={path} noindex={noindex} />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Outfit:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <ClientRouter />
@@ -81,35 +81,13 @@ const siteJsonLd = {
       gtag('config', 'G-WSG747BSDT')
     </script>
   </head>
-  <body
-    class="overflow-x-hidden bg-ink font-sans text-white"
-    data-journey={journey}
-    data-progress={progress}
-  >
-    <header class="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center justify-between px-4 py-3.5 md:px-7 md:py-5">
-      <a class="pointer-events-auto" href="/" aria-label="POS Cloud">
-        <img
-          src="/assets/img/logo-pos-cloud.png"
-          alt=""
-          width="222"
-          height="112"
-          fetchpriority="high"
-          class="h-11 w-auto drop-shadow-[0_8px_18px_color-mix(in_srgb,var(--color-blue)_35%,transparent)] md:h-14"
-        />
-      </a>
-      <a
-        class="pointer-events-auto rounded-full bg-acid px-4 py-2.5 text-sm font-extrabold tracking-tight text-ink"
-        href={whatsappHref()}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Escribime
-      </a>
-    </header>
-    <Path current={path} />
+  <body class="overflow-x-hidden bg-ink font-sans text-fg">
+    <Header current={path} />
     <slot />
+    {cta && <CtaFinal />}
+    <Footer />
     <script>
-      import '../scripts/journey.ts'
+      import '../scripts/animations.ts'
     </script>
   </body>
 </html>

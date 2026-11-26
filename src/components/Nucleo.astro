@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro'
+import SectionHead from './SectionHead.astro'
 import { practices } from '../data/site'
 
 interface Props {
@@ -7,38 +8,143 @@ interface Props {
 }
 
 const { heading = 'h2' } = Astro.props
-const Title = heading
+const byName = Object.fromEntries(practices.map(([icon, name, text]) => [name, { icon, name, text }]))
+const ventas = byName.Ventas!
+const rest = ['Compras', 'Stock', 'Caja', 'Contabilidad', 'Producción'].map((name) => byName[name]!)
 ---
 
-<section id="nucleo" class="flex min-h-dvh items-center px-5 py-28 md:px-16 md:pr-28">
-  <div class="grid w-full items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-    <div data-reveal>
-      <p class="mb-4 text-xs font-extrabold tracking-[0.18em] text-acid uppercase">El núcleo</p>
-      <Title class="max-w-[14ch] font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[0.98] font-extrabold tracking-tight">
-        El manejo de la información, en un solo lugar.
-      </Title>
-      <p class="mt-5 max-w-xl text-lg leading-relaxed text-white/80">
-        Tené el control de todas las operaciones de tu empresa en un solo lugar. El núcleo es la base que toda empresa necesita, y sobre él construimos un sistema a tu medida, con lo último en tecnología e inteligencia artificial.
-      </p>
-      <div class="mt-6 flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4">
-        <img src="/assets/img/logo-claude.svg" alt="" width="40" height="40" loading="lazy" decoding="async" class="h-10 w-10 shrink-0" />
-        <p>Claude lee ventas, productos, stock y caja, y te responde con lo que ya pasó en el negocio.</p>
-      </div>
-    </div>
-    <div class="grid gap-3 sm:grid-cols-2" data-stagger aria-label="Prácticas del núcleo">
-      {
-        practices.map(([icon, title, text]) => (
-          <article class="practice rounded-3xl bg-white p-4 text-ink">
-            <h3 class="flex items-center gap-2.5 font-display text-xl font-bold">
-              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-blue/10 text-lg text-blue">
-                <Icon name={icon} />
-              </span>
-              {title}
+<section id="nucleo" class="px-4 py-24 md:px-6 md:py-32">
+  <div class="mx-auto max-w-7xl">
+    <SectionHead eyebrow="El núcleo" heading={heading}>
+      <Fragment slot="title">El manejo de la información, <span class="text-fg/45">en un solo lugar</span></Fragment>
+      Tené el control de todas las operaciones de tu empresa en un solo lugar. El núcleo es la base que toda empresa necesita, y sobre él construimos un sistema a tu medida, con lo último en tecnología e inteligencia artificial.
+    </SectionHead>
+
+    <div class="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-stagger>
+      <!-- Ventas: tarjeta destacada -->
+      <article class="card-brand flex flex-col overflow-hidden p-6 md:col-span-2 md:p-8">
+        <div class="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
+          <div>
+            <h3 class="flex items-center gap-3 text-2xl font-medium tracking-tight">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-white/10 text-lg text-mist"><Icon name={ventas.icon} /></span>
+              {ventas.name}
             </h3>
-            <p class="mt-2 text-sm leading-relaxed text-ink/70">{text}</p>
+            <p class="mt-4 max-w-md leading-relaxed text-fg/70">{ventas.text}</p>
+          </div>
+          <div class="space-y-2.5" aria-hidden="true">
+            <div class="rounded-2xl bg-white p-4 text-ink shadow-xl">
+              <div class="flex items-center justify-between">
+                <p class="text-xs text-ink/55">Cuenta corriente</p>
+                <span class="rounded-full bg-warn/15 px-2 py-0.5 text-[0.65rem] font-medium text-amber-700">Saldo deudor</span>
+              </div>
+              <p class="mt-1 text-lg font-semibold">Ferretería López</p>
+              <div class="mt-3 grid grid-cols-3 gap-2 text-[0.7rem]">
+                <div><p class="text-ink/50">Compró</p><p class="font-mono font-medium">$412.300</p></div>
+                <div><p class="text-ink/50">Pagó</p><p class="font-mono font-medium">$270.000</p></div>
+                <div><p class="text-ink/50">Debe</p><p class="font-mono font-semibold text-blue">$142.300</p></div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between rounded-2xl border border-white/12 bg-white/[0.06] px-4 py-3 text-sm">
+              <span class="flex items-center gap-2.5"><Icon name="receipt" class="text-mist" /> Factura A 0003-00002291</span>
+              <span class="rounded-full bg-ok/15 px-2 py-0.5 text-[0.68rem] text-ok">ARCA ✓</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      {
+        rest.map((item) => (
+          <article class="card flex flex-col p-6">
+            <h3 class="flex items-center gap-3 text-xl font-medium tracking-tight">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-blue/15 text-lg text-sky">
+                <Icon name={item.icon} />
+              </span>
+              {item.name}
+            </h3>
+            <p class="mt-3 leading-relaxed text-fg/60">{item.text}</p>
+            <div class="mt-6 flex flex-1 items-end" aria-hidden="true">
+              {item.name === 'Compras' && (
+                <div class="w-full space-y-2 text-[0.75rem]">
+                  <div class="flex justify-between rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2">
+                    <span class="text-fg/70">Distribuidora Norte</span>
+                    <span class="font-mono text-ok">+240 u.</span>
+                  </div>
+                  <div class="flex justify-between rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2">
+                    <span class="text-fg/70">Saldo proveedor</span>
+                    <span class="font-mono">$86.500</span>
+                  </div>
+                </div>
+              )}
+              {item.name === 'Stock' && (
+                <div class="w-full space-y-2.5 text-[0.75rem]">
+                  {[
+                    ['Tornillo 6 mm', 82, 'ok'],
+                    ['Pintura látex 20 l', 34, 'ok'],
+                    ['Cinta aisladora', 9, 'low'],
+                  ].map(([name, pct, state]) => (
+                    <div>
+                      <div class="flex justify-between text-fg/70">
+                        <span>{name}</span>
+                        <span class:list={['font-mono', state === 'low' ? 'text-warn' : '']}>{state === 'low' ? 'Reponer' : `${pct}%`}</span>
+                      </div>
+                      <div class="mt-1 h-1.5 rounded-full bg-white/8">
+                        <div class:list={['h-full rounded-full', state === 'low' ? 'bg-warn' : 'bg-sky']} style={`width:${pct}%`} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {item.name === 'Caja' && (
+                <div class="flex h-20 w-full items-end gap-1.5">
+                  {[38, 52, 30, 64, 46, 72, 58, 84, 61, 90].map((h, i) => (
+                    <div class:list={['flex-1 rounded-t-md', i === 9 ? 'bg-sky' : 'bg-white/12']} style={`height:${h}%`} />
+                  ))}
+                </div>
+              )}
+              {item.name === 'Contabilidad' && (
+                <div class="w-full overflow-hidden rounded-xl border border-white/8 font-mono text-[0.68rem]">
+                  <div class="grid grid-cols-[1fr_auto_auto] gap-3 bg-white/[0.03] px-3 py-1.5 text-fg/45">
+                    <span>Cuenta</span><span>Debe</span><span>Haber</span>
+                  </div>
+                  <div class="grid grid-cols-[1fr_auto_auto] gap-3 px-3 py-1.5"><span class="text-fg/70">Caja</span><span>28.600</span><span class="text-fg/30">—</span></div>
+                  <div class="grid grid-cols-[1fr_auto_auto] gap-3 px-3 py-1.5"><span class="text-fg/70">Ventas</span><span class="text-fg/30">—</span><span>23.636</span></div>
+                  <div class="grid grid-cols-[1fr_auto_auto] gap-3 px-3 py-1.5"><span class="text-fg/70">IVA DF</span><span class="text-fg/30">—</span><span>4.964</span></div>
+                </div>
+              )}
+              {item.name === 'Producción' && (
+                <div class="flex w-full items-center gap-2 text-[0.72rem]">
+                  <div class="flex-1 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2">
+                    <p class="text-fg/50">Insumo</p>
+                    <p class="font-mono text-warn">−40 kg</p>
+                  </div>
+                  <Icon name="arrow-right" class="text-fg/40" />
+                  <div class="flex-1 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2">
+                    <p class="text-fg/50">Terminado</p>
+                    <p class="font-mono text-ok">+120 u.</p>
+                  </div>
+                </div>
+              )}
+            </div>
           </article>
         ))
       }
+      <article class="card relative flex flex-col justify-between gap-6 overflow-hidden p-6 md:col-span-2 lg:col-span-2 lg:flex-row lg:items-center">
+        <div class="pointer-events-none absolute -right-20 -bottom-24 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(217,119,87,0.25),transparent)]" aria-hidden="true"></div>
+        <div class="relative max-w-md">
+          <h3 class="flex items-center gap-3 text-xl font-medium tracking-tight">
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-white/8">
+              <img src="/assets/img/logo-claude.svg" alt="" width="24" height="24" loading="lazy" decoding="async" class="h-6 w-6" />
+            </span>
+            Inteligencia artificial con Claude
+          </h3>
+          <p class="mt-3 leading-relaxed text-fg/60">Lee ventas, productos, stock y caja, y te responde con lo que ya pasó en el negocio.</p>
+        </div>
+        <div class="relative w-full max-w-sm space-y-2 text-sm" aria-hidden="true">
+          <p class="ml-auto w-fit rounded-2xl rounded-br-md bg-blue px-3.5 py-2 text-white">¿Qué producto vendí más esta semana?</p>
+          <p class="w-fit rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.05] px-3.5 py-2 text-fg/80">Pintura látex 20 l: 46 unidades, un 18% más que la semana pasada.</p>
+        </div>
+      </article>
     </div>
+
   </div>
 </section>

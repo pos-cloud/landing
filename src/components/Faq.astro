@@ -1,0 +1,48 @@
+---
+import Icon from './Icon.astro'
+import SectionHead from './SectionHead.astro'
+
+interface Props {
+  faqs: ReadonlyArray<readonly [string, string]>
+}
+
+const { faqs } = Astro.props
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(([question, answer]) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+}
+---
+
+<section class="px-4 py-24 md:px-6 md:py-28">
+  <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+    <SectionHead eyebrow="Preguntas frecuentes" align="left">
+      <Fragment slot="title">Lo que nos <span class="text-fg/45">suelen preguntar</span></Fragment>
+      ¿Te queda alguna duda? Escribinos por WhatsApp y te respondemos.
+    </SectionHead>
+
+    <div class="space-y-3" data-stagger>
+      {
+        faqs.map(([question, answer]) => (
+          <details class="card group px-5 py-1" data-faq>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4">
+              <h3 class="text-base font-medium md:text-lg">{question}</h3>
+              <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/10 text-fg/70" data-faq-icon aria-hidden="true">
+                <Icon name="plus" />
+              </span>
+            </summary>
+            <div class="overflow-hidden" data-faq-body>
+              <p class="pb-5 leading-relaxed text-fg/65">{answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</section>

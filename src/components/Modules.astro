@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro'
+import SectionHead from './SectionHead.astro'
 import { modules } from '../data/site'
 
 interface Props {
@@ -7,29 +8,67 @@ interface Props {
 }
 
 const { heading = 'h2' } = Astro.props
-const Title = heading
+const [first, ...rest] = modules
 ---
 
-<section id="modulos" class="flex min-h-dvh flex-col justify-center px-5 py-28 md:px-16 md:pr-28">
-  <div data-reveal>
-    <p class="mb-4 text-xs font-extrabold tracking-[0.18em] text-acid uppercase">A tu medida</p>
-    <Title class="max-w-[16ch] font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[0.98] font-extrabold tracking-tight">
-      Además, desarrollamos módulos exclusivos para vos.
-    </Title>
-    <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/80">
+<section id="modulos" class="px-4 py-24 md:px-6 md:py-32">
+  <div class="mx-auto max-w-7xl">
+    <SectionHead eyebrow="Módulos a medida" heading={heading}>
+      <Fragment slot="title">Además, desarrollamos <span class="text-fg/45">módulos exclusivos para vos</span></Fragment>
       Los armamos sobre el mismo núcleo para que el sistema quede a tu medida y no tengas que cambiar tu forma de trabajar.
-    </p>
-  </div>
-  <div class="mt-8 overflow-hidden" data-marquee>
-    <div class="flex w-max gap-4" data-track>
-      {
-        modules.map(([kind, mark, title, text]) => (
-          <article class="w-72 shrink-0 rounded-3xl bg-white p-5 text-ink">
-            <div class="grid h-14 w-14 place-items-center rounded-2xl bg-acid text-2xl text-ink">
-              {kind === 'img' ? <img src={mark} alt="" width="32" height="32" loading="lazy" decoding="async" class="h-8 w-8 object-contain" /> : <Icon name={mark} />}
+    </SectionHead>
+
+    <div class="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-stagger>
+      <article class="card-brand overflow-hidden p-6 md:col-span-2 md:p-8">
+        <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div>
+            <h3 class="flex items-center gap-3 text-2xl font-medium tracking-tight">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-white/10">
+                <img src={first[1]} alt="" width="24" height="24" loading="lazy" decoding="async" class="h-6 w-6 object-contain brightness-0 invert" />
+              </span>
+              {first[2]}
+            </h3>
+            <p class="mt-4 max-w-md leading-relaxed text-fg/70">{first[3]}</p>
+          </div>
+          <div class="rounded-2xl bg-white p-4 text-ink shadow-2xl" aria-hidden="true">
+            <div class="flex items-center justify-between border-b border-ink/8 pb-3">
+              <p class="text-sm font-semibold">Catálogo mayorista</p>
+              <span class="flex items-center gap-1.5 rounded-full bg-blue px-2.5 py-1 text-[0.68rem] text-white"><Icon name="cart" /> 3</span>
             </div>
-            <h3 class="mt-4 font-display text-2xl">{title}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-ink/70">{text}</p>
+            <div class="mt-3 grid grid-cols-3 gap-2">
+              {
+                [
+                  ['Yerba 1 kg × 10', '$41.500'],
+                  ['Azúcar 1 kg × 10', '$12.900'],
+                  ['Aceite 1,5 l × 6', '$23.400'],
+                ].map(([name, price]) => (
+                  <div class="rounded-xl bg-ink/[0.04] p-2">
+                    <div class="aspect-square rounded-lg bg-gradient-to-br from-mist/70 to-sky/40" />
+                    <p class="mt-1.5 truncate text-[0.65rem] text-ink/70">{name}</p>
+                    <p class="font-mono text-[0.7rem] font-semibold">{price}</p>
+                  </div>
+                ))
+              }
+            </div>
+            <p class="mt-3 rounded-lg bg-ok/12 px-3 py-2 text-[0.7rem] text-green-700">Pedido enviado · entra al stock y a la cuenta corriente</p>
+          </div>
+        </div>
+      </article>
+
+      {
+        rest.map(([kind, mark, title, text]) => (
+          <article class="card flex flex-col p-6">
+            <h3 class="flex items-center gap-3 text-xl font-medium tracking-tight">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-blue/15 text-lg text-sky">
+                {kind === 'img' ? (
+                  <img src={mark} alt="" width="22" height="22" loading="lazy" decoding="async" class="h-[22px] w-[22px] object-contain brightness-0 invert" />
+                ) : (
+                  <Icon name={mark} />
+                )}
+              </span>
+              {title}
+            </h3>
+            <p class="mt-3 leading-relaxed text-fg/60">{text}</p>
           </article>
         ))
       }

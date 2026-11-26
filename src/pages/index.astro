@@ -1,11 +1,13 @@
 ---
-import Base from '../layouts/Base.astro'
 import Hero from '../components/Hero.astro'
 import Nucleo from '../components/Nucleo.astro'
+import Day from '../components/Day.astro'
 import Apps from '../components/Apps.astro'
 import Modules from '../components/Modules.astro'
 import Prices from '../components/Prices.astro'
-import Contact from '../components/Contact.astro'
+import Faq from '../components/Faq.astro'
+import { homeFaqs } from '../data/pitch'
+import Base from '../layouts/Base.astro'
 
 const description =
   'Sistema de gestión y punto de venta en la nube para comercios: ventas, stock, caja y facturación electrónica ARCA, conectado a Mercado Libre y Tienda Nube.'
@@ -32,16 +34,15 @@ const jsonLd = {
   path="/"
   title="POS Cloud — Sistema de gestión y punto de venta en la nube"
   description={description}
-  journey="home"
-  progress={0}
   jsonLd={jsonLd}
 >
   <main>
     <Hero />
     <Nucleo />
+    <Day />
     <Apps />
     <Modules />
     <Prices />
-    <Contact />
+    <Faq faqs={homeFaqs} />
   </main>
 </Base>

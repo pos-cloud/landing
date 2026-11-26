@@ -2,16 +2,12 @@
 import Base from '../layouts/Base.astro'
 ---
 
-<Base
-  path="/404"
-  title="Página no encontrada — POS Cloud"
-  description="Esa página no está en POS Cloud."
-  progress={0}
-  noindex={true}
->
-  <main class="flex min-h-dvh flex-col justify-center px-5 md:px-16">
-    <p class="text-xs font-extrabold tracking-[0.18em] text-acid uppercase">404</p>
-    <h1 class="mt-3 font-display text-5xl font-extrabold tracking-tight">Esa página no está.</h1>
-    <a class="mt-6 inline-flex w-fit rounded-full bg-acid px-4 py-3 font-extrabold text-ink" href="/">Volver al inicio</a>
+<Base path="/404" title="Página no encontrada — POS Cloud" description="Esa página no está en POS Cloud." noindex={true}>
+  <main class="relative flex min-h-[80dvh] flex-col items-center justify-center overflow-hidden px-4 pt-24 text-center">
+    <div class="bg-grid pointer-events-none absolute inset-0" aria-hidden="true"></div>
+    <p class="eyebrow relative">Error 404</p>
+    <h1 class="relative mt-4 text-[clamp(2.4rem,6vw,4.4rem)] leading-tight font-medium tracking-[-0.04em]">Esa página no está</h1>
+    <p class="relative mt-4 text-fg/60">Puede que la dirección haya cambiado. Volvé al inicio y seguí desde ahí.</p>
+    <a class="btn btn-primary relative mt-8" href="/">Volver al inicio</a>
   </main>
 </Base>

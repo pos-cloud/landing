@@ -1,0 +1,30 @@
+---
+interface Props {
+  eyebrow: string
+  heading?: 'h1' | 'h2'
+  align?: 'center' | 'left'
+  class?: string
+}
+
+const { eyebrow, heading = 'h2', align = 'center', class: className } = Astro.props
+const Title = heading
+---
+
+<div class:list={['max-w-3xl', align === 'center' ? 'mx-auto text-center' : '', className]} data-reveal>
+  <p class="eyebrow">{eyebrow}</p>
+  <Title
+    class:list={[
+      'mt-4 font-medium tracking-[-0.035em] text-balance',
+      heading === 'h1' ? 'text-[clamp(2.4rem,5.6vw,4.6rem)] leading-[1.02]' : 'text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.05]',
+    ]}
+  >
+    <slot name="title" />
+  </Title>
+  {
+    Astro.slots.has('default') && (
+      <p class:list={['mt-5 text-lg leading-relaxed text-fg/65 text-pretty', align === 'center' ? 'mx-auto max-w-2xl' : 'max-w-xl']}>
+        <slot />
+      </p>
+    )
+  }
+</div>

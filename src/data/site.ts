@@ -1,13 +1,12 @@
-export const stops = [
-  { href: '/', id: 'inicio', label: 'Inicio' },
-  { href: '/nucleo', id: 'nucleo', label: 'Núcleo' },
-  { href: '/integraciones', id: 'apps', label: 'Aplicaciones' },
-  { href: '/modulos', id: 'modulos', label: 'Módulos' },
-  { href: '/precios', id: 'precio', label: 'Precio' },
-  { href: '/contacto', id: 'contacto', label: 'Contacto' },
+export const nav = [
+  { href: '/nucleo', label: 'Núcleo' },
+  { href: '/integraciones', label: 'Integraciones' },
+  { href: '/modulos', label: 'Módulos' },
+  { href: '/precios', label: 'Precios' },
+  { href: '/contacto', label: 'Contacto' },
 ] as const
 
-export type StopHref = (typeof stops)[number]['href']
+export const email = 'info@poscloud.com.ar'
 
 const plans = ['Basic', 'Pro', 'Max'] as const
 export type Plan = (typeof plans)[number]
@@ -118,4 +117,14 @@ export const offers = [
     label: '$60.000',
     items: ['Transacciones ilimitadas', 'Usuarios ilimitados'],
   },
+] as const
+
+// Línea de tiempo ilustrativa: un día de un comercio usando POS Cloud.
+export const day = [
+  ['08:00', 'bi-unlock', 'Abrís la caja', 'El turno arranca con el saldo del cierre de ayer.', '$45.000', 'neutral'],
+  ['09:40', 'bi-receipt', 'Venta en el mostrador', 'Factura electrónica ARCA emitida en el momento.', '+$28.600', 'in'],
+  ['11:15', 'bi-bag-check', 'Entra un pedido de Tienda Nube', 'Descuenta el mismo stock que el local.', '+$64.200', 'in'],
+  ['13:30', 'bi-phone', 'El vendedor carga un pedido en la calle', 'Queda en la cuenta corriente del cliente.', '+$112.000', 'in'],
+  ['16:00', 'bi-truck', 'Llega la compra al proveedor', 'Suma stock y actualiza su cuenta corriente.', '−$86.500', 'out'],
+  ['20:00', 'bi-journal-check', 'Cerrás la caja', 'Cada comprobante ya dejó su asiento contable.', 'Cerrada', 'ok'],
 ] as const

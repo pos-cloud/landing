@@ -1,8 +1,9 @@
 ---
+import Nucleo from '../components/Nucleo.astro'
 import Pitch from '../components/Pitch.astro'
 import { nucleoPitch } from '../data/pitch'
+import Day from '../components/Day.astro'
 import Base from '../layouts/Base.astro'
-import Nucleo from '../components/Nucleo.astro'
 
 const description =
   'Ventas, compras, control de stock, caja, contabilidad y producción en un solo sistema. El núcleo de POS Cloud junta toda la operación de tu negocio.'
@@ -12,10 +13,10 @@ const description =
   path="/nucleo"
   title="Ventas, stock y caja en un solo sistema — POS Cloud"
   description={description}
-  progress={0.2}
 >
-  <main>
+  <main class="pt-16">
     <Nucleo heading="h1" />
+    <Day />
     <Pitch {...nucleoPitch} />
   </main>
 </Base>

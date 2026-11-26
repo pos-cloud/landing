@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro'
+import SectionHead from './SectionHead.astro'
 import { offers } from '../data/site'
 
 interface Props {
@@ -6,49 +8,60 @@ interface Props {
 }
 
 const { heading = 'h2' } = Astro.props
-const Title = heading
+const icons = { Basic: 'shop', Pro: 'graph-up-arrow', Max: 'buildings' } as const
+const featured = 'Pro'
 ---
 
-<section id="precio" class="flex min-h-dvh flex-col justify-center px-5 py-28 md:px-16 md:pr-28">
-  <div data-reveal>
-    <p class="mb-4 text-xs font-extrabold tracking-[0.18em] text-acid uppercase">Los planes</p>
-    <Title class="font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[0.98] font-extrabold tracking-tight">
-      Un precio que no podés creer.
-    </Title>
-  </div>
-  <div class="mt-8 grid gap-4 lg:grid-cols-3" data-stagger>
-    {
-      offers.map((plan) => (
-        <article
-          class:list={[
-            'flex flex-col rounded-3xl border p-5',
-            plan.name === 'Max'
-              ? 'border-transparent bg-acid text-ink'
-              : 'border-white/15 bg-white/6',
-          ]}
-        >
-          <p class="text-xs font-extrabold tracking-[0.12em] uppercase">
-            {plan.name} · {plan.who}
-          </p>
-          <p class:list={['mt-3 font-display text-5xl tracking-tight', plan.name === 'Max' ? 'text-ink' : 'text-acid']}>
-            <span data-count={plan.price}>{plan.label}</span> <small class="font-sans text-base font-bold">/mes</small>
-          </p>
-          <ul class="mt-4 flex-1 space-y-1 font-semibold">
-            {plan.items.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-          <a
-            class:list={[
-              'mt-6 inline-flex w-fit rounded-full px-4 py-3 font-extrabold',
-              plan.name === 'Max' ? 'bg-ink text-acid' : 'bg-white text-ink',
-            ]}
-            href={`/contacto?plan=${plan.name}`}
-          >
-            Quiero {plan.name}
-          </a>
-        </article>
-      ))
-    }
+<section id="precio" class="px-4 py-24 md:px-6 md:py-32">
+  <div class="mx-auto max-w-7xl">
+    <SectionHead eyebrow="Precios" heading={heading}>
+      <Fragment slot="title">Planes simples <span class="text-fg/45">que crecen con vos</span></Fragment>
+      Un precio fijo por mes, según la cantidad de transacciones y usuarios que necesitás.
+    </SectionHead>
+
+    <div class="mx-auto mt-14 grid max-w-6xl items-center gap-4 lg:grid-cols-3" data-stagger>
+      {
+        offers.map((plan) => {
+          const isFeatured = plan.name === featured
+          return (
+            <article class:list={['flex flex-col p-6 md:p-7', isFeatured ? 'card-brand lg:py-10 shadow-[0_30px_90px_-30px_var(--color-blue)]' : 'card']}>
+              <div class="flex items-center justify-between">
+                <h3 class="flex items-center gap-3 text-xl font-medium">
+                  <span class:list={['grid h-9 w-9 place-items-center rounded-xl', isFeatured ? 'bg-white/12 text-white' : 'bg-blue/15 text-sky']}>
+                    <Icon name={icons[plan.name]} />
+                  </span>
+                  {plan.name}
+                </h3>
+                <span class:list={['rounded-full px-2.5 py-1 text-[0.7rem]', isFeatured ? 'bg-white text-ink' : 'border border-white/10 text-fg/60']}>
+                  {plan.who}
+                </span>
+              </div>
+
+              <div class:list={['mt-6 rounded-2xl p-5', isFeatured ? 'bg-white/8' : 'bg-white/[0.03]']}>
+                <p class="flex items-baseline gap-1.5">
+                  <span class="text-[2.6rem] leading-none font-semibold tracking-tight" data-count={plan.price}>{plan.label}</span>
+                  <span class="text-sm text-fg/55">/ mes</span>
+                </p>
+                <ul class="mt-5 space-y-2.5 text-sm">
+                  {plan.items.map((item) => (
+                    <li class="flex items-center gap-2.5 text-fg/80">
+                      <Icon name="check2" class={isFeatured ? 'text-mist' : 'text-sky'} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a
+                class:list={['btn mt-6 justify-center', isFeatured ? 'btn-light' : 'btn-ghost']}
+                href={`/contacto?plan=${plan.name}`}
+              >
+                Quiero {plan.name} <Icon name="arrow-up-right" />
+              </a>
+            </article>
+          )
+        })
+      }
+    </div>
   </div>
 </section>

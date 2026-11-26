@@ -4,7 +4,7 @@ export interface Pitch {
   intro: string
   points?: ReadonlyArray<readonly [string, string]>
   faqs?: ReadonlyArray<readonly [string, string]>
-  cta: string
+  cta?: string
 }
 
 export const nucleoPitch: Pitch = {
@@ -92,3 +92,11 @@ export const contactoPitch: Pitch = {
   ],
   cta: 'Escribinos por WhatsApp',
 }
+
+export const homeFaqs: ReadonlyArray<readonly [string, string]> = [
+  ['¿Sirve para mi rubro?', 'Sí. POS Cloud trabaja con restaurantes, distribuidoras, tiendas de ropa, ferreterías, farmacias, kioscos, fábricas, mayoristas y muchos rubros más. Chica, mediana o grande, el núcleo se adapta a cómo trabajás.'],
+  ['¿POS Cloud hace factura electrónica?', 'Sí. Está integrado con ARCA: facturás en el momento, con el certificado de tu CUIT.'],
+  ['¿Tengo que instalar algo?', 'No hace falta un servidor propio. POS Cloud funciona en la nube y entrás desde la computadora, la tablet o el celular.'],
+  ['¿Si vendo en la tienda online, se descuenta el stock del local?', 'Sí. Los pedidos de Tienda Nube y WooCommerce entran al sistema y descuentan el mismo depósito.'],
+  ['¿Qué plan me conviene?', 'Basic es para negocios chicos: 1.000 transacciones y hasta 3 usuarios. Pro es para negocios en crecimiento: 5.000 transacciones y hasta 10 usuarios. Max es para empresas con varias sucursales: transacciones y usuarios ilimitados.'],
+]

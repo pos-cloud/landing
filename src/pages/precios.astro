@@ -1,8 +1,8 @@
 ---
+import Prices from '../components/Prices.astro'
 import Pitch from '../components/Pitch.astro'
 import { preciosPitch } from '../data/pitch'
 import Base from '../layouts/Base.astro'
-import Prices from '../components/Prices.astro'
 import { offers } from '../data/site'
 
 const description =
@@ -31,10 +31,9 @@ const jsonLd = {
   path="/precios"
   title="Precios y planes del sistema de gestión — POS Cloud"
   description={description}
-  progress={0.8}
   jsonLd={jsonLd}
 >
-  <main>
+  <main class="pt-16">
     <Prices heading="h1" />
     <Pitch {...preciosPitch} />
   </main>

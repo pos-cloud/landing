@@ -1,46 +1,59 @@
 ---
 import Icon from './Icon.astro'
-import { rubrosA, rubrosB } from '../data/site'
+import DashboardMock from './DashboardMock.astro'
+import { rubrosA, rubrosB, whatsappHref } from '../data/site'
+
+const rubros = [...rubrosA, ...rubrosB]
 ---
 
-<section id="inicio" class="flex min-h-dvh flex-col justify-center px-5 pt-28 pb-24 md:px-16 md:pr-28">
-  <div>
-    <p data-intro class="mb-4 text-xs font-extrabold tracking-[0.18em] text-acid uppercase">POS Cloud</p>
-    <h1 data-intro class="max-w-[12ch] font-display text-[clamp(2.4rem,8vw,7rem)] leading-[0.95] font-extrabold tracking-tight">
-      Un sistema para tu
-      <span data-spin class="text-acid">empresa</span>
+<section id="inicio" class="relative overflow-hidden px-4 pt-32 pb-20 md:px-6 md:pt-40">
+  <div class="bg-grid pointer-events-none absolute inset-0" aria-hidden="true"></div>
+  <div
+    class="pointer-events-none absolute -top-40 left-1/2 h-[640px] w-[1100px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--color-blue)_38%,transparent),transparent)]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-4xl text-center">
+    <p data-intro class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-[0.68rem] tracking-[0.14em] text-fg/70 uppercase">
+      <span class="h-1.5 w-1.5 rounded-full bg-ok shadow-[0_0_8px_var(--color-ok)]"></span>
+      Sistema de gestión en la nube
+    </p>
+    <h1 data-intro class="mt-7 text-[clamp(2.6rem,7.4vw,5.6rem)] leading-[1] font-medium tracking-[-0.045em]">
+      Un sistema para tu <span data-spin class="text-gradient inline-block pb-[0.08em]">empresa</span>
     </h1>
     <p class="sr-only">
       Sistema de gestión y punto de venta en la nube para empresas y comercios de cualquier rubro: restaurantes, distribuidoras, tiendas de ropa, ferreterías, farmacias y más.
     </p>
-    <p data-intro class="mt-6 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl">
-      Chica, mediana o grande. POS Cloud es una solución integral que se adapta a todas las necesidades, en todos tus dispositivos.
+    <p data-intro class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-fg/65 md:text-xl">
+      Chica, mediana o grande. Ventas, stock, caja, facturación ARCA y contabilidad en un solo lugar, desde todos tus dispositivos.
     </p>
-  </div>
-  <div data-intro class="mt-10 space-y-3">
-    <div class="overflow-hidden" data-marquee>
-      <div class="flex w-max gap-2.5" data-track>
-        {
-          rubrosA.map(([icon, label]) => (
-            <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3.5 py-2 text-sm font-semibold whitespace-nowrap">
-              <Icon name={icon} class="text-acid" />
-              {label}
-            </span>
-          ))
-        }
-      </div>
+    <div data-intro class="mt-9 flex flex-wrap justify-center gap-3">
+      <a class="btn btn-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+        <Icon name="whatsapp" /> Pedí una demo
+      </a>
+      <a class="btn btn-ghost" href="/precios">Ver precios <Icon name="arrow-up-right" /></a>
     </div>
-    <div class="overflow-hidden" data-marquee data-reverse>
-      <div class="flex w-max gap-2.5" data-track>
-        {
-          rubrosB.map(([icon, label]) => (
-            <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3.5 py-2 text-sm font-semibold whitespace-nowrap">
-              <Icon name={icon} class="text-acid" />
-              {label}
-            </span>
-          ))
-        }
-      </div>
+  </div>
+
+  <div data-intro class="relative mx-auto mt-14 max-w-5xl overflow-hidden" data-marquee>
+    <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-ink to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-ink to-transparent"></div>
+    <div class="flex w-max gap-2" data-track>
+      {
+        rubros.map(([icon, label]) => (
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/8 bg-white/[0.03] px-3 py-1.5 text-[0.82rem] whitespace-nowrap text-fg/70">
+            <Icon name={icon} class="text-sky" />
+            {label}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="relative mx-auto mt-14 max-w-6xl [perspective:1600px]">
+    <div data-hero-mock class="origin-top">
+      <DashboardMock />
     </div>
   </div>
 </section>

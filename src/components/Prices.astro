@@ -16,7 +16,7 @@ const Title = heading
       Un precio que no podés creer.
     </Title>
   </div>
-  <div class="mt-8 grid gap-4 lg:grid-cols-3">
+  <div class="mt-8 grid gap-4 lg:grid-cols-3" data-stagger>
     {
       offers.map((plan) => (
         <article
@@ -31,7 +31,7 @@ const Title = heading
             {plan.name} · {plan.who}
           </p>
           <p class:list={['mt-3 font-display text-5xl tracking-tight', plan.name === 'Max' ? 'text-ink' : 'text-acid']}>
-            {plan.label} <small class="font-sans text-base font-bold">/mes</small>
+            <span data-count={plan.price}>{plan.label}</span> <small class="font-sans text-base font-bold">/mes</small>
           </p>
           <ul class="mt-4 flex-1 space-y-1 font-semibold">
             {plan.items.map((item) => (

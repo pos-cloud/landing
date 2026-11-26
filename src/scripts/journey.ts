@@ -42,8 +42,12 @@ function normalize(path: string) {
   return path || '/'
 }
 
+let listeners = new AbortController()
+
 function boot() {
   ctx?.revert()
+  listeners.abort()
+  listeners = new AbortController()
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   ctx = gsap.context(() => {
@@ -82,6 +86,84 @@ function boot() {
       })
       spinTl.to(spin, { autoAlpha: 1, duration: 0.35 })
     }
+
+    const intro = gsap.utils.toArray<HTMLElement>('[data-intro]')
+    if (intro.length) {
+      gsap.from(intro, {
+        autoAlpha: 0,
+        y: 48,
+        duration: 0.9,
+        ease: 'power3.out',
+        stagger: 0.14,
+        delay: 0.1,
+      })
+    }
+
+    gsap.utils.toArray<HTMLElement>('[data-stagger]').forEach((group) => {
+      const items = [...group.children] as HTMLElement[]
+      gsap.from(items, {
+        autoAlpha: 0,
+        y: 36,
+        scale: 0.97,
+        duration: 0.7,
+        ease: 'power3.out',
+        stagger: 0.09,
+        scrollTrigger: { trigger: group, start: 'top 86%', once: true },
+      })
+    })
+
+    gsap.utils.toArray<HTMLElement>('[data-count]').forEach((el) => {
+      const target = Number(el.dataset.count)
+      if (!Number.isFinite(target)) return
+      const value = { n: 0 }
+      const render = () => {
+        el.textContent = `$${Math.round(value.n).toLocaleString('es-AR')}`
+      }
+      gsap.to(value, {
+        n: target,
+        duration: 1.3,
+        ease: 'power2.out',
+        snap: { n: 500 },
+        onUpdate: render,
+        onComplete: render,
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true, onEnter: render },
+      })
+    })
+
+    gsap.utils.toArray<HTMLDetailsElement>('[data-faq]').forEach((item) => {
+      const summary = item.querySelector('summary')
+      const body = item.querySelector<HTMLElement>('[data-faq-body]')
+      const icon = item.querySelector<HTMLElement>('[data-faq-icon]')
+      if (!summary || !body || !icon) return
+      summary.addEventListener(
+        'click',
+        (event) => {
+          event.preventDefault()
+          if (item.open) {
+            gsap.to(icon, { rotate: 0, duration: 0.3, ease: 'power2.out' })
+            gsap.to(body, {
+              height: 0,
+              autoAlpha: 0,
+              duration: 0.35,
+              ease: 'power2.inOut',
+              onComplete: () => {
+                item.open = false
+                gsap.set(body, { clearProps: 'height,opacity,visibility' })
+              },
+            })
+          } else {
+            item.open = true
+            gsap.to(icon, { rotate: 45, duration: 0.3, ease: 'power2.out' })
+            gsap.fromTo(
+              body,
+              { height: 0, autoAlpha: 0 },
+              { height: 'auto', autoAlpha: 1, duration: 0.45, ease: 'power2.out', clearProps: 'height' },
+            )
+          }
+        },
+        { signal: listeners.signal },
+      )
+    })
 
     gsap.utils.toArray<HTMLElement>('[data-marquee]').forEach((box) => {
       const track = box.querySelector<HTMLElement>('[data-track]')

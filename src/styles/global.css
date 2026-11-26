@@ -5,7 +5,7 @@
   --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --color-ink: #07111a;
   --color-acid: #d6ff3f;
-  --color-blue: #2f6bff;
+  --color-blue: #0275d8;
 }
 
 html {
@@ -16,8 +16,8 @@ body {
   margin: 0;
   background-color: var(--color-ink);
   background-image:
-    radial-gradient(circle at 88% 0%, rgba(47, 107, 255, 0.28), transparent 34%),
-    radial-gradient(circle at 0% 100%, rgba(214, 255, 63, 0.08), transparent 28%);
+    radial-gradient(circle at 88% 0%, color-mix(in srgb, var(--color-blue) 30%, transparent), transparent 34%),
+    radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--color-acid) 8%, transparent), transparent 28%);
   background-attachment: fixed;
 }
 
@@ -43,8 +43,8 @@ body {
 }
 
 [data-path-draw] {
-  stroke: #d6ff3f;
-  filter: drop-shadow(0 0 6px rgba(214, 255, 63, 0.85));
+  stroke: var(--color-acid);
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--color-acid) 85%, transparent));
 }
 
 .path a {
@@ -55,7 +55,7 @@ body {
   place-items: center;
   border: 2px solid rgba(255, 255, 255, 0.75);
   border-radius: 99px;
-  background: #07111a;
+  background: var(--color-ink);
 }
 
 .path a span {
@@ -73,20 +73,20 @@ body {
 .path a.is-on,
 .path a:hover,
 .path a:focus-visible {
-  background: #d6ff3f;
-  border-color: #d6ff3f;
-  box-shadow: 0 0 0 6px rgba(214, 255, 63, 0.22);
+  background: var(--color-acid);
+  border-color: var(--color-acid);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-acid) 22%, transparent);
 }
 
 .path a.is-on span,
 .path a:hover span,
 .path a:focus-visible span {
   opacity: 1;
-  color: #d6ff3f;
+  color: var(--color-acid);
 }
 
 .practice.is-on {
-  box-shadow: 0 0 0 2px #d6ff3f;
+  box-shadow: 0 0 0 2px var(--color-acid);
 }
 
 @media (min-width: 900px) {

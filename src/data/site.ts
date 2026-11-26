@@ -71,12 +71,12 @@ export const rubrosB = [
 ] as const
 
 export const practices = [
-  ['bi-receipt', 'Ventas', 'Cobrás en el mostrador o en la mesa.'],
-  ['bi-bag', 'Compras', 'La mercadería entra al depósito.'],
-  ['bi-box-seam', 'Stock', 'Sabés qué hay, qué entró y qué salió.'],
-  ['bi-cash-stack', 'Caja', 'El turno cierra con lo que pasó.'],
-  ['bi-journal-text', 'Contabilidad', 'El comprobante deja el asiento.'],
-  ['bi-gear-wide-connected', 'Producción', 'Baja el insumo, sube el terminado.'],
+  ['bi-receipt', 'Ventas', 'Controlá todas tus ventas, vengan de donde vengan: nosotros las registramos. Y mantené al día las cuentas corrientes para saber quién te debe.'],
+  ['bi-bag', 'Compras', 'Cargás tus compras y el sistema actualiza el stock y las cuentas corrientes de tus proveedores.'],
+  ['bi-box-seam', 'Stock', 'Tu inventario al día, siempre: sabés qué tenés, qué entró y qué salió.'],
+  ['bi-cash-stack', 'Caja', 'Entendé el flujo de tu caja y descubrí dónde se te escapa la plata.'],
+  ['bi-journal-text', 'Contabilidad', 'Toda la base que necesita una empresa para llevar las cuentas en regla.'],
+  ['bi-gear-wide-connected', 'Producción', 'Un módulo que se adapta a la forma de producir de cada empresa.'],
 ] as const
 
 export const apps = [
